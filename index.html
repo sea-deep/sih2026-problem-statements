@@ -460,13 +460,6 @@
           <button class="flat-tab-btn active" data-tab="full-desc">Full Description</button>
           <button class="flat-tab-btn" data-tab="structured-sec">Structured Sections</button>
           <button class="flat-tab-btn" data-tab="dataset-links">Datasets & Links</button>
-          <button class="flat-tab-action-btn" id="copyModalMdBtn" title="Copy problem statement as Markdown">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            <span>Copy as MD</span>
-          </button>
         </div>
 
         <!-- Tab Panes -->
@@ -507,9 +500,20 @@
 
       <!-- Modal Footer -->
       <div class="modal-bottom-bar">
-        <button class="btn btn-secondary" id="modalFavoriteBtn">★ Bookmark</button>
-        <a href="#" target="_blank" class="btn btn-outline" id="modalOfficialLink">Official SIH 2026 Page &nearr;</a>
-        <button class="btn btn-primary" id="modalCloseActionBtn">Close</button>
+        <div class="modal-bottom-left">
+          <button class="btn btn-secondary" id="copyModalMdBtn" title="Copy problem statement as Markdown">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: -2px;">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy as MD</span>
+          </button>
+          <button class="btn btn-secondary" id="modalFavoriteBtn">☆ Bookmark</button>
+        </div>
+        <div class="modal-bottom-right">
+          <a href="#" target="_blank" class="btn btn-outline" id="modalOfficialLink">Official SIH 2026 Page &nearr;</a>
+          <button class="btn btn-primary" id="modalCloseActionBtn">Close</button>
+        </div>
       </div>
 
     </div>

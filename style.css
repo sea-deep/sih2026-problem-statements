@@ -1625,7 +1625,15 @@ mark {
   border-top: 2px solid var(--border-light);
   background-color: var(--bg-muted);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-bottom-left,
+.modal-bottom-right {
+  display: flex;
+  align-items: center;
   gap: 0.6rem;
 }
 
@@ -1807,10 +1815,22 @@ mark {
   
   .modal-bottom-bar {
     padding: 0.75rem 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
-  .modal-bottom-bar .btn {
+  .modal-bottom-left,
+  .modal-bottom-right {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .modal-bottom-left .btn,
+  .modal-bottom-right .btn {
     flex: 1;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.6rem;
+    justify-content: center;
   }
 }

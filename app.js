@@ -756,6 +756,41 @@ function toggleSelectAllFiltered(checked) {
   renderResults();
 }
 
+// Transform raw problem object to clean, concise export object (matching MD content, no scraper bloat)
+function formatProblemForExport(p) {
+  if (!p) return null;
+  const item = {
+    id: p.id,
+    title: p.title,
+    category: p.category,
+    theme: p.theme,
+    organization: p.organization,
+    department: p.department,
+    submissions: p.submitted_ideas?.raw || (typeof p.submitted_ideas === 'string' ? p.submitted_ideas : '0/500'),
+    deadline: p.deadline || '20 September 2026',
+    official_url: p.web_url || (p.modal_id ? `https://sih.gov.in/sih2026PS#${p.modal_id}` : `https://sih.gov.in/sih2026PS#ViewProblemStatement${p.id.replace('SIH', '')}`),
+    description: (p.description || '').trim()
+  };
+  
+  if (p.dataset_info) {
+    item.dataset_info = p.dataset_info.trim();
+  }
+  if (p.external_links && p.external_links.length > 0) {
+    item.external_links = p.external_links;
+  }
+  if (p.youtube_link) {
+    item.youtube_link = p.youtube_link;
+  }
+  if (p.contact_info) {
+    item.contact_info = p.contact_info.trim();
+  }
+  if (p.sections && Object.keys(p.sections).length > 0) {
+    item.sections = p.sections;
+  }
+  
+  return item;
+}
+
 // Downloads & Exports
 function downloadJSON(data, filename) {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -765,41 +800,40 @@ function downloadJSON(data, filename) {
 function downloadCSV(items, filename) {
   const headers = [
     'PS ID',
-    'Serial No',
     'Title',
-    'Organization',
-    'Department',
     'Category',
     'Theme',
-    'Submitted Ideas',
-    'Capacity',
+    'Organization',
+    'Department',
+    'Submissions',
     'Deadline',
-    'Dataset Info',
-    'YouTube Link',
-    'External Links',
+    'Official URL',
     'Description',
-    'Web URL'
+    'Dataset Info',
+    'External Links',
+    'YouTube Link',
+    'Contact Info'
   ];
   
   const csvRows = [headers.join(',')];
   
   items.forEach(p => {
+    const formatted = formatProblemForExport(p);
     const row = [
-      escapeCsvCell(p.id),
-      escapeCsvCell(p.serial_no),
-      escapeCsvCell(p.title),
-      escapeCsvCell(p.organization),
-      escapeCsvCell(p.department),
-      escapeCsvCell(p.category),
-      escapeCsvCell(p.theme),
-      escapeCsvCell(p.submitted_ideas ? p.submitted_ideas.count : 0),
-      escapeCsvCell(p.submitted_ideas ? p.submitted_ideas.capacity : 500),
-      escapeCsvCell(p.deadline),
-      escapeCsvCell(p.dataset_info || ''),
-      escapeCsvCell(p.youtube_link || ''),
-      escapeCsvCell((p.external_links || []).join('; ')),
-      escapeCsvCell(p.description || ''),
-      escapeCsvCell(p.web_url || '')
+      escapeCsvCell(formatted.id),
+      escapeCsvCell(formatted.title),
+      escapeCsvCell(formatted.category),
+      escapeCsvCell(formatted.theme),
+      escapeCsvCell(formatted.organization),
+      escapeCsvCell(formatted.department),
+      escapeCsvCell(formatted.submissions),
+      escapeCsvCell(formatted.deadline),
+      escapeCsvCell(formatted.official_url),
+      escapeCsvCell(formatted.description),
+      escapeCsvCell(formatted.dataset_info || ''),
+      escapeCsvCell((formatted.external_links || []).join('; ')),
+      escapeCsvCell(formatted.youtube_link || ''),
+      escapeCsvCell(formatted.contact_info || '')
     ];
     csvRows.push(row.join(','));
   });
@@ -1154,7 +1188,7 @@ function setupEventListeners() {
           techTags: Array.from(state.filters.techTags)
         }
       },
-      problem_statements: state.filteredProblems
+      problem_statements: state.filteredProblems.map(formatProblemForExport)
     };
     downloadJSON(exportData, `sih2026_filtered_${state.filteredProblems.length}_statements.json`);
   });
@@ -1176,7 +1210,7 @@ function setupEventListeners() {
         exported_at: new Date().toISOString(),
         selected_count: selected.length
       },
-      problem_statements: selected
+      problem_statements: selected.map(formatProblemForExport)
     };
     downloadJSON(exportData, `sih2026_selected_${selected.length}_statements.json`);
   });
@@ -1194,7 +1228,8 @@ function setupEventListeners() {
   el.copyJsonClipboard.addEventListener('click', async () => {
     el.exportMenu.classList.remove('show');
     try {
-      await navigator.clipboard.writeText(JSON.stringify(state.filteredProblems, null, 2));
+      const formatted = state.filteredProblems.map(formatProblemForExport);
+      await navigator.clipboard.writeText(JSON.stringify(formatted, null, 2));
       showToast(`Copied ${state.filteredProblems.length} items to clipboard!`, 'success');
     } catch (err) {
       showToast('Clipboard access denied', 'error');
