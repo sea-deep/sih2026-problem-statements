@@ -83,77 +83,37 @@ def fix_punctuation_spacing(text: str) -> str:
     
     return text
 
-KNOWN_HEADERS = {
-    'background': 'Background',
-    'context': 'Background',
-    'overview': 'Overview',
-    'introduction': 'Overview',
-    'problem description': 'Problem Description',
-    'description': 'Problem Description',
-    'detailed description': 'Problem Description',
-    'problem statement': 'Problem Statement',
-    'problem definition': 'Problem Definition',
-    'existing problem': 'Existing Problem',
-    'existing system': 'Existing System',
-    'core challenge': 'Core Challenge',
-    'challenge': 'Challenge',
-    'challenges': 'Challenges',
-    'expected solution / outcome': 'Expected Solution / Outcome',
-    'expected outcome / solution': 'Expected Solution / Outcome',
-    'expected outcome': 'Expected Outcome',
-    'expected outcomes': 'Expected Outcome',
-    'expected solution': 'Expected Solution',
-    'expected solutions': 'Expected Solution',
-    'expected solution (indicative)': 'Expected Solution (Indicative)',
-    'expected solution/deliverables': 'Expected Solution / Deliverables',
-    'desired outcome': 'Desired Outcome',
-    'desired outcomes': 'Desired Outcome',
-    'desired solution': 'Desired Solution',
-    'proposed solution': 'Proposed Solution',
-    'solution': 'Expected Solution',
-    'expected output': 'Expected Output',
-    'expected outputs': 'Expected Output',
-    'objective': 'Objectives',
-    'objectives': 'Objectives',
-    'goal': 'Objectives',
-    'goals': 'Objectives',
-    'purpose': 'Objectives',
-    'aim': 'Objectives',
-    'scope of work': 'Scope of Work',
-    'scope of the project': 'Scope of Work',
-    'scope': 'Scope of Work',
-    'key deliverables': 'Key Deliverables',
-    'deliverables': 'Key Deliverables',
-    'deliverable': 'Key Deliverables',
-    'key features': 'Key Features',
-    'key functionalities': 'Key Features',
-    'features': 'Key Features',
-    'technical requirements': 'Technical Requirements',
-    'hardware & runtime environment': 'Hardware & Runtime Environment',
-    'hardware requirements': 'Hardware Requirements',
-    'technology stack': 'Technology Stack',
-    'tech stack': 'Technology Stack',
-    'allowed frameworks': 'Allowed Frameworks',
-    'relevant data availability': 'Relevant Data Availability',
-    'relevant data availability (if any)': 'Relevant Data Availability',
-    'dataset availability': 'Relevant Data Availability',
-    'dataset details': 'Relevant Data Availability',
-    'input data': 'Relevant Data Availability',
-    'data availability': 'Relevant Data Availability',
-    'proposed methodology': 'Methodology & Approach',
-    'methodology': 'Methodology & Approach',
-    'approach': 'Methodology & Approach',
-    'architecture': 'Architecture & Design',
-    'evaluation criteria': 'Evaluation Criteria',
-    'success criteria': 'Evaluation Criteria',
-    'key metrics for evaluation': 'Evaluation Criteria',
-    'key metrics': 'Evaluation Criteria',
-    'performance metrics': 'Evaluation Criteria',
-    'impact': 'Impact & Applications',
-    'benefits': 'Impact & Applications',
-    'potential applications': 'Impact & Applications',
-    'use cases': 'Use Cases'
-}
+SECTION_HEADERS = [
+    # Top-level Sections & Sub-sections
+    'Expected Outcomes and Impact', 'Expected Outcome and Impact', 'Outcomes and Impact',
+    'Expected Outcomes and lmpact', 'Expected Outcome and lmpact', 'Outcomes and lmpact',
+    'Expected Solution / Deliverables', 'Expected Solution/Deliverables', 'Expected Solution / Outcome',
+    'Expected Solution/Outcome', 'Expected Outcome / Solution', 'Expected Outcome/Solution',
+    'Expected Solution (Indicative)', 'Expected Solution', 'Expected Solutions', 'Expected Outcomes',
+    'Expected Outcome', 'Expected Output', 'Expected Outputs', 'Desired Outcomes', 'Desired Outcome',
+    'Desired Solution', 'Proposed Solution', 'Problem Description', 'Problem Statement',
+    'Problem Definition', 'Detailed Description', 'Description of the Study', 'Existing Problem',
+    'Existing System', 'Background', 'Context', 'Overview', 'Introduction', 'Description',
+    'Core Challenge', 'Innovation Challenge', 'Challenge', 'Challenges', 'Scope of Work',
+    'Scope of the Project', 'Scope', 'Expected Deliverables', 'Key Deliverables', 'Deliverables',
+    'Deliverable', 'Key Functional Requirements', 'Functional Requirements', 'Technical Requirements',
+    'Hardware & Runtime Environment', 'Hardware Component', 'Hardware Components', 'Hardware Requirements',
+    'Software Component', 'Software Components', 'Software Platform', 'Technology Stack', 'Tech Stack',
+    'Allowed Frameworks', 'Relevant Data Availability (if any)', 'Relevant Data Availability',
+    'Dataset Availability', 'Dataset Details', 'Input Data', 'Data Availability', 'Data Sources',
+    'Data Parameters for Analysis', 'Data Parameters For Analysis', 'Data Parameters',
+    'Solution Components', 'Solution Component', 'Components of the Solution', 'System Architecture',
+    'Proposed Digitalized System Architecture', 'Proposed Methodology', 'Methodology & Approach',
+    'Methodology', 'Approach', 'Architecture & Design', 'Architecture', 'Objectives', 'Objective',
+    'Goal', 'Goals', 'Purpose', 'Aim', 'Key Features', 'Key Functionalities', 'Core Features',
+    'Features', 'Evaluation Criteria', 'Success Criteria', 'Key Metrics for Evaluation', 'Key Metrics',
+    'Performance Metrics', 'Key Milestones', 'Impact & Applications', 'Impact and Applications',
+    'Potential Applications', 'Use Cases', 'Target Audience', 'For Grand Finale', 'Grand Finale'
+]
+
+SECTION_HEADERS_SORTED = sorted(SECTION_HEADERS, key=len, reverse=True)
+header_pattern_str = '|'.join(re.escape(h) for h in SECTION_HEADERS_SORTED)
+header_regex = re.compile(r'^\s*(?:[•·â€¢\-*]\s*)?(' + header_pattern_str + r')(?:\s*[:\-—]\s*|\s+(?=[A-Z0-9])|$)', flags=re.MULTILINE | re.IGNORECASE)
 
 ABBREVIATIONS = {
     'e.g.', 'i.e.', 'etc.', 'vs.', 'viz.', 'al.', 'inc.', 'ltd.', 'corp.',
@@ -174,29 +134,17 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
     s = re.sub(r'</p>', '\n\n', s, flags=re.IGNORECASE)
     s = re.sub(r'<p[^>]*>', '', s, flags=re.IGNORECASE)
     
-    soup = BeautifulSoup(s, 'html.parser')
+    # Split fused inlined sentences: e.g. 'factors Based on the analysis...' -> 'factors\n\nBased on the analysis...'
+    s = re.sub(r'([a-z0-9,;)])\s+(Based on the analysis|The system should|The solution should|The platform should|The proposed solution|In addition|Furthermore)\b', r'\1\n\n\2', s)
     
-    # Process headings and bold tags
+    soup = BeautifulSoup(s, 'html.parser')
     for b in soup.find_all(['b', 'strong', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'u']):
         txt = b.get_text().strip()
         if not txt:
             b.decompose()
             continue
-            
-        txt_clean = re.sub(r'[:\-—\s]+$', '', txt).strip().lower()
-        if txt_clean in KNOWN_HEADERS:
-            canonical_title = KNOWN_HEADERS[txt_clean]
-            b.replace_with(f'\n\n@@HEADER@@{canonical_title}@@\n')
-        else:
-            list_match = re.match(r'^([a-z0-9]+[\.\)])\s*(.*)$', txt, re.IGNORECASE)
-            if list_match and list_match.group(1).lower() not in ABBREVIATIONS:
-                prefix = list_match.group(1)
-                heading_content = list_match.group(2).strip()
-                b.replace_with(f'\n\n**{prefix}** {heading_content}\n')
-            else:
-                b.replace_with(f' **{txt}** ')
-                
-    # Process anchor links
+        b.replace_with(f' **{txt}** ')
+        
     for a in soup.find_all('a'):
         href = a.get('href', '').strip()
         txt = a.get_text(strip=True)
@@ -211,6 +159,19 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
     text = fix_mojibake(text)
     text = fix_punctuation_spacing(text)
     text = re.sub(r'([A-Za-z0-9]):([A-Za-z])', r'\1: \2', text)
+    
+    # Header matching across lines
+    def replace_sec_header(m):
+        h_matched = m.group(1).strip().title()
+        if 'Outcome' in h_matched and 'Impact' in h_matched:
+            h_matched = 'Expected Outcomes and Impact'
+        elif 'Outcome' in h_matched and 'Solution' in h_matched:
+            h_matched = 'Expected Solution / Outcome'
+        elif h_matched in ['Description', 'Detailed Description']:
+            h_matched = 'Problem Description'
+        return f'\n\n**{h_matched}:**\n'
+        
+    text = header_regex.sub(replace_sec_header, text)
     
     # Inlined letter lists (avoiding abbreviations like e.g. or i.e.)
     def split_letter_list(m):
@@ -241,7 +202,7 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
             continue
             
         # Top-level section header
-        if l.startswith('@@HEADER@@') or (l.startswith('**') and l.endswith(':**')):
+        if l.startswith('**') and l.endswith(':**'):
             cleaned_lines.append('')
             cleaned_lines.append(l)
             in_sub_list = False
@@ -270,37 +231,24 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
                 cleaned_lines.append(f'- {b_text}')
             continue
             
-        # Clean double bullets or weird bullet chars
         l = re.sub(r'^(?:[•·â€¢]\s*)+', '- ', l)
         l = re.sub(r'^[oO]\s+(?=[A-Z])', '- ', l)
         l = re.sub(r'^-\s*[•·â€¢]\s*', '- ', l)
         l = re.sub(r'^\*\s*(?!\*)', '- ', l)
         
-        # If line is solely bullets, dashes, asterisks, whitespace
         if re.fullmatch(r'[\s•·â€¢\-\*]+', l):
             continue
             
-        # If line starts with '- **Header:**' or '- **a.**' remove the leading '- '
         l = re.sub(r'^-\s*(\*\*[^*]+:\*\*)$', r'\1', l)
         l = re.sub(r'^-\s*(\*\*[a-z0-9]+[\.\)]\*\*)\s*', r'\1 ', l, flags=re.IGNORECASE)
-        l = re.sub(r'^-\s*(\*\*A scalable [^*]+\*\*)\s*', r'\1\n', l, flags=re.IGNORECASE)
         
         in_sub_list = False
         cleaned_lines.append(l)
         
     text = '\n'.join(cleaned_lines)
-    text = re.sub(r'@@HEADER@@(.*?)@@', r'**\1:**', text)
-    
-    # Also handle plain text headers that weren't inside <b> tags
-    for raw_k, canon_title in sorted(KNOWN_HEADERS.items(), key=lambda x: len(x[0]), reverse=True):
-        pattern = r'(?:\n|^|\.\s+)(?:[•\-*·]\s*)?' + re.escape(raw_k) + r'(?:\s*[:\-—]\s*|\s+(?=[A-Z0-9]))'
-        text = re.sub(pattern, f'\n\n**{canon_title}:**\n', text, flags=re.IGNORECASE)
-        
-    # Clean double header artifacts
     text = re.sub(r'(\*\*[^*]+:\*\*)\s*\n+\s*\1', r'\1', text)
     text = re.sub(r'\n{3,}', '\n\n', text).strip()
     
-    # Extract dataset availability if present in text
     extracted_data_info = ''
     data_match = re.search(r'\*\*(?:Relevant Data Availability):\*\*\s*\n*(.*?)(?=\n\n\*\*|\Z)', text, flags=re.DOTALL)
     if data_match:
