@@ -155,6 +155,11 @@ KNOWN_HEADERS = {
     'use cases': 'Use Cases'
 }
 
+ABBREVIATIONS = {
+    'e.g.', 'i.e.', 'etc.', 'vs.', 'viz.', 'al.', 'inc.', 'ltd.', 'corp.',
+    'dr.', 'mr.', 'mrs.', 'ms.', 'prof.', 'dept.', 'govt.', 'fig.', 'ref.', 'no.'
+}
+
 def clean_problem_description(raw_input: str) -> tuple[str, str]:
     """Convert raw description HTML or text to clean, normalized Markdown without artifacts."""
     if not raw_input:
@@ -184,7 +189,7 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
             b.replace_with(f'\n\n@@HEADER@@{canonical_title}@@\n')
         else:
             list_match = re.match(r'^([a-z0-9]+[\.\)])\s*(.*)$', txt, re.IGNORECASE)
-            if list_match:
+            if list_match and list_match.group(1).lower() not in ABBREVIATIONS:
                 prefix = list_match.group(1)
                 heading_content = list_match.group(2).strip()
                 b.replace_with(f'\n\n**{prefix}** {heading_content}\n')
@@ -207,18 +212,62 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
     text = fix_punctuation_spacing(text)
     text = re.sub(r'([A-Za-z0-9]):([A-Za-z])', r'\1: \2', text)
     
-    # Inlined list splitters: ' b. Text', ' c. Text' (put on new line with **b.**)
-    text = re.sub(r'(\s+)([a-h]\.|\([a-h]\)|[a-h]\))\s+([A-Z])', r'\n\n**\2** \3', text)
-    text = re.sub(r'(\s+)(\d+\.|\(\d+\)|\d+\))\s+([A-Z])', r'\n\n**\2** \3', text)
+    # Inlined letter lists (avoiding abbreviations like e.g. or i.e.)
+    def split_letter_list(m):
+        prefix = m.group(1)
+        if prefix.lower() in ABBREVIATIONS:
+            return m.group(0)
+        return f'\n\n**{prefix}** {m.group(2)}'
+        
+    text = re.sub(r'(?:^|[\n\s]+)([a-h]\.|\([a-h]\)|[a-h]\))\s+([A-Z])', split_letter_list, text)
     
-    # Process lines
+    # Inlined numbered lists
+    def split_number_list(m):
+        prefix = m.group(1)
+        return f'\n\n**{prefix}** {m.group(2)}'
+        
+    text = re.sub(r'(?:^|[\n\s]+)(\d+\.|\(\d+\)|\d+\))\s+([A-Z])', split_number_list, text)
+    
+    # Process lines & determine indentation hierarchy
     lines = text.splitlines()
     cleaned_lines = []
+    in_sub_list = False
     
     for line in lines:
         l = line.strip()
         if not l:
             cleaned_lines.append('')
+            in_sub_list = False
+            continue
+            
+        # Top-level section header
+        if l.startswith('@@HEADER@@') or (l.startswith('**') and l.endswith(':**')):
+            cleaned_lines.append('')
+            cleaned_lines.append(l)
+            in_sub_list = False
+            continue
+            
+        # Step item: e.g. **a.** ... or **f.** Generate dashboards showing:
+        if re.match(r'^\*\*[a-z0-9]+[\.\)]\*\*', l, re.IGNORECASE):
+            cleaned_lines.append('')
+            cleaned_lines.append(l)
+            if l.endswith(':'):
+                in_sub_list = True
+            else:
+                in_sub_list = False
+            continue
+            
+        # Bullet item: • or - or *
+        bullet_match = re.match(r'^(?:[•·â€¢\-*]\s*)+(.*)$', l)
+        if bullet_match:
+            b_text = bullet_match.group(1).strip()
+            if not b_text:
+                continue
+            b_text = re.sub(r'^[•·â€¢\-*]\s*', '', b_text)
+            if in_sub_list:
+                cleaned_lines.append(f'  - {b_text}')
+            else:
+                cleaned_lines.append(f'- {b_text}')
             continue
             
         # Clean double bullets or weird bullet chars
@@ -236,6 +285,7 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
         l = re.sub(r'^-\s*(\*\*[a-z0-9]+[\.\)]\*\*)\s*', r'\1 ', l, flags=re.IGNORECASE)
         l = re.sub(r'^-\s*(\*\*A scalable [^*]+\*\*)\s*', r'\1\n', l, flags=re.IGNORECASE)
         
+        in_sub_list = False
         cleaned_lines.append(l)
         
     text = '\n'.join(cleaned_lines)
@@ -246,7 +296,7 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
         pattern = r'(?:\n|^|\.\s+)(?:[•\-*·]\s*)?' + re.escape(raw_k) + r'(?:\s*[:\-—]\s*|\s+(?=[A-Z0-9]))'
         text = re.sub(pattern, f'\n\n**{canon_title}:**\n', text, flags=re.IGNORECASE)
         
-    # Clean double header artifacts like '**Header:**\n**Header:**'
+    # Clean double header artifacts
     text = re.sub(r'(\*\*[^*]+:\*\*)\s*\n+\s*\1', r'\1', text)
     text = re.sub(r'\n{3,}', '\n\n', text).strip()
     

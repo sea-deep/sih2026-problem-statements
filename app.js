@@ -634,10 +634,12 @@ function formatMarkdownToHtml(md) {
   // Convert bold
   str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   
-  // Convert list items
-  str = str.replace(/^[•\-*]\s*(.*?)$/gm, '<li class="prose-li">$1</li>');
+  // Convert indented sub-bullets (2 or more leading spaces)
+  str = str.replace(/^[ ]{2,}[•\-*]\s*(.*?)$/gm, '<li class="prose-sub-li">$1</li>');
+  str = str.replace(/((?:<li class="prose-sub-li">.*?<\/li>\s*)+)/g, '<ul class="prose-sub-ul">$1</ul>');
   
-  // Group adjacent <li> into <ul class="prose-ul">
+  // Convert top-level bullets
+  str = str.replace(/^[•\-*]\s*(.*?)$/gm, '<li class="prose-li">$1</li>');
   str = str.replace(/((?:<li class="prose-li">.*?<\/li>\s*)+)/g, '<ul class="prose-ul">$1</ul>');
   
   // Split by double newlines into clean blocks

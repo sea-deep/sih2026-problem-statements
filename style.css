@@ -1464,6 +1464,18 @@ mark {
   line-height: 1.55;
 }
 
+.prose-sub-ul {
+  margin: 0.3rem 0 0.6rem 2.25rem;
+  padding-left: 0.5rem;
+  list-style-type: circle;
+}
+
+.prose-sub-li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
 .sections-stack {
   display: flex;
   flex-direction: column;
