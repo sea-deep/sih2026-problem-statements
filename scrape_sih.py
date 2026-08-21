@@ -98,45 +98,35 @@ def clean_problem_description(text: str) -> tuple[str, str]:
     
     # 3. Fix typographic punctuation spacing
     text = fix_punctuation_spacing(text)
+    text = re.sub(r'([A-Za-z0-9]):([A-Za-z])', r'\1: \2', text)
     
-    # 4. Standardize and Demarcate Section Headers
-    section_patterns = [
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Background\b[:\-—\s]*', '\n\n**Background:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Problem Description\b[:\-—\s]*', '\n\n**Problem Description:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Detailed Description\b[:\-—\s]*', '\n\n**Problem Description:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Problem Statement\b[:\-—\s]*', '\n\n**Problem Statement:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Problem Definition\b[:\-—\s]*', '\n\n**Problem Definition:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Existing Problem\b[:\-—\s]*', '\n\n**Existing Problem:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Outcome/Solution\b[:\-—\s]*', '\n\n**Expected Outcome / Solution:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Solution/Deliverables\b[:\-—\s]*', '\n\n**Expected Solution / Deliverables:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Outcomes?\b[:\-—\s]*', '\n\n**Expected Outcome:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Solution\b[:\-—\s]*', '\n\n**Expected Solution:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Desired Outcomes?\b[:\-—\s]*', '\n\n**Desired Outcome:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Proposed Solution\b[:\-—\s]*', '\n\n**Proposed Solution:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Relevant Data Availability\s*(?:\(if any\))?[:\-—\s]*', '\n\n**Relevant Data Availability:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Dataset Availability\b[:\-—\s]*', '\n\n**Dataset Availability:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Dataset Details?\b[:\-—\s]*', '\n\n**Dataset Details:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Input Data\b[:\-—\s]*', '\n\n**Input Data:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Scope of Work\b[:\-—\s]*', '\n\n**Scope of Work:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Key Deliverables\b[:\-—\s]*', '\n\n**Key Deliverables:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Deliverables?\b[:\-—\s]*', '\n\n**Deliverables:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Objectives?\b[:\-—\s]*', '\n\n**Objectives:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Key Features\b[:\-—\s]*', '\n\n**Key Features:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Technical Requirements\b[:\-—\s]*', '\n\n**Technical Requirements:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Hardware & Runtime Environment\b[:\-—\s]*', '\n\n**Hardware & Runtime Environment:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Evaluation Criteria\b[:\-—\s]*', '\n\n**Evaluation Criteria:**\n'),
-        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Success Criteria\b[:\-—\s]*', '\n\n**Success Criteria:**\n')
+    # Comprehensive header vocabulary across all SIH problem statements
+    header_list = [
+        'Expected Solution / Outcome', 'Expected Solution/Outcome', 'Expected Outcome / Solution', 'Expected Outcome/Solution',
+        'Expected Solution / Deliverables', 'Expected Solution/Deliverables', 'Expected Solution (Indicative)', 'Expected Solution(Indicative)',
+        'Expected Solution', 'Expected Solutions', 'Expected Outcome', 'Expected Outcomes', 'Expected Output', 'Expected Outputs',
+        'Problem Description', 'Problem Statement', 'Problem Definition', 'Detailed Description', 'Description',
+        'Background', 'Context', 'Overview', 'Introduction', 'Existing System', 'Existing Problem',
+        'Core Challenge', 'Challenge', 'Challenges',
+        'Desired Outcome', 'Desired Outcomes', 'Desired Solution', 'Proposed Solution', 'Solution',
+        'Objective', 'Objectives', 'Goal', 'Goals', 'Purpose', 'Aim',
+        'Scope of Work', 'Scope of the Project', 'Scope',
+        'Key Deliverables', 'Expected Deliverables', 'Deliverable', 'Deliverables',
+        'Key Features', 'Key Functionalities', 'Features', 'Core Features',
+        'Technical Requirements', 'Hardware & Runtime Environment', 'Hardware Requirements', 'Technology Stack', 'Tech Stack', 'Allowed Frameworks',
+        'Relevant Data Availability', 'Dataset Availability', 'Dataset Details', 'Input Data', 'Data Availability', 'Data Sources',
+        'Proposed Methodology', 'Methodology', 'Approach', 'Architecture',
+        'Evaluation Criteria', 'Success Criteria', 'Key Metrics for Evaluation', 'Key Metrics', 'Performance Metrics', 'Key Milestones',
+        'Impact', 'Benefits', 'Target Audience', 'Stakeholders', 'Potential Applications', 'Use Cases'
     ]
     
-    for pattern, replacement in section_patterns:
-        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
-        
-    # 5. Format inline list items (a) ... b) ... c) ... or 1. ... 2. ... 3. ...)
-    text = re.sub(r'(?:^|[\n\s]+)([a-d]\))\s+([A-Z])', r'\n- **\1** \2', text)
-    text = re.sub(r'(?:^|[\n\s]+)(\([a-d]\))\s+([A-Z])', r'\n- **\1** \2', text)
-    text = re.sub(r'(?:^|[\n\s]+)(\([i|v|x]+\))\s+([A-Z])', r'\n- **\1** \2', text)
+    header_list_sorted = sorted(header_list, key=len, reverse=True)
+    header_regex_str = '|'.join(re.escape(h) for h in header_list_sorted)
+    header_line_pattern = re.compile(
+        r'^(?:[•\-*·]\s*)?\*?\*?(' + header_regex_str + r')\*?\*?(?:\s*[:\-—•]\s*|\s+(?=[A-Z0-9\(\'\"])|$)',
+        re.IGNORECASE
+    )
     
-    # 6. Normalize list bullets on lines
     cleaned_lines = []
     for line in text.splitlines():
         line = line.strip()
@@ -144,13 +134,34 @@ def clean_problem_description(text: str) -> tuple[str, str]:
             cleaned_lines.append('')
             continue
             
-        # Clean double bullets or weird bullet chars
+        m = header_line_pattern.match(line)
+        if m:
+            matched_header = m.group(1).strip()
+            # Standardize header casing and naming
+            std_header = matched_header.title()
+            if 'Outcome' in std_header and 'Solution' in std_header:
+                std_header = 'Expected Solution / Outcome'
+            elif std_header in ['Description', 'Detailed Description']:
+                std_header = 'Problem Description'
+            
+            rest = line[m.end():].strip()
+            rest = re.sub(r'^[•\-*·]\s*', '- ', rest)
+            cleaned_lines.append('')
+            cleaned_lines.append(f'**{std_header}:**')
+            if rest:
+                cleaned_lines.append(rest)
+            continue
+            
+        # Format inline list items: a) ... b) ... c) ...
+        line = re.sub(r'(?:^|[\n\s]+)([a-d]\))\s+([A-Z])', r'\n- **\1** \2', line)
+        line = re.sub(r'(?:^|[\n\s]+)(\([a-d]\))\s+([A-Z])', r'\n- **\1** \2', line)
+        line = re.sub(r'(?:^|[\n\s]+)(\([i|v|x]+\))\s+([A-Z])', r'\n- **\1** \2', line)
+        
+        # Standard bullets
         line = re.sub(r'^(?:[•·â€¢]\s*)+', '- ', line)
         line = re.sub(r'^[oO]\s+(?=[A-Z])', '- ', line)
         line = re.sub(r'^-\s*[•·â€¢]\s*', '- ', line)
         line = re.sub(r'^\*\s*(?!\*)', '- ', line)
-        
-        # If line is a header like '- **Background:**' -> remove bullet
         line = re.sub(r'^-\s*(\*\*[^*]+:\*\*)$', r'\1', line)
         
         cleaned_lines.append(line)
