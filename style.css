@@ -297,15 +297,33 @@ body.no-scroll {
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: var(--bg-muted);
-  color: var(--text-main);
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  padding: 0 !important;
+  background-color: #111827;
+  color: #FFFFFF;
   border-radius: var(--radius-md);
   text-decoration: none;
+  flex-shrink: 0;
+  border: 2px solid transparent;
   transition: all 0.2s;
 }
 
 .btn-icon-round:hover {
-  background-color: #E5E7EB;
+  background-color: #000000;
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.btn-icon-round svg {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  display: block;
+  fill: currentColor;
 }
 
 .btn-mobile-filter {
