@@ -17,8 +17,9 @@ Access the live interactive application at:
 
 - **Decoupled Search Bar**: Instantly filter across keywords, title, description, ministry, or specific problem statement IDs (e.g. `SIH26001`).
 - **Multi-Select Technology Tags**: Combine tags like `AI / ML`, `Computer Vision`, `NLP / LLM`, `GIS / Satellite`, `IoT / Sensors`, `Blockchain`, `Robotics & UAV`, `Cybersecurity`, and more.
-- **Deep Structured Sections**: Normalized headers for *Background*, *Problem Description*, *Expected Outcome / Solution*, and *Relevant Data Availability*.
-- **Dataset Export**: Download full, filtered, or bookmarked problem statements in structured JSON and CSV.
+- **Spec-Compliant Markdown**: Formatted via `marked.js` and `DOMPurify` with proper sub-bullet nesting and typography.
+- **1-Click Markdown Copy**: Instant clipboard export of structured problem statements in GitHub-Flavored Markdown.
+- **Clean Dataset Export**: Export filtered or selected problem statements in clean JSON and CSV without scraper bloat.
 
 ---
 
@@ -136,9 +137,32 @@ Each problem statement entry in `sih2026_problem_statements.json`:
     }
   },
   "description": "**Background:**\n\nThe North Eastern Region (NER) frequently faces landslides...",
-  "description_html": "<div class=\"style-2\" ...>...</div>",
   "modal_id": "ViewProblemStatement26001",
   "web_url": "https://sih.gov.in/sih2026PS#ViewProblemStatement26001"
+}
+```
+
+---
+
+## 📦 Clean Export Schema
+
+When exporting selected or filtered statements via the **Download / Export** menu, the JSON format produces a clean schema without scraper bloat:
+
+```json
+{
+  "id": "SIH26158",
+  "title": "Single-Pass Drone Video to Accurate 3D Model Generation System",
+  "category": "Software",
+  "theme": "Robotics and Drones",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "department": "National Technical Research Organisation (NTRO)",
+  "submissions": "0/500",
+  "deadline": "20 September 2026",
+  "official_url": "https://sih.gov.in/sih2026PS#ViewProblemStatement26158",
+  "description": "...",
+  "dataset_info": "...",
+  "external_links": [],
+  "sections": { ... }
 }
 ```
 
@@ -172,9 +196,10 @@ print(f"Found {len(ai_statements)} AI/ML statements")
 
 ## 🎨 Web Explorer Features
 
-- **Flat Design System**: Zero drop shadows, bold color blocking, and geometric typography (`Outfit` sans-serif & `JetBrains Mono`).
-- **Mobile Responsive**: Slide-out filter drawer, sticky action bar, and responsive touch controls.
+- **Flat Design System**: High-contrast, card-based interface with geometric typography (`Outfit` sans-serif & `JetBrains Mono`).
+- **Mobile Responsive**: Slide-out filter drawer, sticky action bar, and responsive modal actions.
 - **Search Scopes**: Filter across Full Text, Title Only, Description & Solution, Organization, or Problem ID.
 - **12 Tech Tag Pills**: AI/ML, Computer Vision, NLP/LLM, GIS/Satellite, IoT, Blockchain, Robotics, Mobile Apps, Cloud, HealthTech, AgriTech, Cybersecurity.
-- **Export Formats**: Filtered / Selected export as `.json` or `.csv`, and 1-click clipboard copy.
-- **Problem Modal**: Tabbed view with full formatted description, structured sections, datasets, external links, and raw JSON inspector.
+- **1-Click Copy as MD**: Copies the problem statement as a formatted GitHub markdown document with metadata table and sections.
+- **Clean Export Engine**: Export filtered or selected subsets to JSON and CSV with sanitized fields.
+- **Problem Detail Modal**: Tabbed view featuring Full Description, Structured Sections, and Datasets & References.
