@@ -1,10 +1,28 @@
-# SIH 2026 Problem Statement Research Explorer & Scraper
+# 💡 Smart India Hackathon (SIH) 2026 Problem Statement Research Explorer & Dataset
 
-An automated scraping pipeline, dataset repository, and responsive web explorer for all **226 Problem Statements** from the [Smart India Hackathon 2026 (SIH 2026)](https://sih.gov.in/sih2026PS).
+[![SIH 2026 Live Portal](https://img.shields.io/badge/Live_Portal-sih26ps.vercel.app-blue?style=for-the-badge&logo=vercel)](https://sih26ps.vercel.app)
+[![Total Problem Statements](https://img.shields.io/badge/Total_Statements-226-emerald?style=for-the-badge)](https://sih26ps.vercel.app)
+[![Software](https://img.shields.io/badge/Software-172-3B82F6?style=for-the-badge)](https://sih26ps.vercel.app)
+[![Hardware](https://img.shields.io/badge/Hardware-54-10B981?style=for-the-badge)](https://sih26ps.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+Interactive exploration portal, multi-tag search, automated data cleaning pipeline, and comprehensive JSON/CSV dataset for all **226 Problem Statements** released for the [Smart India Hackathon 2026 (SIH 2026)](https://sih.gov.in/sih2026PS).
 
 ---
 
-## 📊 Dataset Overview
+## 🌐 Live Research Portal
+
+Access the live interactive application at:
+👉 **[https://sih26ps.vercel.app](https://sih26ps.vercel.app)**
+
+- **Decoupled Search Bar**: Instantly filter across keywords, title, description, ministry, or specific problem statement IDs (e.g. `SIH26001`).
+- **Multi-Select Technology Tags**: Combine tags like `AI / ML`, `Computer Vision`, `NLP / LLM`, `GIS / Satellite`, `IoT / Sensors`, `Blockchain`, `Robotics & UAV`, `Cybersecurity`, and more.
+- **Deep Structured Sections**: Normalized headers for *Background*, *Problem Description*, *Expected Outcome / Solution*, and *Relevant Data Availability*.
+- **Dataset Export**: Download full, filtered, or bookmarked problem statements in structured JSON and CSV.
+
+---
+
+## 📊 Dataset Overview & Statistics
 
 - **Source URL**: `https://sih.gov.in/sih2026PS`
 - **Total Problem Statements**: 226 (`SIH26001` – `SIH26226`)
@@ -38,25 +56,25 @@ An automated scraping pipeline, dataset repository, and responsive web explorer 
 
 ## 📁 Repository Structure
 
-```
-├── sih2026_problem_statements.json  # Complete structured JSON dataset (1.6 MB)
-├── sih2026_problem_statements.csv   # Tabular CSV export (640 KB)
-├── index.html                       # Flat design web portal (HTML5)
-├── style.css                        # Strict Flat Design styling & responsive CSS
-├── app.js                           # Real-time search, filters, exports, modal logic
-├── scrape_sih.py                    # Standalone Python scraper (BeautifulSoup + Requests)
-├── scrape_sih.js                    # Node.js scraper (Axios + Cheerio)
-├── scrape_puppeteer.js              # Headless browser scraper (Puppeteer)
-├── package.json                     # Node.js dependencies
-└── README.md                        # Documentation
+```text
+├── index.html                        # Modern Flat Design web portal (HTML5 + JSON-LD Schema)
+├── style.css                         # High-contrast CSS system tokens & responsive layouts
+├── app.js                            # Search, multi-tag filter engine, and modal controller
+├── sih2026_problem_statements.json   # Cleaned & normalized JSON dataset (226 statements)
+├── sih2026_problem_statements.csv    # Cleaned CSV export for data analysis & Excel
+├── scrape_sih.py                     # Canonical scraper & data normalizer
+├── logo.png                          # Official SIH logo
+├── favicon.ico / favicon-*.png       # Multi-resolution favicons
+├── package.json                      # Project metadata
+└── README.md                         # Documentation
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Launch the Web Explorer
-Serve the directory with any static HTTP server:
+### 1. Launch the Web Explorer Locally
+Serve the repository with any local HTTP server:
 
 ```bash
 # Python 3
@@ -67,23 +85,14 @@ npx serve .
 ```
 Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-### 2. Run the Scrapers (Optional / Re-scraping)
+### 2. Run the Data Pipeline & Cleaner
 
-**Using Python**:
 ```bash
-pip install beautifulsoup4 requests
+# Clean & normalize the local dataset
+python3 scrape_sih.py --clean-only
+
+# Or fetch and parse directly from the official portal
 python3 scrape_sih.py
-```
-
-**Using Node.js (Axios/Cheerio)**:
-```bash
-npm install
-node scrape_sih.js
-```
-
-**Using Puppeteer**:
-```bash
-node scrape_puppeteer.js
 ```
 
 ---

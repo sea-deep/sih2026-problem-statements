@@ -25,6 +25,53 @@
   <meta property="twitter:description" content="Interactive exploration, multi-tag filtering, and JSON/CSV dataset extraction for all 226 Smart India Hackathon 2026 Problem Statements.">
   <meta property="twitter:image" content="https://sih26ps.vercel.app/logo.png">
   
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://sih26ps.vercel.app/">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Structured Data: JSON-LD for Google Search & Datasets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://sih26ps.vercel.app/#webapp",
+        "name": "SIH 2026 Problem Statement Research Explorer",
+        "url": "https://sih26ps.vercel.app/",
+        "description": "Interactive exploration, multi-tag filtering, and JSON/CSV dataset extraction for all 226 Smart India Hackathon (SIH) 2026 Problem Statements.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "author": {
+          "@type": "Organization",
+          "name": "Smart India Hackathon Research Explorer"
+        }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://sih26ps.vercel.app/#dataset",
+        "name": "Smart India Hackathon (SIH) 2026 Problem Statements Dataset",
+        "description": "Complete, structured, and normalized dataset of 226 problem statements across 172 Software and 54 Hardware challenges released for SIH 2026.",
+        "url": "https://sih26ps.vercel.app/",
+        "keywords": ["Smart India Hackathon", "SIH 2026", "AI/ML", "Hackathon Dataset", "Computer Vision", "NLP", "Cybersecurity", "GIS", "IoT", "Blockchain"],
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://sih26ps.vercel.app/sih2026_problem_statements.json"
+          },
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://sih26ps.vercel.app/sih2026_problem_statements.csv"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
