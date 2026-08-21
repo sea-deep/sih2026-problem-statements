@@ -623,17 +623,33 @@ function closeDetailModal() {
   state.activeModalProblem = null;
 }
 
-// Convert clean markdown strings to readable HTML with bold & lists
+// Convert clean markdown strings to readable HTML with bold, paragraphs & nested lists
 function formatMarkdownToHtml(md) {
   if (!md) return '';
-  let str = escapeHtml(md);
+  let str = escapeHtml(md.trim());
   
-  str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  str = str.replace(/^- (.*?)$/gm, '<li class="prose-li">$1</li>');
-  str = str.replace(/((?:<li class="prose-li">.*?<\/li>\s*)+)/g, '<ul class="prose-ul">$1</ul>');
+  // Convert markdown links
   str = str.replace(/\[(.*?)\]\((https?:\/\/.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600; text-decoration:underline;">$1 &nearr;</a>');
   
-  return str;
+  // Convert bold
+  str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
+  // Convert list items
+  str = str.replace(/^[•\-*]\s*(.*?)$/gm, '<li class="prose-li">$1</li>');
+  
+  // Group adjacent <li> into <ul class="prose-ul">
+  str = str.replace(/((?:<li class="prose-li">.*?<\/li>\s*)+)/g, '<ul class="prose-ul">$1</ul>');
+  
+  // Split by double newlines into clean blocks
+  const blocks = str.split(/\n{2,}/);
+  const htmlBlocks = blocks.map(b => {
+    b = b.trim();
+    if (!b) return '';
+    if (b.startsWith('<ul') || b.startsWith('<ol')) return b;
+    return `<p class="prose-p">${b.replace(/\n/g, '<br/>')}</p>`;
+  }).filter(Boolean);
+  
+  return htmlBlocks.join('');
 }
 
 // Toggle Bookmark

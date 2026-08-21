@@ -1435,10 +1435,9 @@ mark {
 }
 
 .flat-prose {
-  font-size: 0.925rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.65;
   color: var(--text-main);
-  white-space: pre-line;
 }
 
 .flat-prose strong {
@@ -1446,15 +1445,23 @@ mark {
   color: var(--text-dark);
 }
 
+.prose-p {
+  margin-bottom: 0.85rem;
+}
+
+.prose-p:last-child {
+  margin-bottom: 0;
+}
+
 .prose-ul {
-  margin: 0.5rem 0 1rem 1.25rem;
+  margin: 0.4rem 0 0.85rem 1.25rem;
   padding-left: 0.5rem;
   list-style-type: disc;
 }
 
 .prose-li {
-  margin-bottom: 0.35rem;
-  line-height: 1.6;
+  margin-bottom: 0.3rem;
+  line-height: 1.55;
 }
 
 .sections-stack {
