@@ -1438,12 +1438,23 @@ mark {
   font-size: 0.925rem;
   line-height: 1.7;
   color: var(--text-main);
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
 
 .flat-prose strong {
   font-weight: 800;
-  color: var(--text-main);
+  color: var(--text-dark);
+}
+
+.prose-ul {
+  margin: 0.5rem 0 1rem 1.25rem;
+  padding-left: 0.5rem;
+  list-style-type: disc;
+}
+
+.prose-li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
 }
 
 .sections-stack {

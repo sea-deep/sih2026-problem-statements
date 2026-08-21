@@ -57,6 +57,115 @@ def extract_urls(text: str) -> list[str]:
     urls = list(set(re.findall(url_pattern, text)))
     return sorted(urls)
 
+def fix_punctuation_spacing(text: str) -> str:
+    """Fix missing spaces after punctuation without breaking common abbreviations."""
+    if not text:
+        return ''
+    
+    # 1. Abbreviations stuck to following words: e.g.Word, etc.Word -> etc. Word
+    text = re.sub(r'\b(e\.g\.|i\.e\.|etc\.)([A-Za-z])', r'\1 \2', text)
+    
+    # 2. General sentence boundaries: word.NextWord -> word. NextWord
+    def period_repl(m):
+        prefix = m.group(1)
+        next_char = m.group(2)
+        if prefix.lower() in {'dr', 'mr', 'mrs', 'ms', 'prof', 'govt', 'inc', 'ltd', 'u.s', 'no', 'vs'} and next_char.islower():
+            return f"{prefix}.{next_char}"
+        return f"{prefix}. {next_char}"
+    
+    text = re.sub(r'(\b[a-zA-Z0-9%]+)\.([A-Z][a-zA-Z])', period_repl, text)
+    # Comma spacing: word,word -> word, word
+    text = re.sub(r'([a-zA-Z0-9]),([a-zA-Z])', r'\1, \2', text)
+    # Parenthesis spacing: word(e.g. -> word (e.g.
+    text = re.sub(r'([a-zA-Z0-9])\(([a-zA-Z0-9])', r'\1 (\2', text)
+    # Closing parenthesis spacing: )word -> ) word
+    text = re.sub(r'\)([a-zA-Z])', r') \1', text)
+    
+    return text
+
+def clean_problem_description(text: str) -> tuple[str, str]:
+    """Clean markdown text, normalize headers, fix inlined lists and missing spaces."""
+    if not text:
+        return '', ''
+    
+    # 1. Unescape HTML entities & clean mojibake
+    text = html_module.unescape(text)
+    text = fix_mojibake(text)
+    
+    # 2. Strip HTML comments and tags
+    text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
+    text = re.sub(r'</?(?:div|span|p|br|table|tr|td|th)[^>]*>', '\n', text, flags=re.IGNORECASE)
+    
+    # 3. Fix typographic punctuation spacing
+    text = fix_punctuation_spacing(text)
+    
+    # 4. Standardize and Demarcate Section Headers
+    section_patterns = [
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Background\b[:\-—\s]*', '\n\n**Background:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Problem Description\b[:\-—\s]*', '\n\n**Problem Description:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Detailed Description\b[:\-—\s]*', '\n\n**Problem Description:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Problem Statement\b[:\-—\s]*', '\n\n**Problem Statement:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Problem Definition\b[:\-—\s]*', '\n\n**Problem Definition:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Existing Problem\b[:\-—\s]*', '\n\n**Existing Problem:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Outcome/Solution\b[:\-—\s]*', '\n\n**Expected Outcome / Solution:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Solution/Deliverables\b[:\-—\s]*', '\n\n**Expected Solution / Deliverables:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Outcomes?\b[:\-—\s]*', '\n\n**Expected Outcome:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Expected Solution\b[:\-—\s]*', '\n\n**Expected Solution:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Desired Outcomes?\b[:\-—\s]*', '\n\n**Desired Outcome:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Proposed Solution\b[:\-—\s]*', '\n\n**Proposed Solution:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Relevant Data Availability\s*(?:\(if any\))?[:\-—\s]*', '\n\n**Relevant Data Availability:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Dataset Availability\b[:\-—\s]*', '\n\n**Dataset Availability:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Dataset Details?\b[:\-—\s]*', '\n\n**Dataset Details:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Input Data\b[:\-—\s]*', '\n\n**Input Data:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Scope of Work\b[:\-—\s]*', '\n\n**Scope of Work:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Key Deliverables\b[:\-—\s]*', '\n\n**Key Deliverables:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Deliverables?\b[:\-—\s]*', '\n\n**Deliverables:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Objectives?\b[:\-—\s]*', '\n\n**Objectives:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Key Features\b[:\-—\s]*', '\n\n**Key Features:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Technical Requirements\b[:\-—\s]*', '\n\n**Technical Requirements:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Hardware & Runtime Environment\b[:\-—\s]*', '\n\n**Hardware & Runtime Environment:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Evaluation Criteria\b[:\-—\s]*', '\n\n**Evaluation Criteria:**\n'),
+        (r'(?:\n|^|\.\s+)(?:[•\-*]\s*)?Success Criteria\b[:\-—\s]*', '\n\n**Success Criteria:**\n')
+    ]
+    
+    for pattern, replacement in section_patterns:
+        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+        
+    # 5. Format inline list items (a) ... b) ... c) ... or 1. ... 2. ... 3. ...)
+    text = re.sub(r'(?:^|[\n\s]+)([a-d]\))\s+([A-Z])', r'\n- **\1** \2', text)
+    text = re.sub(r'(?:^|[\n\s]+)(\([a-d]\))\s+([A-Z])', r'\n- **\1** \2', text)
+    text = re.sub(r'(?:^|[\n\s]+)(\([i|v|x]+\))\s+([A-Z])', r'\n- **\1** \2', text)
+    
+    # 6. Normalize list bullets on lines
+    cleaned_lines = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            cleaned_lines.append('')
+            continue
+            
+        # Clean double bullets or weird bullet chars
+        line = re.sub(r'^(?:[•·â€¢]\s*)+', '- ', line)
+        line = re.sub(r'^[oO]\s+(?=[A-Z])', '- ', line)
+        line = re.sub(r'^-\s*[•·â€¢]\s*', '- ', line)
+        line = re.sub(r'^\*\s*(?!\*)', '- ', line)
+        
+        # If line is a header like '- **Background:**' -> remove bullet
+        line = re.sub(r'^-\s*(\*\*[^*]+:\*\*)$', r'\1', line)
+        
+        cleaned_lines.append(line)
+        
+    result = '\n'.join(cleaned_lines)
+    result = re.sub(r'\n{3,}', '\n\n', result).strip()
+    
+    # Extract dataset availability if present in text
+    extracted_data_info = ''
+    data_match = re.search(r'\*\*(?:Relevant Data Availability|Dataset Availability|Dataset Details|Input Data):\*\*\s*\n*(.*?)(?=\n\n\*\*|\Z)', result, flags=re.DOTALL)
+    if data_match:
+        extracted_data_info = data_match.group(1).strip()
+        
+    return result, extracted_data_info
+
 def clean_html_to_markdown(raw_input) -> str:
     """Convert HTML content element to clean, formatted Markdown."""
     if raw_input is None:
@@ -99,21 +208,8 @@ def clean_html_to_markdown(raw_input) -> str:
                 a.replace_with(f' {href} ')
                 
     text = sub_soup.get_text()
-    text = html_module.unescape(text)
-    text = fix_mojibake(text)
-    
-    # Format bullet lines nicely
-    lines = []
-    for raw_line in text.splitlines():
-        line = raw_line.strip()
-        # Match bullet characters or single asterisk not followed by another asterisk
-        if re.match(r'^(?:&#8226;|•|·|â€¢|\*(?!\*))\s*', line):
-            line = '- ' + re.sub(r'^(?:&#8226;|•|·|â€¢|\*(?!\*))\s*', '', line).strip()
-        lines.append(line)
-        
-    result = '\n'.join(lines)
-    result = re.sub(r'\n{3,}', '\n\n', result)
-    return result.strip()
+    cleaned, _ = clean_problem_description(text)
+    return cleaned
 
 def parse_sections(markdown_text: str) -> dict:
     """
@@ -129,7 +225,10 @@ def parse_sections(markdown_text: str) -> dict:
     
     if len(parts) >= 3:
         if parts[0].strip():
-            sections['preamble'] = parts[0].strip()
+            sections['overview'] = {
+                'title': 'Overview',
+                'content': parts[0].strip()
+            }
             
         for i in range(1, len(parts), 2):
             raw_title = parts[i].strip()
@@ -140,6 +239,11 @@ def parse_sections(markdown_text: str) -> dict:
                 'title': raw_title,
                 'content': sec_val
             }
+    else:
+        sections['full_description'] = {
+            'title': 'Full Description',
+            'content': markdown_text.strip()
+        }
     return sections
 
 def scrape_sih_problem_statements(
@@ -363,5 +467,83 @@ def scrape_sih_problem_statements(
     
     return dataset
 
+def clean_existing_dataset(
+    json_path: str = "sih2026_problem_statements.json",
+    csv_path: str = "sih2026_problem_statements.csv"
+):
+    print(f"Reading {json_path} for normalization & cleaning...")
+    with open(json_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        
+    total = len(data['problem_statements'])
+    cleaned_problems = []
+    dataset_info_extracted = 0
+    structured_sections_count = 0
+    
+    for p in data['problem_statements']:
+        raw_desc = p.get('raw_description') or p['description']
+        cleaned_desc, extracted_data = clean_problem_description(raw_desc)
+        
+        if 'raw_description' not in p:
+            p['raw_description'] = raw_desc
+        p['description'] = cleaned_desc
+        
+        if not p.get('dataset_info') and extracted_data and extracted_data.lower() not in ['none', 'n/a', 'nil', 'none.']:
+            p['dataset_info'] = extracted_data
+            dataset_info_extracted += 1
+            
+        secs = parse_sections(cleaned_desc)
+        p['sections'] = secs
+        if len(secs) > 1 or (len(secs) == 1 and 'full_description' not in secs):
+            structured_sections_count += 1
+            
+        cleaned_problems.append(p)
+        
+    data['problem_statements'] = cleaned_problems
+    data['metadata']['cleaned_at'] = datetime.now(timezone.utc).isoformat()
+    data['metadata']['cleaning_engine'] = 'SIH-2026-Data-Normalizer-v2'
+    data['metadata']['structured_sections_coverage'] = f"{structured_sections_count}/{total}"
+    
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"✅ Saved cleaned JSON ({total} statements) to {json_path}")
+    print(f"   - Structured sections parsed for {structured_sections_count}/{total} statements")
+    print(f"   - Extracted dataset info for {dataset_info_extracted} statements")
+    
+    with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "PS ID", "Serial No", "Title", "Organization", "Department",
+            "Category", "Theme", "Submitted Ideas Count", "Capacity", "Deadline",
+            "Dataset Info", "YouTube Link", "External Links", "Description", "Web URL"
+        ])
+        for p in cleaned_problems:
+            writer.writerow([
+                p["id"],
+                p.get("serial_no", ""),
+                p["title"],
+                p["organization"],
+                p.get("department", ""),
+                p["category"],
+                p["theme"],
+                p.get("submitted_ideas", {}).get("count", 0),
+                p.get("submitted_ideas", {}).get("capacity", 500),
+                p.get("deadline", ""),
+                p.get("dataset_info") or "",
+                p.get("youtube_link") or "",
+                "; ".join(p.get("external_links", [])),
+                p["description"],
+                p.get("web_url", "")
+            ])
+    print(f"✅ Saved cleaned CSV to {csv_path}")
+
 if __name__ == "__main__":
-    scrape_sih_problem_statements()
+    import sys
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    json_file = os.path.join(base_dir, "sih2026_problem_statements.json")
+    csv_file = os.path.join(base_dir, "sih2026_problem_statements.csv")
+    
+    if len(sys.argv) > 1 and sys.argv[1] == '--clean-only':
+        clean_existing_dataset(json_file, csv_file)
+    else:
+        scrape_sih_problem_statements(output_json=json_file, output_csv=csv_file)

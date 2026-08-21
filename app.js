@@ -629,8 +629,9 @@ function formatMarkdownToHtml(md) {
   let str = escapeHtml(md);
   
   str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  str = str.replace(/^- (.*?)$/gm, '<li style="margin-left:1.25rem; margin-bottom:0.25rem;">$1</li>');
-  str = str.replace(/\[(.*?)\]\((https?:\/\/.*?)\)/g, '<a href="$2" target="_blank" style="color:var(--primary); font-weight:600;">$1</a>');
+  str = str.replace(/^- (.*?)$/gm, '<li class="prose-li">$1</li>');
+  str = str.replace(/((?:<li class="prose-li">.*?<\/li>\s*)+)/g, '<ul class="prose-ul">$1</ul>');
+  str = str.replace(/\[(.*?)\]\((https?:\/\/.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600; text-decoration:underline;">$1 &nearr;</a>');
   
   return str;
 }
