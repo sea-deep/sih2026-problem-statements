@@ -134,8 +134,7 @@ const el = {
   modalYoutubeContent: document.getElementById('modalYoutubeContent'),
   modalContactSection: document.getElementById('modalContactSection'),
   modalContactContent: document.getElementById('modalContactContent'),
-  modalJsonCode: document.getElementById('modalJsonCode'),
-  copyModalJsonBtn: document.getElementById('copyModalJsonBtn'),
+  copyModalMdBtn: document.getElementById('copyModalMdBtn'),
   modalFavoriteBtn: document.getElementById('modalFavoriteBtn'),
   modalOfficialLink: document.getElementById('modalOfficialLink'),
   
@@ -595,9 +594,6 @@ function openDetailModal(problemId) {
     el.modalContactSection.style.display = 'none';
   }
   
-  // Raw JSON Tab
-  el.modalJsonCode.textContent = JSON.stringify(problem, null, 2);
-  
   // Bookmark button in modal
   const isFav = state.bookmarkedIds.has(problem.id);
   el.modalFavoriteBtn.textContent = isFav ? '★ Bookmarked' : '☆ Bookmark';
@@ -663,6 +659,53 @@ function formatMarkdownToHtml(md) {
     if (b.startsWith('<ul') || b.startsWith('<ol')) return b;
     return `<p class="prose-p">${b.replace(/\n/g, '<br/>')}</p>`;
   }).filter(Boolean).join('');
+}
+
+// Generate clean, beautifully formatted Markdown representation of a problem statement
+function generateProblemMarkdown(problem) {
+  if (!problem) return '';
+  
+  let md = `# [${problem.id}] ${problem.title}\n\n`;
+  
+  md += `| Attribute | Details |\n`;
+  md += `| :--- | :--- |\n`;
+  md += `| **Category** | ${problem.category || 'N/A'} |\n`;
+  md += `| **Theme** | ${problem.theme || 'N/A'} |\n`;
+  md += `| **Organization** | ${problem.organization || 'N/A'} |\n`;
+  md += `| **Department** | ${problem.department || 'N/A'} |\n`;
+  md += `| **Submissions** | ${problem.submitted_ideas?.raw || '0/500'} |\n`;
+  md += `| **Deadline** | ${problem.deadline || 'N/A'} |\n`;
+  
+  const officialUrl = problem.web_url || (problem.modal_id ? `https://sih.gov.in/sih2026PS#${problem.modal_id}` : null);
+  if (officialUrl) {
+    md += `| **Official Portal Link** | [${problem.id} on SIH 2026](${officialUrl}) |\n`;
+  }
+  
+  md += `\n---\n\n`;
+  md += `## Description\n\n`;
+  md += `${(problem.description || '').trim()}\n\n`;
+  
+  if (problem.dataset_info) {
+    md += `---\n\n## Relevant Data Availability\n\n${problem.dataset_info.trim()}\n\n`;
+  }
+  
+  if (problem.external_links && problem.external_links.length > 0) {
+    md += `---\n\n## External References\n\n`;
+    problem.external_links.forEach(link => {
+      md += `- ${link}\n`;
+    });
+    md += `\n`;
+  }
+  
+  if (problem.youtube_link) {
+    md += `---\n\n## Media Reference\n\n- [Watch Video Reference](${problem.youtube_link})\n\n`;
+  }
+  
+  if (problem.contact_info) {
+    md += `---\n\n## Contact Information\n\n${problem.contact_info.trim()}\n\n`;
+  }
+  
+  return md.trim();
 }
 
 // Toggle Bookmark
@@ -1178,12 +1221,24 @@ function setupEventListeners() {
     });
   });
   
-  // Modal Copy JSON
-  el.copyModalJsonBtn.addEventListener('click', async () => {
+  // Modal Copy as Markdown
+  el.copyModalMdBtn.addEventListener('click', async () => {
     if (!state.activeModalProblem) return;
     try {
-      await navigator.clipboard.writeText(JSON.stringify(state.activeModalProblem, null, 2));
-      showToast(`Copied ${state.activeModalProblem.id} JSON`, 'success');
+      const mdContent = generateProblemMarkdown(state.activeModalProblem);
+      await navigator.clipboard.writeText(mdContent);
+      showToast(`Copied ${state.activeModalProblem.id} as Markdown!`, 'success');
+      
+      const originalHtml = el.copyModalMdBtn.innerHTML;
+      el.copyModalMdBtn.innerHTML = `
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px; color: #10B981;">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span style="color: #10B981;">Copied!</span>
+      `;
+      setTimeout(() => {
+        el.copyModalMdBtn.innerHTML = originalHtml;
+      }, 2000);
     } catch (err) {
       showToast('Clipboard copy failed', 'error');
     }

@@ -1420,11 +1420,49 @@ mark {
   cursor: pointer;
   white-space: nowrap;
   text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.flat-tab-btn:hover:not(.active) {
+  color: var(--text-dark);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .flat-tab-btn:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .flat-tab-btn.active {
   background-color: var(--primary);
   color: #FFFFFF;
+}
+
+.flat-tab-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.flat-tab-action-btn:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.flat-tab-action-btn:active {
+  transform: scale(0.97);
 }
 
 .tab-pane {
