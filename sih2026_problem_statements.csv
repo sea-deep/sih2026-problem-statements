@@ -6,13 +6,18 @@ The North Eastern Region (NER) frequently faces landslides, flash floods, road b
 **Problem Description:**
 
 This problem statement proposes the development of an Al-powered early warning and monitoring platform capable of predicting and tracking landslide-prone areas in real time across the North Eastern Region. The solution should:
-- **a.** Collect and analyse data from: Rainfall patterns Soil moisture sensors Satellite imagery Terrain/slope data Historical landslide records
-- **b.** Use AI/ML models to identify high-risk zones and predict possible landslide events.
-- **c.** Provide real-time alerts to district administrations, disaster management authorities, and local communities.
-- **d.** Integrate GIS mapping for visualization of vulnerable roads, villages, and infrastructure.
-- **e.** Allow citizens/field officials to upload geo-tagged photos/videos of cracks, slope movement or blocked roads.
 
-- **f.** Generate dashboards showing:
+**a.** Collect and analyse data from: Rainfall patterns Soil moisture sensors Satellite imagery Terrain/slope data Historical landslide records
+
+**b.** Use AI/ML models to identify high-risk zones and predict possible landslide events.
+
+**c.** Provide real-time alerts to district administrations, disaster management authorities, and local communities.
+
+**d.** Integrate GIS mapping for visualization of vulnerable roads, villages, and infrastructure.
+
+**e.** Allow citizens/field officials to upload geo-tagged photos/videos of cracks, slope movement or blocked roads.
+
+**f.** Generate dashboards showing:
 
 - Risk severity levels
 - Road connectivity status
@@ -36,16 +41,26 @@ The North Eastern Region (NER) faces major logistics and accessibility challenge
 **Problem Description:**
 
 This problem statement seeks the development of an Al-powered Smart and in Logistics Accessibility Intelligence Platform for the North Eastern Region (NER) to address challenges related to difficult terrain, weather-induced disruptions, and limited transport connectivity remote areas. The platform should use Artificial Intelligence (Al), Machine Learning (ML), GIS mapping, weather data, and real-time field inputs to monitor transportation networks and improve movement of essential goods and services across the region. The platform should:
-- **a.** Monitoring real-time road, bridge, and transport accessibility across districts and remote locations
-- **b.** Predicting possible route disruptions caused by landslides, floods, heavy rainfall, road damage, or traffic congestion
-- **c.** Providing Al-based alternate route suggestions and estimated travel delays
-- **d.** Tracking movement of vehicles carrying essential commodities, medicines, agricultural produce, and construction materials through GPS integration
-- **e.** Generating automated alerts for blocked roads, inaccessible regions, delayed deliveries, and high-risk transport corridors
-- **f.** Enabling field officials and local authorities to upload geo-tagged updates, photographs, and incident reports from remote locations g. Creating centralized dashboards for visualizing:
+
+**a.** Monitoring real-time road, bridge, and transport accessibility across districts and remote locations
+
+**b.** Predicting possible route disruptions caused by landslides, floods, heavy rainfall, road damage, or traffic congestion
+
+**c.** Providing Al-based alternate route suggestions and estimated travel delays
+
+**d.** Tracking movement of vehicles carrying essential commodities, medicines, agricultural produce, and construction materials through GPS integration
+
+**e.** Generating automated alerts for blocked roads, inaccessible regions, delayed deliveries, and high-risk transport corridors
+
+**f.** Enabling field officials and local authorities to upload geo-tagged updates, photographs, and incident reports from remote locations
+
+**g.** Creating centralized dashboards for visualizing:
 
 - District-wise connectivity status
 - Logistics bottlenecks and supply chain gaps Emergency and disaster-time accessibility routes
-- Real-time movement and delivery status of essential supplies h. Supporting multilingual notifications and offline data synchronization for low-network areas The platform should help improve regional connectivity, strengthen emergency response systems, reduce supply chain disruptions, and support efficient planning and monitoring of logistics operations in the North Eastern Region.
+- Real-time movement and delivery status of essential supplies
+
+**h.** Supporting multilingual notifications and offline data synchronization for low-network areas The platform should help improve regional connectivity, strengthen emergency response systems, reduce supply chain disruptions, and support efficient planning and monitoring of logistics operations in the North Eastern Region.
 
 **Expected Solution:**
 
@@ -70,19 +85,27 @@ This problem statement seeks the development of an AI-powered cognitive gaming a
 
 **The solution should:**
 
-- **a.** Include interactive cognitive games and activities focused on:
+**a.** Include interactive cognitive games and activities focused on:
 
 - Memory improvement
 - Attention and concentration 0 Daily routine recall
 - Pattern and object recognition of emotional and mental engagement
-- **b.** Use AI/ML algorithms to adapt difficulty levels based on patient performance and cognitive condition
-- **c.** Support multilingual and voice-assisted interaction suitable for elderly users in NER Include culturally familiar themes, visuals, sounds, and regional language support for d. better engagement
-- **e.** Provide reminders for:
+
+**b.** Use AI/ML algorithms to adapt difficulty levels based on patient performance and cognitive condition
+
+**c.** Support multilingual and voice-assisted interaction suitable for elderly users in NER Include culturally familiar themes, visuals, sounds, and regional language support for d. better engagement
+
+**e.** Provide reminders for:
 - Medicines
 - Hydration
 - Daily activities
 - Medical appointments.
-- **f.** Enable caregivers and healthcare workers to monitor patient progress through dashboards and activity levels g. Work in low-connectivity environments with offline functionality support h. Be accessible through mobile/tablet devices with a simple and elderly-friendly interface The platform should encourage long-term cognitive engagement, emotional well-being, and social interaction among elderly users.
+
+**f.** Enable caregivers and healthcare workers to monitor patient progress through dashboards and activity levels
+
+**g.** Work in low-connectivity environments with offline functionality support
+
+**h.** Be accessible through mobile/tablet devices with a simple and elderly-friendly interface The platform should encourage long-term cognitive engagement, emotional well-being, and social interaction among elderly users.
 
 **Expected Solution: A user-friendly Al-enabled cognitive assistance platform with:**
 
@@ -104,17 +127,27 @@ However, healthcare facilities in many remote and rural areas of NER lack afford
 **Problem Description:**
 
 This problem statement seeks to develop an AI-assisted screening and detection system for identifying early risk markers and symptoms associated with Osteoarthritis (OA) in the North Eastern Region. The solution should:
-- **a.** Assist in early detection of OA-related risk markers through
+
+**a.** Assist in early detection of OA-related risk markers through
 
 - Joint movement analysis
 - Gait and posture assessment
 - Pain and mobility screening inputs
 - Medical imaging or sensor-based assessment (if applicable)
-- **b.** Use AI/ML techniques to analyse patient data and identify high-risk cases for early intervention
-- **c.** Support screening in primary healthcare centres, rural health camps, and community outreach programs
-- **d.** Provide preliminary OA risk assessment and severity indication
-- **e.** Enable healthcare workers to digitally record patient symptoms and screening reports
-- **f.** Include multilingual and easy-to-use interfaces suitable for rural healthcare settings in NER g. Work in low-connectivity environments with offline data collection capability h. Provide awareness and preventive guidance related to joint care, physical activity, nutrition, and lifestyle management The solution should be portable, affordable, and suitable for deployment in remote and underserved areas.
+
+**b.** Use AI/ML techniques to analyse patient data and identify high-risk cases for early intervention
+
+**c.** Support screening in primary healthcare centres, rural health camps, and community outreach programs
+
+**d.** Provide preliminary OA risk assessment and severity indication
+
+**e.** Enable healthcare workers to digitally record patient symptoms and screening reports
+
+**f.** Include multilingual and easy-to-use interfaces suitable for rural healthcare settings in NER
+
+**g.** Work in low-connectivity environments with offline data collection capability
+
+**h.** Provide awareness and preventive guidance related to joint care, physical activity, nutrition, and lifestyle management The solution should be portable, affordable, and suitable for deployment in remote and underserved areas.
 
 **Expected Solution:**
 
@@ -136,31 +169,51 @@ The North Eastern Region (NER) produces a substantial quantity of fresh vegetabl
 This problem statement seeks the development of a Solar-Powered Smart Mini Cold Storage System for farmers and vegetable producers in the North Eastern Region (NER) to reduce postharvest losses of perishable vegetables. Due to poor cold-chain infrastructure, difficult transportation routes, frequent power cuts, and long travel durations from remote villages to markets, fresh vegetables often spoil within a short time after harvest. Farmers are forced to sell produce at low prices or suffer financial losses due to lack of nearby storage facilities. The proposed system should function as a decentralized mini cold storage unit that can be installed at village-level collection centres, local markets, farmer cooperatives, and farm-gate aggregation points.
 
 **The system should:**
-- **a.** Preserve fresh vegetables such as tomatoes, cabbage, beans, leafy vegetables, chilli, and other horticultural produce under suitable storage conditions
-- **b.** Operate using solar energy with battery backup support for off-grid and low-electricity areas
-- **c.** Maintain controlled temperature and humidity levels for extending shelf life of vegetables
-- **d.** Include smart monitoring features for:
+
+**a.** Preserve fresh vegetables such as tomatoes, cabbage, beans, leafy vegetables, chilli, and other horticultural produce under suitable storage conditions
+
+**b.** Operate using solar energy with battery backup support for off-grid and low-electricity areas
+
+**c.** Maintain controlled temperature and humidity levels for extending shelf life of vegetables
+
+**d.** Include smart monitoring features for:
 
 - Temperature fluctuation
 - Humidity variation
 - Power failure alerts
 - Storage condition status
-- **e.** Be compact, modular, and suitable for deployment in remote hilly terrain and rural agricultural clusters
-- **f.** Be energy-efficient, weather-resistant, and capable of operating under varying climatic conditions of NER g. Support easy operation and low maintenance for farmer groups, cooperatives, and local vendors h. Help reduce spoilage during temporary storage before transportation to larger markets The solution should strengthen local agricultural supply chains, reduce vegetable wastage, improve market accessibility, and enhance income opportunities for farmers in the North Eastern Region.
+
+**e.** Be compact, modular, and suitable for deployment in remote hilly terrain and rural agricultural clusters
+
+**f.** Be energy-efficient, weather-resistant, and capable of operating under varying climatic conditions of NER
+
+**g.** Support easy operation and low maintenance for farmer groups, cooperatives, and local vendors
+
+**h.** Help reduce spoilage during temporary storage before transportation to larger markets The solution should strengthen local agricultural supply chains, reduce vegetable wastage, improve market accessibility, and enhance income opportunities for farmers in the North Eastern Region.
 
 **Expected Solution:**
 
 A functional hardware-based smart mini cold storage system suitable for rural and remote agricultural areas of the North Eastern Region. The proposed solution should include:
-- **a.** Solar-powered cooling system with energy-efficient operation
-- **b.** Insulated cold storage chamber for preserving fresh vegetables and horticultural produce
-- **c.** Battery backup support for uninterrupted operation during power outages or low sunlight conditions
-- **d.** Temperature and humidity monitoring mechanism for maintaining suitable storage conditions
-- **e.** Smart alert/indicator system for:
+
+**a.** Solar-powered cooling system with energy-efficient operation
+
+**b.** Insulated cold storage chamber for preserving fresh vegetables and horticultural produce
+
+**c.** Battery backup support for uninterrupted operation during power outages or low sunlight conditions
+
+**d.** Temperature and humidity monitoring mechanism for maintaining suitable storage conditions
+
+**e.** Smart alert/indicator system for:
 
 - Temperature fluctuations
 - Power failure
 - Unsafe storage conditions
-- **f.** Compact and modular design suitable for village-level deployment and difficult terrain g. Weather-resistant and durable structure for varying climatic conditions in NER h. Low-maintenance and cost-effective system suitable for farmer cooperatives, local markets, and collection centres i. Basic digital monitoring/display interface for storage status and system performance The solution should help reduce post-harvest vegetable spoilage, improve shelf life of produce, strengthen local cold-chain infrastructure, and enhance income opportunities for farmers in the North Eastern Region.",https://sih.gov.in/sih2026PS#ViewProblemStatement26005
+
+**f.** Compact and modular design suitable for village-level deployment and difficult terrain
+
+**g.** Weather-resistant and durable structure for varying climatic conditions in NER
+
+**h.** Low-maintenance and cost-effective system suitable for farmer cooperatives, local markets, and collection centres i. Basic digital monitoring/display interface for storage status and system performance The solution should help reduce post-harvest vegetable spoilage, improve shelf life of produce, strengthen local cold-chain infrastructure, and enhance income opportunities for farmers in the North Eastern Region.",https://sih.gov.in/sih2026PS#ViewProblemStatement26005
 SIH26006,6,Development of an Intelligent Freight Forecasting Model for Optimized Vessel Chartering and Bulk Cargo Procurement from overseas to East Coast of India,Ministry of Steel,SAIL,Software,Transportation & Logistics,0,500,20 September 2026,,,,"**Background:**
 
 The current approach to vessel chartering for bulk cargo procurement to India's East Coast ports often involves daily market exploration, leading to reactive decision-making and likely missed opportunities for cost savings and efficiency. The highly volatile nature of global freight markets, coupled with varying supply and demand dynamics from key origins like Australia, the US, Mozambique, Russia and Indonesia, makes it challenging to identify optimal entry points for short-term or mid-term charter contracts. Furthermore, without a robust future forecasting mechanism, determining the most suitable vessel type (e.g., Handysize, Supramax, Panamax, Capesize) for specific cargo parcels and routes, while accounting for port infrastructure limitations at both origin and destination, results in suboptimal utilization and increased idle time. This manual, market-dependent approach requires analytics to mitigate risks associated with freight fluctuations and port-specific constraints, directly impacting overall logistics costs and supply chain reliability
@@ -173,10 +226,14 @@ For instance, procuring bulk cargo (such as coal) from Australia, the US, Mozamb
 **Expected Solution:**
 
 The expected solution is the development and implementation of an intelligent, datadriven Freight Forecasting Model. This model should leverage advanced analytical techniques, potentially including machine learning algorithms (e.g., time series forecasting, regression models) and artificial intelligence, to predict future freight rates with a high degree of accuracy for various vessel types and trade routes. The solution should offer actionable insights by providing recommendations on:
-- **a.** Optimal Market Entry Timing: Identify ideal windows to secure short-term or mid-term vessel charter contracts for specific cargo requirements, minimizing freight costs.
-- **b.** Vessel Type Optimization: Recommend the most suitable vessel type (e.g.,Handysize, Supramax, Panamax, Capesize) for a given cargo volume and origin-destination pair, considering all known port infrastructure limitations at both loading and discharge ports on India's East Coast. This includes factoring in draft restrictions, LOA, and cargo handling capabilities to prevent idle time and ensure efficient turnaround.
-- **c.** Idle Scenario Management: Propose strategies for minimizing vessel idle time by forecasting periods of low demand and suggesting alternative employment opportunities or optimized positioning to reduce deadheading.
-- **d.** Risk Mitigation: Provide early warnings for potential market volatility, port congestion, or other disruptions that could impact chartering decisions.
+
+**a.** Optimal Market Entry Timing: Identify ideal windows to secure short-term or mid-term vessel charter contracts for specific cargo requirements, minimizing freight costs.
+
+**b.** Vessel Type Optimization: Recommend the most suitable vessel type (e.g.,Handysize, Supramax, Panamax, Capesize) for a given cargo volume and origin-destination pair, considering all known port infrastructure limitations at both loading and discharge ports on India's East Coast. This includes factoring in draft restrictions, LOA, and cargo handling capabilities to prevent idle time and ensure efficient turnaround.
+
+**c.** Idle Scenario Management: Propose strategies for minimizing vessel idle time by forecasting periods of low demand and suggesting alternative employment opportunities or optimized positioning to reduce deadheading.
+
+**d.** Risk Mitigation: Provide early warnings for potential market volatility, port congestion, or other disruptions that could impact chartering decisions.
 
 The model should be user-friendly, perhaps with a dashboard interface, allowing logistics managers to input cargo details, origin/destination ports, and desired contract duration to receive comprehensive freight forecasts and actionable recommendations. The ultimate goal is to move from a reactive, daily market approach to a proactive, predictive chartering strategy, leading to significant cost reductions, improved supply chain efficiency, and enhanced decision-making capabilities.
 
@@ -234,13 +291,20 @@ Mostly inspections are done manually and only at fixed intervals, making it diff
 To develop an Intelligent Conveyor Belt Health Monitoring and Predictive Maintenance System using digitalization, IoT, AI, and machine learning technologies to detect early signs of belt joint deterioration and damages.
 
 **The proposed digitalized system architecture may include the following:**
-- **1.** IoT-Based Sensor Integration for real-time monitoring using vibration, temperature, belt tracking, acoustic, load, speed, and tension sensors.
-- **2.** AI-Based Vision Monitoring using smart cameras and thermal imaging systems to detect cracks, tears, overheating, misalignment, and abnormal belt conditions.
-- **3.** Drone and Camera-Based Inspection Systems.
-- **4.** Digital Twin of Conveyor System to simulate conveyor operations, monitor equipment health, and analyse behaviour in real time.
-- **5.** Integration with Existing SCADA, PLC, and other pre-existed Conveyor Monitoring Systems.
-- **6.** AI/ML-Based Predictive Analytics
-- **7.** Others The proposed solution aims to reduce unplanned downtime, improve safety, minimize maintenance costs, and enhance conveyor reliability and operational efficiency in iron ore mining industries.",https://sih.gov.in/sih2026PS#ViewProblemStatement26008
+
+**1.** IoT-Based Sensor Integration for real-time monitoring using vibration, temperature, belt tracking, acoustic, load, speed, and tension sensors.
+
+**2.** AI-Based Vision Monitoring using smart cameras and thermal imaging systems to detect cracks, tears, overheating, misalignment, and abnormal belt conditions.
+
+**3.** Drone and Camera-Based Inspection Systems.
+
+**4.** Digital Twin of Conveyor System to simulate conveyor operations, monitor equipment health, and analyse behaviour in real time.
+
+**5.** Integration with Existing SCADA, PLC, and other pre-existed Conveyor Monitoring Systems.
+
+**6.** AI/ML-Based Predictive Analytics
+
+**7.** Others The proposed solution aims to reduce unplanned downtime, improve safety, minimize maintenance costs, and enhance conveyor reliability and operational efficiency in iron ore mining industries.",https://sih.gov.in/sih2026PS#ViewProblemStatement26008
 SIH26009,9,Using AI/ML and Space Technology to Identify Manganese Reserves and Overcome Production Shortfalls.,Ministry of Steel,MOIL Ltd.,Software,Smart Automation,0,500,20 September 2026,,,,"**Background:**
 MOIL Limited is the largest producer of Manganese Ore in India. To meet future demand, it is important to accurately identify available reserves and avoid production shortfalls. At present, reserve estimation and production planning are mainly based on manual surveys, drilling results, and production records. These methods are time-consuming and sometimes lead to a mismatch between expected and actual ore production
 
@@ -290,11 +354,16 @@ Accurate and up-to-date urban land records are essential for effective land gove
 . High-resolution Drone lmagery . Orthorectified lmagery (ORl)
 
 . DSM/DTM datasets . Existing GIS Parcel layers . Ground Truthing (GT) datasets . GNSS/CORS-enabled surveY data The platform should incorporate:
-- **1.** Al-based image segmentation models for parcel delineation.
-- **2.** Deep learning techniques for feature extraction and object detection.
-- **3.** Automated topology generation and parcel polygon creation.
-- **4.** Detection of overlapping or inconsistent parcel geometries.
-- **5.** Web-GlS visualization and editing interface.
+
+**1.** Al-based image segmentation models for parcel delineation.
+
+**2.** Deep learning techniques for feature extraction and object detection.
+
+**3.** Automated topology generation and parcel polygon creation.
+
+**4.** Detection of overlapping or inconsistent parcel geometries.
+
+**5.** Web-GlS visualization and editing interface.
 
 **Expected Solution:**
 
@@ -337,7 +406,8 @@ The growing scale of urbanization, increasing land transactions, demand for effi
 **Problem Description:**
 
 The Department of Land Resources has initiated the development and deployment of Land Stack in pilot locations of Chandigarh and Tamil Nadu, launched on 31 December
-- **2025.** Following successful implementation, the platform is proposed to be expanded across lndia by covering one city and one village in every State and Union Territory, and subsequently scaled to achieve nationwide coverage. One of the major challenges in lndia is that land is a State subject, resulting in significant diversity in land administration systems across states. Variations exist in land record formats, database structures, units of measurement, number and type of fields, language, terminology, and administrative workflows.
+
+**2025.** Following successful implementation, the platform is proposed to be expanded across lndia by covering one city and one village in every State and Union Territory, and subsequently scaled to achieve nationwide coverage. One of the major challenges in lndia is that land is a State subject, resulting in significant diversity in land administration systems across states. Variations exist in land record formats, database structures, units of measurement, number and type of fields, language, terminology, and administrative workflows.
 
 Therefore, the challenge is to conceptualize and develop a scalable prototype of Land Stack capable of integrating diverse land-related datasets, workflows, and services into a common interoperable State-level framework.
 
@@ -384,28 +454,29 @@ of the Study: Table to be Added here Expected Solutions:
 
 The proposed study is expected to provide a structured geospatial framework for visualization and interpretation of geo-coded images in watershed development programs. The key expected solutions include:
 
-- **a)** Development of an lntegrated Geospatial Visualization Framework:
+**a)** Development of an lntegrated Geospatial Visualization Framework:
 
 Thes tudy will develop a GIS and remote sensing-based framework for integrating geo-coded images with satellite data from the SRISHTI-DRISHTI platform to support watershed analysis and monitoring.
 
-- **b)** lmproved Geo-Coded lmage lnterpretation:
+**b)** lmproved Geo-Coded lmage lnterpretation:
 
 Advanced spatial interpretation techniques will help convert geo-coded imagery into meaningful analytical information related to land use, Vegetation status, water resources, watershed interventions, and environmental changes.
 
-- **c)** Generation of Thematic Maps and Visualization Products:
+**c)** Generation of Thematic Maps and Visualization Products:
 
 The study will visualize outputs such as land use maps, drainage maps, vegetation maps, watershed intervention maps, and spatial change detection products for better interpretation and planning.
-- **d)** Enhanced Watershed Monitoring and Assessment: lntegration of geo-coded images with satellite-based datasets will improve the accuracy and efficiency of monitoring watershed activities and assessing development outcomes.
 
-- **e)** Scientific Support for Decision-Making:
+**d)** Enhanced Watershed Monitoring and Assessment: lntegration of geo-coded images with satellite-based datasets will improve the accuracy and efficiency of monitoring watershed activities and assessing development outcomes.
+
+**e)** Scientific Support for Decision-Making:
 
 The proposed framework will support evidence-based planning and policy decisions by providing spatially validated and visually interpretable watershed information.
 
-- **f)** Scalable and Cost-Effective Monitoring Approach:
+**f)** Scalable and Cost-Effective Monitoring Approach:
 
 The methodology will offer a focused, scalable, and economically viable approach for watershed monitoring that can be replicated across different regions and watershed programs.
 
-- **g)** Strengthening Use of the SRISHTI-DRISHTI Platform:
+**g)** Strengthening Use of the SRISHTI-DRISHTI Platform:
 
 The study will enhance the practical utilization of the SRISHTI-DRISHTI platform as a dedicated source for satellite-based geospatial analysis and watershed interpretation.",https://sih.gov.in/sih2026PS#ViewProblemStatement26015
 SIH26016,16,Real-Time National Land Acquisition & Management System for End-to-End Digital Monitoring and Decision Support,Ministry of Rural Development,Dept of land resources (DoLR),Software,Miscellaneous,0,500,20 September 2026,,,,"**Background:**
@@ -415,15 +486,24 @@ Land acquisition is a critical component of infrastructure development and publi
 **Description of the Study:**
 
 Web-based National Land Acquisition & Management System that digitizes the complete land acquisition lifecycle—from project proposal submission to final possession of land. The proposed platform should provide standardized workflows for different stakeholders and enable seamless coordination among Central Ministries, State Governments, District Authorities, and Project Implementing Agencies. The system should facilitate online submission and approval of proposals, digital scrutiny, document management, automated workflow routing, and status tracking at every stage. The platform should support geo-tagging of acquired land parcels using GIS technology, enabling visualization of project locations on interactive maps. It should also maintain real-time information on key land acquisition parameters such as:
-- **7.** Land proposed and acquired
-- **8.** Notifications issued
-- **9.** Awards declared
-- **10.** Compensation assessed and disbursed
-- **11.** Possession status
-- **12.** Rehabilitation and Resettlement (R&R) progress
-- **13.** Number of affected and displaced families
-- **14.** Project-wise and state-wise progress
-- **15.** Timeline monitoring and milestone tracking The platform should be scalable for nationwide implementation across all States and Union Territories while ensuring data security, interoperability, and compliance with government standards.
+
+**7.** Land proposed and acquired
+
+**8.** Notifications issued
+
+**9.** Awards declared
+
+**10.** Compensation assessed and disbursed
+
+**11.** Possession status
+
+**12.** Rehabilitation and Resettlement (R&R) progress
+
+**13.** Number of affected and displaced families
+
+**14.** Project-wise and state-wise progress
+
+**15.** Timeline monitoring and milestone tracking The platform should be scalable for nationwide implementation across all States and Union Territories while ensuring data security, interoperability, and compliance with government standards.
 
 Add 'Scope of Study' Table here Problems:
 
@@ -434,14 +514,22 @@ At present, land acquisition activities are managed through fragmented systems, 
 The solution should incorporate role-based access control, automated alerts and notifications, API-based integration with relevant government systems, customizable dashboards, analytical reports, and predictive analytics to support policy formulation and efficient project execution.
 
 **The system should provide:**
-- **7.** End-to-end digital workflow for land acquisition processes;
-- **8.** Online submission, verification, approval, and tracking of proposals;
-- **9.** GIS-enabled geo-tagging and spatial visualization of land parcels;
-- **10.** Interactive national dashboard displaying: Area notified, Area acquired, Compensation assessed and paid, Number of affected and displaced families, Rehabilitation & Resettlement status, Project progress, Possession status, Timeline adherence
-- **11.** API-based integration with land records, cadastral maps, and relevant government portals.
-- **12.** Mobile-responsive interface for field-level data collection and verification.
-- **13.** Secure document repository with version control and audit history.
-- **14.** Customizable MIS reports and executive dashboards for decision-makers.
+
+**7.** End-to-end digital workflow for land acquisition processes;
+
+**8.** Online submission, verification, approval, and tracking of proposals;
+
+**9.** GIS-enabled geo-tagging and spatial visualization of land parcels;
+
+**10.** Interactive national dashboard displaying: Area notified, Area acquired, Compensation assessed and paid, Number of affected and displaced families, Rehabilitation & Resettlement status, Project progress, Possession status, Timeline adherence
+
+**11.** API-based integration with land records, cadastral maps, and relevant government portals.
+
+**12.** Mobile-responsive interface for field-level data collection and verification.
+
+**13.** Secure document repository with version control and audit history.
+
+**14.** Customizable MIS reports and executive dashboards for decision-makers.
 
 The solution should significantly enhance transparency, accountability, efficiency, and data-driven governance in land acquisition while reducing processing time and improving inter-agency coordination.
 
@@ -471,19 +559,30 @@ With the availability of large volumes of historical land acquisition data, proj
 The proposed solution should be an AI-enabled decision support platform capable of predicting potential land acquisition delays before they adversely impact project implementation.
 
 **The solution should provide:**
-- **7.** AI/ML-based predictive models for forecasting project delays.
-- **8.** Automated identification of projects with high probability of delay.
-- **9.** Project-wise risk scoring and prioritization based on multiple parameters.
-- **10.** Identification of key delay drivers such as pending approvals, compensation delays, legal disputes, incomplete documentation, rehabilitation status, and administrative bottlenecks.
-- **11.** Explainable AI techniques to ensure transparency in prediction results.
+
+**7.** AI/ML-based predictive models for forecasting project delays.
+
+**8.** Automated identification of projects with high probability of delay.
+
+**9.** Project-wise risk scoring and prioritization based on multiple parameters.
+
+**10.** Identification of key delay drivers such as pending approvals, compensation delays, legal disputes, incomplete documentation, rehabilitation status, and administrative bottlenecks.
+
+**11.** Explainable AI techniques to ensure transparency in prediction results.
 
 - Interactive dashboards displaying: Delay probability, Risk categorization, District-wise and State-wise delay trends, Timeline analysis, Performance indicators, Comparative analytics
-- **7.** GIS-enabled visualization of high-risk projects on digital maps.
-- **8.** Automated alerts and notifications for project managers and administrators.
-- **9.** Predictive recommendations suggesting corrective actions to minimize delays.
-- **10.** Continuous model learning using newly generated project data for improved prediction accuracy.
-- **11.** APIs for integration with existing land acquisition management systems and government databases.
-- **12.** Secure, role-based access for various stakeholders with comprehensive audit trails.
+
+**7.** GIS-enabled visualization of high-risk projects on digital maps.
+
+**8.** Automated alerts and notifications for project managers and administrators.
+
+**9.** Predictive recommendations suggesting corrective actions to minimize delays.
+
+**10.** Continuous model learning using newly generated project data for improved prediction accuracy.
+
+**11.** APIs for integration with existing land acquisition management systems and government databases.
+
+**12.** Secure, role-based access for various stakeholders with comprehensive audit trails.
 
 The proposed solution should enable proactive governance by shifting project monitoring from reactive reporting to predictive decision-making, thereby reducing project delays, optimizing public expenditure, and accelerating infrastructure development.
 
@@ -517,19 +616,30 @@ The lack of standardized and accurate digital land records creates challenges in
 The proposed solution should be an intelligent AI-based platform capable of automating the digitization and validation of legacy land records while minimizing manual intervention and ensuring high data accuracy.
 
 **The system should provide:**
-- **7.** Support for multilingual document recognition across major Indian languages.
-- **8.** Automatic extraction of structured land record information from scanned PDFs, images, and historical documents.
-- **9.** Intelligent classification of extracted data into predefined land record fields.
-- **10.** Automated validation using business rules, cross-database verification, and duplicate detection.
-- **11.** Confidence scoring for extracted information with automatic identification of uncertain fields.
-- **12.** Human-assisted verification workflow for low-confidence records.
-- **13.** AI-driven learning mechanism that improves extraction accuracy over time.
-- **14.** Integration with existing Land Records Management Systems (LRMS), DILRMP databases, GIS platforms, and cadastral maps.
-- **15.** Secure document repository with metadata management and audit trails.
+
+**7.** Support for multilingual document recognition across major Indian languages.
+
+**8.** Automatic extraction of structured land record information from scanned PDFs, images, and historical documents.
+
+**9.** Intelligent classification of extracted data into predefined land record fields.
+
+**10.** Automated validation using business rules, cross-database verification, and duplicate detection.
+
+**11.** Confidence scoring for extracted information with automatic identification of uncertain fields.
+
+**12.** Human-assisted verification workflow for low-confidence records.
+
+**13.** AI-driven learning mechanism that improves extraction accuracy over time.
+
+**14.** Integration with existing Land Records Management Systems (LRMS), DILRMP databases, GIS platforms, and cadastral maps.
+
+**15.** Secure document repository with metadata management and audit trails.
 
 - Interactive dashboards displaying: Number of documents processed, Extraction accuracy, Validation status, Pending verification cases, Error statistics, State-wise and district-wise digitization progress
-- **7.** APIs for seamless integration with government applications and digital governance platforms.
-- **8.** Role-based access control ensuring secure access to sensitive land record information.
+
+**7.** APIs for seamless integration with government applications and digital governance platforms.
+
+**8.** Role-based access control ensuring secure access to sensitive land record information.
 
 The solution should significantly reduce manual effort, improve the accuracy and reliability of digital land records, accelerate modernization of land administration, and support transparent, data-driven governance.
 
@@ -556,18 +666,30 @@ Emerging challenges such as climate change, rapid urbanization, urban-rural land
 The proposed solution should be a secure, scalable, AI-enabled National Research and Policy Innovation Platform that strengthens evidence-based land governance through collaborative research, advanced analytics, and digital knowledge management.
 
 **The platform should provide:**
-- **7.** A centralized digital repository for land governance research, policy papers, datasets, legal documents, and case studies.
-- **8.** AI-powered search and recommendation engine for discovering relevant research and policy resources.
-- **9.** Collaborative workspaces for researchers, policymakers, academic institutions, and government agencies.
-- **10.** Interactive GIS-based visualization of land use patterns, climate vulnerability, infrastructure development, and policy impacts.
-- **11.** Advanced analytics and decision-support tools for evaluating policy effectiveness and identifying emerging trends.
-- **12.** Policy simulation modules to assess the likely outcomes of proposed reforms before implementation.
-- **13.** Integration of satellite imagery, remote sensing, land records, socio-economic datasets, and geospatial databases.
-- **14.** AI-assisted research tools for trend analysis, literature synthesis, predictive modelling, and scenario analysis.
-- **15.** Innovation portal supporting hackathons, research grants, pilot projects, and knowledge competitions.
-- **16.** Interactive dashboards displaying: Research outputs, Policy performance indicators, Land use trends, Climate resilience metrics, Land dispute statistics, Project implementation outcomes, Geospatial insights
-- **17.** Secure role-based access for researchers, government officials, institutions, and public users with appropriate permissions.
-- **18.** APIs for seamless integration with existing government platforms, research databases, GIS systems, and digital governance initiatives.
+
+**7.** A centralized digital repository for land governance research, policy papers, datasets, legal documents, and case studies.
+
+**8.** AI-powered search and recommendation engine for discovering relevant research and policy resources.
+
+**9.** Collaborative workspaces for researchers, policymakers, academic institutions, and government agencies.
+
+**10.** Interactive GIS-based visualization of land use patterns, climate vulnerability, infrastructure development, and policy impacts.
+
+**11.** Advanced analytics and decision-support tools for evaluating policy effectiveness and identifying emerging trends.
+
+**12.** Policy simulation modules to assess the likely outcomes of proposed reforms before implementation.
+
+**13.** Integration of satellite imagery, remote sensing, land records, socio-economic datasets, and geospatial databases.
+
+**14.** AI-assisted research tools for trend analysis, literature synthesis, predictive modelling, and scenario analysis.
+
+**15.** Innovation portal supporting hackathons, research grants, pilot projects, and knowledge competitions.
+
+**16.** Interactive dashboards displaying: Research outputs, Policy performance indicators, Land use trends, Climate resilience metrics, Land dispute statistics, Project implementation outcomes, Geospatial insights
+
+**17.** Secure role-based access for researchers, government officials, institutions, and public users with appropriate permissions.
+
+**18.** APIs for seamless integration with existing government platforms, research databases, GIS systems, and digital governance initiatives.
 
 The platform should establish a sustainable national ecosystem for applied research and policy innovation, enabling evidence-based decision-making, fostering interdisciplinary collaboration, accelerating technological adoption, and supporting resilient, transparent, and future-ready land governance in India.
 
@@ -643,9 +765,12 @@ CMPDI/CIL subsidiaries play a key role in providing geological and mining inform
 
 **Desired Outcome:**
 The solution should be implemented in structured phases, including requirement analysis, data digitization and pre-processing, platform development, system testing, integration with CIL subsidiary workflows, training, and continuous enhancement to ensure scalability and long-term adoption.
-- **1.** Automated Report Generation Platform
-- **2.** Automated Word Cloud and Topic Identification Module
-- **3.** AI-Based Query and Response System Expected Benefits:
+
+**1.** Automated Report Generation Platform
+
+**2.** Automated Word Cloud and Topic Identification Module
+
+**3.** AI-Based Query and Response System Expected Benefits:
 
 - Reduction in report preparation time as less as it can be, quantified in percentage.
 - Maximum accuracy, calculated in percentage in structured extraction and report generation.
@@ -769,10 +894,14 @@ Maintenance data-such as defects and overdue tasks—is maintained separately in
 
 **Expected Solution:**
 Participants should build an Al system that includes:
-- **1.** Integration of maintenance data (defects, overdue maintenance) from TMS, SMMS, and TDMS with corridor block and block availability as per the Train Time Table and the goods trains forecast from the Control Office.
-- **2.** Uses AI/ML algorithms to prioritize and schedule maintenance tasks based on criticality, urgency, and impact on asset availability.
-- **3.** Optimize block scheduling to maximize asset uptime by minimizing downtime and efficiently coordinating multi-department activities.
-- **4.** Provides block plans over multiple time horizons-weekly and monthly—to support both short-term and long-term maintenance.
+
+**1.** Integration of maintenance data (defects, overdue maintenance) from TMS, SMMS, and TDMS with corridor block and block availability as per the Train Time Table and the goods trains forecast from the Control Office.
+
+**2.** Uses AI/ML algorithms to prioritize and schedule maintenance tasks based on criticality, urgency, and impact on asset availability.
+
+**3.** Optimize block scheduling to maximize asset uptime by minimizing downtime and efficiently coordinating multi-department activities.
+
+**4.** Provides block plans over multiple time horizons-weekly and monthly—to support both short-term and long-term maintenance.
 
 The solution should transform current decentralized and manual block planning into a data-driven, coordinated process that maximizes asset availability, improves safety, and supports reliable train operations.",https://sih.gov.in/sih2026PS#ViewProblemStatement26027
 SIH26028,28,Dynamic Forecast of Expected Time of Arrival (ETA) for Coaching Trains,Ministry of Railways,Ministry of Railways,Software,Disaster Management,0,500,20 September 2026,,,,"**Background:**
@@ -843,7 +972,8 @@ Create a digital marketplace that:
 SIH26034,34,"Software System to check compliance of Packaged Commodities under Legal Metrology(Packaged Commodities) Rules, 2011 by scanning products, images and labels.","Ministry of Consumer Affairs, Food & Public Distribution",Department of Consumer Affairs (DoCA),Software,"Agriculture, FoodTech & Rural Development",0,500,20 September 2026,"https://consumeraffairs.gov.in/pages/legal-metrology-act and the Legal Metrology (Packaged commodities) Rules, 2011",,https://consumeraffairs.gov.in/pages/legal-metrology-act,"**Background:**
 
 Packaged commodities are widely sold through retail stores, supermarkets and e-commerce platforms across India. Under the Legal Metrology Act, 2009 and the Legal Metrology (Packaged Commodities) Rules, 2011, every packaged commodity is required to bear mandatory declarations such as name and address of manufacturer/packer/importer, net quantity, Maximum Retail Price (MRP), month and year of manufacture/packing/import, consumer care details and other prescribed declarations in a specified format and manner. These declarations are important for ensuring transparency, fair trade practices and consumer protection. However, due to the large volume and variety of packaged products available in the market, manual inspection and compliance checking by enforcement agencies becomes time-consuming and resource intensive. Non-compliance such as missing declarations, incorrect font sizes, improper MRP declarations and other such practices are frequently observed. There is scope to develop a compliance checking system capable of scanning product labels, package images and product listings to identify violations under the Legal Metrology (Packaged Commodities) Rules,
-- **2011.** Accordingly, a software system capable of automatically detecting, extracting and validating mandatory declarations and identifying noncompliances in packaged commodities through image and label analysis can be developed.
+
+**2011.** Accordingly, a software system capable of automatically detecting, extracting and validating mandatory declarations and identifying noncompliances in packaged commodities through image and label analysis can be developed.
 
 **Problem Description:**
 
@@ -898,7 +1028,8 @@ For granting model approval, NAWIs are evaluated by designated laboratories in a
 **Problem Description:**
 
 Develop a software application capable of generating complete test reports for Non-Automatic Weighing Instruments based on test observations recorded during type evaluation as per OIML R
-- **76.** The system should be capable of: - Capturing instrument details and technical specifications.
+
+**76.** The system should be capable of: - Capturing instrument details and technical specifications.
 
 - Recording laboratory and environmental conditions.
 - Entering observations from various OIML R 76 test procedures.
@@ -1001,11 +1132,16 @@ India has over 77 million diabetic adults - the second highest globally. Diabeti
 **Problem Description:**
 
 Design a MATLAB-based retinal image analysis pipeline for automated DR screening addressing real-world deployment challenges:
-- **1.** Image Quality Assessment and Enhancement: Automatically evaluate fundus images for adequacy (focus, illumination, field of view). Apply adaptive enhancement (CLAHE, illumination normalization, denoising) for borderline images; reject ungradeable ones with recapture feedback.
-- **2.** Retinal Structure Segmentation: Extract clinically relevant structures - optic disc/fovea localization, vessel segmentation, microaneurysm detection, exudate segmentation, hemorrhage classification, and neovascularization detection.
-- **3.** DR Severity Grading: Classify using the International Clinical DR severity scale (Levels 0-4, from no DR to proliferative DR) with clinically acceptable sensitivity (>90%) and specificity (>85%) for referable DR (Level 2+).
-- **4.** Explainability Module: Implement Grad-CAM attention maps, lesion-level evidence correlated with clinical criteria, calibrated confidence scores, and automated annotated reports - enabling ophthalmologist validation in under 30 seconds for a human-in-theloop workflow.
-- **5.** Simulink Workflow Simulation: Model the telemedicine screening pipeline in Simulink - image acquisition rates, bandwidth constraints, processing throughput, and review capacity - to optimize resource allocation for district-level programs serving 100,000+ patients annually.
+
+**1.** Image Quality Assessment and Enhancement: Automatically evaluate fundus images for adequacy (focus, illumination, field of view). Apply adaptive enhancement (CLAHE, illumination normalization, denoising) for borderline images; reject ungradeable ones with recapture feedback.
+
+**2.** Retinal Structure Segmentation: Extract clinically relevant structures - optic disc/fovea localization, vessel segmentation, microaneurysm detection, exudate segmentation, hemorrhage classification, and neovascularization detection.
+
+**3.** DR Severity Grading: Classify using the International Clinical DR severity scale (Levels 0-4, from no DR to proliferative DR) with clinically acceptable sensitivity (>90%) and specificity (>85%) for referable DR (Level 2+).
+
+**4.** Explainability Module: Implement Grad-CAM attention maps, lesion-level evidence correlated with clinical criteria, calibrated confidence scores, and automated annotated reports - enabling ophthalmologist validation in under 30 seconds for a human-in-theloop workflow.
+
+**5.** Simulink Workflow Simulation: Model the telemedicine screening pipeline in Simulink - image acquisition rates, bandwidth constraints, processing throughput, and review capacity - to optimize resource allocation for district-level programs serving 100,000+ patients annually.
 
 This problem demands clinical validation rigor, sub-pixel microaneurysm detection, and clinically meaningful explainability
 
@@ -1047,8 +1183,10 @@ Jharkhand is lndia's leading mineral-producing state, with coal mines, steel pla
 **Problem Description:**
 
 Design and develop a mobile AR-based vocational training and safety certification platform running on mid-range Android smartphones (Android 10+, no external headset required), accessible to workers across Jharkhand's mining, steel, and mica sectors. The platform must deliver interactive AR training modules covering five industrial safety domains: (l) Fire & Explosion Response-exit identification, extinguisher use, and evacuation sequencing overlaid on real surroundings via phone camera;
-- **(2)** Gas Leak & Confined Space Protocol-hazard zone recognition, PPE selection, and buddy-system procedures simulated in AR;
-- **(3)** Machinery.
+
+**(2)** Gas Leak & Confined Space Protocol-hazard zone recognition, PPE selection, and buddy-system procedures simulated in AR;
+
+**(3)** Machinery.
 
 **Expected Solution:**
 
@@ -1269,13 +1407,20 @@ High Altitude Areas (HAA) and Super High Altitude Areas (SHAA) of Ladakh region 
 
 **Problem Description:**
 Ladakh is a cold desert located at elevations of approximately 3000 to 6000m above sea level. There are several environmental challenges viz. very low temperatures (-35°C to 40°C in winters), low atmospheric pressure, lower partial pressure of oxygen, low humidity, snow, ice and occasional moisture condensation. These conditions pose serious operational and storage issues of electrical and electronic equipment and systems and following effects on same is observed:
-- **1.** Reduced Cooling Efficiency: At high altitude, air density decreases significantly. Thin air removes heat less effectively (degradation of convective cooling), so electronic components run hotter even when ambient temperature is cold. This means overheating of processors, reduced efficiency of cooling fans and heat sinks, thermal stress on semiconductors and premature component failure. Systems being affected are computers and servers, telecom base stations, radar system, power electronics, military communication systems.
-- **2.** Insulation Breakdown and Electrical Arcing: Low atmospheric pressure reduces the dielectric strength of air. Air becomes a weaker insulator, increasing the risk of sparking and arcing between conductors.
-- **3.** Battery Performance Degradation: Cold temperatures severely affect battery chemistry. Lithium-ion and lead-acid batteries lose capacity and discharge faster in freezing conditions. Owing to this there is reduced backup time, slow charging and voltage instability.
-- **4.** Thermal Cycling Damage: Ladakh experiences large temperature variation between day and night. Repeated expansion and contraction develop mechanical stresses in the components. This result in cracking of solder joints, PCB warping etc.
-- **5.** Increased Radiation Exposure: Higher altitude means thinner atmospheric shielding, so electrical and electronic components receive more UV radiation and cosmic rays. This means semiconductor degradation, memory bit error and failure of sensitive sensors.
-- **6.** Effects on Communication Systems: High Mountains and severe weather affect signal propagation. There are problems like signal attenuation and reflection, antenna icing. Because of these cellular networks, satellite communication and military radio system get affected.
-- **7.** Real-World Impact: The Drone Challenge: The Indian Army's extensive use of drones along the LAC highlights these exact issues. In the thin air of Ladakh, drone rotors generate less lift, forcing the electronic motors to work much harder and draw more current. Combined with cold-induced battery drain, drones that fly for an hour at sea level might only manage 20-25 minutes of flight time in Ladakh
+
+**1.** Reduced Cooling Efficiency: At high altitude, air density decreases significantly. Thin air removes heat less effectively (degradation of convective cooling), so electronic components run hotter even when ambient temperature is cold. This means overheating of processors, reduced efficiency of cooling fans and heat sinks, thermal stress on semiconductors and premature component failure. Systems being affected are computers and servers, telecom base stations, radar system, power electronics, military communication systems.
+
+**2.** Insulation Breakdown and Electrical Arcing: Low atmospheric pressure reduces the dielectric strength of air. Air becomes a weaker insulator, increasing the risk of sparking and arcing between conductors.
+
+**3.** Battery Performance Degradation: Cold temperatures severely affect battery chemistry. Lithium-ion and lead-acid batteries lose capacity and discharge faster in freezing conditions. Owing to this there is reduced backup time, slow charging and voltage instability.
+
+**4.** Thermal Cycling Damage: Ladakh experiences large temperature variation between day and night. Repeated expansion and contraction develop mechanical stresses in the components. This result in cracking of solder joints, PCB warping etc.
+
+**5.** Increased Radiation Exposure: Higher altitude means thinner atmospheric shielding, so electrical and electronic components receive more UV radiation and cosmic rays. This means semiconductor degradation, memory bit error and failure of sensitive sensors.
+
+**6.** Effects on Communication Systems: High Mountains and severe weather affect signal propagation. There are problems like signal attenuation and reflection, antenna icing. Because of these cellular networks, satellite communication and military radio system get affected.
+
+**7.** Real-World Impact: The Drone Challenge: The Indian Army's extensive use of drones along the LAC highlights these exact issues. In the thin air of Ladakh, drone rotors generate less lift, forcing the electronic motors to work much harder and draw more current. Combined with cold-induced battery drain, drones that fly for an hour at sea level might only manage 20-25 minutes of flight time in Ladakh
 
 **Expected Solution:**
 The environment of Ladakh significantly affects electrical and electronic equipment due to low atmospheric pressure, extreme cold, high UV/cosmic radiation, dust and dryness, and large thermal variations. These conditions can cause overheating, insulation failure, battery degradation, display malfunction, communication instability, and reduced reliability. Therefore, electrical and electronic equipment and systems used in Ladakh require specialized design modifications to improve the reliability, efficiency, and lifespan.",https://sih.gov.in/sih2026PS#ViewProblemStatement26049
@@ -1330,9 +1475,12 @@ The primary objective of the work/project is to minimize the energy utilisation 
 
 **Expected Solution:**
 Development of Software based model for predicating the suitable shelter design including suitable material, size, shape etc. with the objective of thermal comfort maintenance in passive shelter installed in different atmospheric conditions. This work involves simple feeding of collected data and material properties in developed model and outcome shows in terms of most efficient design with materials for thermal comfort maintenance in a particular region The Developed Model should be capable of giving/solving the following tasks:
-- **1.** Prediction of shelter inside temperature based on the user defined inputs.
-- **2.** Prediction of thermal energy generated from solar radiation.
-- **3.** Heat flow details as per the temperature difference between ambient and shelter temperature for a defined time period.",https://sih.gov.in/sih2026PS#ViewProblemStatement26051
+
+**1.** Prediction of shelter inside temperature based on the user defined inputs.
+
+**2.** Prediction of thermal energy generated from solar radiation.
+
+**3.** Heat flow details as per the temperature difference between ambient and shelter temperature for a defined time period.",https://sih.gov.in/sih2026PS#ViewProblemStatement26051
 SIH26052,52,"To develop an AI/ML-enabled adaptive noise cancellation (ANC) system that effectively suppresses stationary, non-stationary, and impulsive defence noises while maintaining high speech intelligibility and real-time performance on embedded hardware.",DRDO,Department of Defence Production /IDEX,Hardware,Smart Vehicles,0,500,20 September 2026,,,,"**Background:**
 In defence and mission-critical communication systems, reliable speech transmission is severely affected by diverse acoustic disturbances such as gunshots, artillery fire, helicopter rotor noise, armored vehicle sound and emergency sirens. Traditional signal processing techniques—like spectral subtraction, Wiener filtering, and classical LMS-based ANC—are limited in handling highly dynamic and non-linear noise environments. These methods assume stationary noise characteristics and often introduce artifacts or speech distortion under rapidly changing conditions.
 
@@ -1364,9 +1512,12 @@ Autonomous navigation depends on the ability of a vehicle to perceive its surrou
 
 **Problem Description:**
 The goal is to build a deep learning pipeline that transforms raw Lidar point clouds into a variable resolution 2.5D grid (an elevation map with semantic layers). The system must perform three primary tasks:
-- **1.** Terrain Analysis: Distinguish between drivable surfaces and non-drivable terrain.
-- **2.** Object Detection: Identify and classify static obstacles (walls, poles) and dynamic objects (pedestrians, other vehicles).
-- **3.** Adaptive Spatial Representation: Implement a non-uniform grid where the cell size increases as the distance from the sensor increases. This requires a sophisticated data structure that can handle variable resolution without causing alignment errors or data loss during the projection from 3D to 2.5D
+
+**1.** Terrain Analysis: Distinguish between drivable surfaces and non-drivable terrain.
+
+**2.** Object Detection: Identify and classify static obstacles (walls, poles) and dynamic objects (pedestrians, other vehicles).
+
+**3.** Adaptive Spatial Representation: Implement a non-uniform grid where the cell size increases as the distance from the sensor increases. This requires a sophisticated data structure that can handle variable resolution without causing alignment errors or data loss during the projection from 3D to 2.5D
 
 **Expected Solution:**
 **A software framework consisting of:**
@@ -1520,9 +1671,12 @@ Participants must design, prototype, and demonstrate a physical, self-contained 
 Teams are expected to deliver a functional physical hardware prototype consisting of the following modules:
 - Embedded Firmware Engine: A robust program deployed on a physical microcontroller or FPGA (written in C/C++, Verilog, or VHDL). The firmware must utilize hardware timers and DMA to stream wave-generation arrays directly to an internal or external DAC without stalling the CPU. The system must support multiple modulation types on the fly: LFM chirps, geometric sweeps, and phase-coded pulses.
 - Environmental Sensor Interface & Adaptation Logic: A physical control interface where real-time environmental changes are introduced to the hardware (via physical sensors, or potentiometers simulating sensors for parameters like 'Entering Muddy Estuary' or 'Entering Clear Shallow Reef'). The microcontroller must read these inputs via an ADC and modify three critical wave parameters instantly:
-- **1.** Bandwidth/Center Frequency (Tuning for range vs. resolution)
-- **2.** Pulse Duration (Controlling total energy output)
-- **3.** Amplitude/Signal Power
+
+**1.** Bandwidth/Center Frequency (Tuning for range vs. resolution)
+
+**2.** Pulse Duration (Controlling total energy output)
+
+**3.** Amplitude/Signal Power
 
 - Analog Signal Conditioning & Hardware Filters: A physical analog frontend circuit (built on a breadboard or custom PCB) featuring active/passive low-pass filters and an operational amplifier. Combined with digital windowing filters (such as Hamming, Hann, or Blackman windows) applied in the firmware, this hardware must smooth out sudden voltage jumps at the start and end of a pulse, protecting the transmitter hardware from electrical stress and eliminating sidelobe artifacts.
 - Physical Form Factor & Output Validation: The physical analog output of the transmitter payload must be connected to an oscilloscope or spectrum analyzer at the judging table. The generated raw waves must demonstrate clean, low-distortion, mathematically sound spectrograms when validated via a Fast Fourier Transform (FFT). Additionally, the module should be housed in a robust, 3D-printed or fabricated structural enclosure representing a field-deployable payload pod designed for an AUV hull slot.",https://sih.gov.in/sih2026PS#ViewProblemStatement26058
@@ -1540,29 +1694,46 @@ Subsurface ocean temperature is a fundamental variable for understanding ocean c
 The current problem statement proposes the development of a Satellite Embedding-Based Deep Learning Framework to reconstruct depth-wise subsurface temperature from daily surface satellite observations at 0.25° spatial resolution for North Indian Ocean (5°N to 30°N and 45°E to 105°E).The objective is to estimate the three-dimensional ocean temperature using only surface satellite observations.
 
 **The proposed system shall:**
-- **1.** Develop a preprocessing and harmonization pipeline for multi-source satellite and ocean datasets.
 
-- **2.** Standardize all datasets to:
-- **a.** Spatial Resolution: 0.25° Ã— 0.25°
-- **b.** Temporal Resolution: Daily
-- **3.** Use surface observations as input variables:
-- **a.** Sea Surface Temperature (SST)
-- **b.** Sea Surface Salinity (SSS)
-- **c.** Sea Surface Height (SSH) / Sea Level Anomaly (SLA)
-- **d.** Surface ocean currents (U, V)
-- **e.** Surface Winds (U, V)
+**1.** Develop a preprocessing and harmonization pipeline for multi-source satellite and ocean datasets.
 
-- **4.** Generate compact satellite embeddings using DL architectures such as:
-- **a.** Convolutional Neural Networks (CNN)
-- **b.** Vision Transformers (ViT)
-- **c.** Autoencoders
-- **d.** Graph Neural Networks (GNN)
-- **e.** Attention-based hybrid architectures
-- **5.** Train reconstruction models that learn the relationship between surface ocean state to temperature profiles.
+**2.** Standardize all datasets to:
 
-- **6.** Reconstruct:
-- **a.** Temperature at standard depth levels. Standard depths in meters: (0, 5, 10, 20, 30, 50, 75, 100, 125, 150, 200, 300, 500, 700, 1000)
-- **7.** Evaluate the reconstruction using independent observations and standard skill metrics like correlation, RMSE, Bias etc.(If a dataset is not available at required resolution, the team may select the openly available product and perform appropriate spatial and temporal interpolation/regridding)
+**a.** Spatial Resolution: 0.25° Ã— 0.25°
+
+**b.** Temporal Resolution: Daily
+
+**3.** Use surface observations as input variables:
+
+**a.** Sea Surface Temperature (SST)
+
+**b.** Sea Surface Salinity (SSS)
+
+**c.** Sea Surface Height (SSH) / Sea Level Anomaly (SLA)
+
+**d.** Surface ocean currents (U, V)
+
+**e.** Surface Winds (U, V)
+
+**4.** Generate compact satellite embeddings using DL architectures such as:
+
+**a.** Convolutional Neural Networks (CNN)
+
+**b.** Vision Transformers (ViT)
+
+**c.** Autoencoders
+
+**d.** Graph Neural Networks (GNN)
+
+**e.** Attention-based hybrid architectures
+
+**5.** Train reconstruction models that learn the relationship between surface ocean state to temperature profiles.
+
+**6.** Reconstruct:
+
+**a.** Temperature at standard depth levels. Standard depths in meters: (0, 5, 10, 20, 30, 50, 75, 100, 125, 150, 200, 300, 500, 700, 1000)
+
+**7.** Evaluate the reconstruction using independent observations and standard skill metrics like correlation, RMSE, Bias etc.(If a dataset is not available at required resolution, the team may select the openly available product and perform appropriate spatial and temporal interpolation/regridding)
 
 - Training Input Datasets The following datasets are recommended for building the training and evaluation pipeline. (Insert table here)
 - Training Target Dataset (Subsurface Temperature)
@@ -1616,17 +1787,24 @@ Weather information is often distributed through multiple portals, bulletins, sa
 There is a need for an intelligent conversational platform that can provide real-time weather information, forecasts, warnings, climate analysis, and decision support in natural language
 
 **Objectives:**
-Develop an AI-powered chatbot platform named WeatherGPT that integrates meteorological datasets, forecasting models, and disaster warning systems to provide accurate, contextual, and multilingual weather intelligence through conversational interfaces
+Develop an AI-powered chatbot platform named WeatherGPT that integrates meteorological datasets, forecasting models, and disaster warning systems to provide accurate, contextual, and multilingual weather intelligence through conversational interfaces.
+- Key Features
 
-**Key Features:**
 **1.** Real-time weather information retrieval.
-- **2.** Natural language querying for weather forecasts.
-- **3.** Integration with numerical weather prediction (NWP) models such as GFS/WRF.
-- **4.** Extreme weather alerts and early warning dissemination.
-- **5.** Location-based forecasting and advisory generation.
-- **6.** Multilingual support for Indian languages.
-- **7.** Climate trend and historical weather analysis.
-- **8.** Voice-enabled interaction for rural accessibility
+
+**2.** Natural language querying for weather forecasts.
+
+**3.** Integration with numerical weather prediction (NWP) models such as GFS/WRF.
+
+**4.** Extreme weather alerts and early warning dissemination.
+
+**5.** Location-based forecasting and advisory generation.
+
+**6.** Multilingual support for Indian languages.
+
+**7.** Climate trend and historical weather analysis.
+
+**8.** Voice-enabled interaction for rural accessibility
 
 **Expected Solution:**
 Participants should develop:
@@ -1965,9 +2143,12 @@ There is a critical need to bridge the gap between traditional craftsmanship and
 Participants are expected to develop an AI-powered, cross-platform mobile application supported by a robust, scalable backend architecture. To ensure high adoption among low-literacy users, the application must feature a highly responsive, minimalist UI/UX design (incorporating modern, clean visual hierarchies and accessible layouts).
 
 **Key features should include:**
-- **1.** AI Image Enhancer & Studio: A built-in camera module that utilizes AI to automatically remove cluttered backgrounds, correct lighting, and format product photos (e.g., textiles, handicrafts) to professional e-commerce standards.
-- **2.** Multilingual Auto-Cataloger: An NLP-based engine that allows artisans to describe their product via voice notes in regional languages. The AI should translate and generate SEO-friendly, professional product descriptions in English and Hindi.
-- **3.** Dynamic Pricing Assistant: A machine learning algorithm that analyzes the uploaded product image and description to suggest an optimal, competitive selling price based on current market trends and raw material costs
+
+**1.** AI Image Enhancer & Studio: A built-in camera module that utilizes AI to automatically remove cluttered backgrounds, correct lighting, and format product photos (e.g., textiles, handicrafts) to professional e-commerce standards.
+
+**2.** Multilingual Auto-Cataloger: An NLP-based engine that allows artisans to describe their product via voice notes in regional languages. The AI should translate and generate SEO-friendly, professional product descriptions in English and Hindi.
+
+**3.** Dynamic Pricing Assistant: A machine learning algorithm that analyzes the uploaded product image and description to suggest an optimal, competitive selling price based on current market trends and raw material costs
 
 **Impact & Applications:**
 
@@ -1998,12 +2179,18 @@ Geographic Location (Village/Block/District), Available Margin Capital (e.g., ?1
 
 **The application must feature two core modules:**
 **Module 1: Hyper-Local Business Feasibility Report The AI must dynamically generate a localized strategy encompassing:**
-- **1.** Market Reach: Estimating the immediate consumer base within a 5–10 km radius of the village/block and identifying primary distribution channels.
-- **2.** Opportunity Analysis: Highlighting unserved or underserved niches within the chosen business sector in that specific local economy.
-- **3.** General Business Analysis (SWOT): A foundational breakdown of Strengths, Weaknesses, Opportunities, and Threats tailored to the specific micro-enterprise budget.
-- **4.** Threats Identification: Pinpointing local risks such as supply chain bottlenecks, seasonal demand fluctuations, or dependency on single buyers.
-- **5.** Competitor Mapping: Using localized demographic and economic data to estimate the density of existing similar businesses in the block.
-- **6.** Product Market Value: Suggesting optimal pricing strategies and predicting the local market value of the goods/services based on regional purchasing power.
+
+**1.** Market Reach: Estimating the immediate consumer base within a 5–10 km radius of the village/block and identifying primary distribution channels.
+
+**2.** Opportunity Analysis: Highlighting unserved or underserved niches within the chosen business sector in that specific local economy.
+
+**3.** General Business Analysis (SWOT): A foundational breakdown of Strengths, Weaknesses, Opportunities, and Threats tailored to the specific micro-enterprise budget.
+
+**4.** Threats Identification: Pinpointing local risks such as supply chain bottlenecks, seasonal demand fluctuations, or dependency on single buyers.
+
+**5.** Competitor Mapping: Using localized demographic and economic data to estimate the density of existing similar businesses in the block.
+
+**6.** Product Market Value: Suggesting optimal pricing strategies and predicting the local market value of the goods/services based on regional purchasing power.
 
 Module 2: Smart Financial Calculator & Scheme Router An integrated financial engine that automatically processes the user's 'Available Margin Capital' to output a clear financial roadmap: 7.
 
@@ -2039,9 +2226,12 @@ Citizens often lack awareness regarding which specific credit scheme fits their 
 
 **Expected Solution:**
 Participants are expected to develop a comprehensive platform that includes:
-- **1.** Smart Scheme Recommender: An AI/rule-based engine that takes basic user inputs (project type, estimated cost, income level, education status) and automatically recommends the most suitable credit or educational loan scheme.
-- **2.** Financial Calculator: A dynamic tool to calculate projected EMIs, accounting for specific scheme guidelines like maximum loan limits, interest rates (e.g., 6.5% to 15% depending on the scheme), and moratorium periods (3 to 12 months).
-- **3.** Geo-Spatial Partner Locator & Router: Integration of a mapping service to identify the nearest eligible Channel Partner (SCA/Bank/NBFC-MFI) based on the user's location and the partner's current fund utilization eligibility (ensuring applications aren't sent to partners with high NPAs or overdues)
+
+**1.** Smart Scheme Recommender: An AI/rule-based engine that takes basic user inputs (project type, estimated cost, income level, education status) and automatically recommends the most suitable credit or educational loan scheme.
+
+**2.** Financial Calculator: A dynamic tool to calculate projected EMIs, accounting for specific scheme guidelines like maximum loan limits, interest rates (e.g., 6.5% to 15% depending on the scheme), and moratorium periods (3 to 12 months).
+
+**3.** Geo-Spatial Partner Locator & Router: Integration of a mapping service to identify the nearest eligible Channel Partner (SCA/Bank/NBFC-MFI) based on the user's location and the partner's current fund utilization eligibility (ensuring applications aren't sent to partners with high NPAs or overdues)
 
 **Impact & Applications:**
 
@@ -2282,14 +2472,22 @@ An AI-driven Unified Material Master Platform shall be developed with the follow
 The proposed solution should enable 'One Nation – One Material Code' for common materials, while maintaining traceability to individual CPSE material codes.
 
 - Key Capabilities
-- **1.** AI Material Matching & Recommendation
-- **2.** Material Standardization & Classification
-- **3.** Duplicate / Near-Duplicate Detection
-- **4.** Common National Material Code Generation
-- **5.** CPSE Code Mapping & Migration Support
-- **6.** Material Master Dashboard & Analytics
-- **7.** Audit Trail & Governance
-- **8.** SAP / ERP Integration
+
+**1.** AI Material Matching & Recommendation
+
+**2.** Material Standardization & Classification
+
+**3.** Duplicate / Near-Duplicate Detection
+
+**4.** Common National Material Code Generation
+
+**5.** CPSE Code Mapping & Migration Support
+
+**6.** Material Master Dashboard & Analytics
+
+**7.** Audit Trail & Governance
+
+**8.** SAP / ERP Integration
 - Expected Impact
 - One Nation – One Common Material Code
 - Reduction in duplicate and redundant material codes
@@ -2316,30 +2514,50 @@ An AI Verification Engine shall analyse the submitted bidder documents and porta
 
 **Expected Solution:**
 An AI-enabled integrated platform shall be developed for automated verification of bidder compliance in GeM procurement. The solution shall:
-- **1.** Integrate with relevant Government portals/databases for automated verification.
-- **2.** Verify Udyam/MSME status and other applicable statutory registrations.
-- **3.** Verify GST registration and return filing status.
-- **4.** Verify PAN and Income Tax compliance.
-- **5.** Check Make in India/local content requirements.
-- **6.** Verify EPFO/ESIC compliance wherever applicable.
-- **7.** Verify Startup India, NSIC and OEM authorization requirements.
-- **8.** Perform DigiLocker/document verification.
-- **9.** Identify blacklisting and debarment status.
-- **10.** Check other applicable statutory and tender-specific compliance requirements.
-- **11.** Use AI to identify missing, inconsistent or non-compliant information.
-- **12.** Generate an overall Compliance Score and Risk Level.
-- **13.** Provide an AI-generated recommendation to the Procurement Officer.
-- **14.** Maintain an auditable record of verification and compliance checks.
+
+**1.** Integrate with relevant Government portals/databases for automated verification.
+
+**2.** Verify Udyam/MSME status and other applicable statutory registrations.
+
+**3.** Verify GST registration and return filing status.
+
+**4.** Verify PAN and Income Tax compliance.
+
+**5.** Check Make in India/local content requirements.
+
+**6.** Verify EPFO/ESIC compliance wherever applicable.
+
+**7.** Verify Startup India, NSIC and OEM authorization requirements.
+
+**8.** Perform DigiLocker/document verification.
+
+**9.** Identify blacklisting and debarment status.
+
+**10.** Check other applicable statutory and tender-specific compliance requirements.
+
+**11.** Use AI to identify missing, inconsistent or non-compliant information.
+
+**12.** Generate an overall Compliance Score and Risk Level.
+
+**13.** Provide an AI-generated recommendation to the Procurement Officer.
+
+**14.** Maintain an auditable record of verification and compliance checks.
 
 The final qualification/disqualification decision shall remain with the Procurement Officer, with the AI system functioning as a decision-support and verification tool.
 
 - Key Capabilities
-- **1.** Multi-Portal Integration – Udyam, GSTN, PAN, GEM etc.,
-- **2.** AI Document Verification – Automated extraction, validation & cross-verification
-- **3.** Automated Compliance Engine – Tender-specific eligibility & statutory compliance checks
-- **4.** Risk & Compliance Scoring – Overall compliance score with bidder risk classification
-- **5.** AI Recommendation Engine – Identifies gaps, discrepancies & recommends compliance status
-- **6.** Audit Trail & Dashboard – Centralized verification status, evidence & decision support
+
+**1.** Multi-Portal Integration – Udyam, GSTN, PAN, GEM etc.,
+
+**2.** AI Document Verification – Automated extraction, validation & cross-verification
+
+**3.** Automated Compliance Engine – Tender-specific eligibility & statutory compliance checks
+
+**4.** Risk & Compliance Scoring – Overall compliance score with bidder risk classification
+
+**5.** AI Recommendation Engine – Identifies gaps, discrepancies & recommends compliance status
+
+**6.** Audit Trail & Dashboard – Centralized verification status, evidence & decision support
 - Expected Impact
 - 60–80% Reduction in Verification Effort
 - Faster Tender Evaluation & Award
@@ -2425,28 +2643,42 @@ The availability of large-scale historical repository of project data together w
 and Scope of Work for Hackathon Under the broader theme of 'AI for Infrastructure Monitoring', the proposed use-case seeks to develop an AI-powered Predictive Analytics and Early Warning System capable of analysing the large volume of project data available at PAIMANA portal, using Open-Source Tools and Softwares, to identify projects that are likely to experience cost escalation, schedule delays and implementation risks before such issues materialise.
 
 The solution should assist policymakers, project administrators and monitoring agencies in prioritising interventions, improving project execution outcomes and enhancing the effectiveness of infrastructure project monitoring. The use-case aims to transform project monitoring from a descriptive reporting framework into a predictive and prescriptive decision-support system capable of generating actionable insights for evidence-based decision-making. In this regard, the proposed solution may address the following technical dimensions:
-- **a)** Development and evaluation of statistical analysis and predictive models using open-source tools and methodologies for analysing project performance and forecasting cost overruns, time overruns and implementation risks.
-- **b)** Assessment of whether Artificial Intelligence (AI) and Machine Learning (ML) techniques provide significant gains over conventional statistical methods in terms of prediction accuracy, early warning capabilities and decision-support for infrastructure project monitoring.
-- **c)** Development of prediction and analytical models based on the existing Common Upload Form (CUF) fields available in the project-monitoring framework, along with an assessment of the extent to which predictive performance is attributable to the current CUF fields vis-Ã -vis additional variables that are not presently captured in the CUF.
+
+**a)** Development and evaluation of statistical analysis and predictive models using open-source tools and methodologies for analysing project performance and forecasting cost overruns, time overruns and implementation risks.
+
+**b)** Assessment of whether Artificial Intelligence (AI) and Machine Learning (ML) techniques provide significant gains over conventional statistical methods in terms of prediction accuracy, early warning capabilities and decision-support for infrastructure project monitoring.
+
+**c)** Development of prediction and analytical models based on the existing Common Upload Form (CUF) fields available in the project-monitoring framework, along with an assessment of the extent to which predictive performance is attributable to the current CUF fields vis-Ã -vis additional variables that are not presently captured in the CUF.
 
 It is suggested/ desirable that the proposed solution may leverage any of the following (using Open-Source Tools/ Softwares);
-- **(a)** Artificial Intelligence (AI),
-- **(b)** Machine Learning (ML),
-- **(c)** Big Data Analytics,
-- **(d)** Forecast Modelling and
-- **(e)** Large Language Models (LLMs); to predict cost and time overruns, generate project-level risk scores, identify emerging implementation challenges, and provide early warning signals and decision-support mechanisms for timely interventions. However, these suggested techniques are only indicative and non-exhaustive. The students may adopt alternative or additional methodologies, tools, frameworks, or analytical approaches, as deemed appropriate, to achieve the stated objectives.
+
+**(a)** Artificial Intelligence (AI),
+
+**(b)** Machine Learning (ML),
+
+**(c)** Big Data Analytics,
+
+**(d)** Forecast Modelling and
+
+**(e)** Large Language Models (LLMs); to predict cost and time overruns, generate project-level risk scores, identify emerging implementation challenges, and provide early warning signals and decision-support mechanisms for timely interventions. However, these suggested techniques are only indicative and non-exhaustive. The students may adopt alternative or additional methodologies, tools, frameworks, or analytical approaches, as deemed appropriate, to achieve the stated objectives.
 
 - Possible Expected Outcomes and Evaluation An indicative solution proposed by the student should comprise of any of the outcomes given below:
-- **a.** Cost Overrun Prediction Model;
-- **b.** Time Overrun Prediction Model;
-- **c.** Project Risk Scoring Framework;
-- **d.** Early Warning Alert System;
-- **e.** Benchmarking and Comparative Analytics Module;
-- **f.** Cost Escalation Driver Analysis Module;
 
-g. AI-powered Monitoring Dashboard;
+**a.** Cost Overrun Prediction Model;
 
-h. LLM-enabled Project Intelligence Assistant;
+**b.** Time Overrun Prediction Model;
+
+**c.** Project Risk Scoring Framework;
+
+**d.** Early Warning Alert System;
+
+**e.** Benchmarking and Comparative Analytics Module;
+
+**f.** Cost Escalation Driver Analysis Module;
+
+**g.** AI-powered Monitoring Dashboard;
+
+**h.** LLM-enabled Project Intelligence Assistant;
 
 i. Documentation and deployment framework.
 
@@ -2658,15 +2890,22 @@ Develop an integrated Al-enabled predictive forecasting system capable of identi
 
 **Expected Solution:**
 The solution should be capable of:
-- **1.** Predicting mastitis risk at least 7-14 days before the appearance of clinical signs.
-- **2.** Generating animal-wise and herd-level risk assessments.
+
+**1.** Predicting mastitis risk at least 7-14 days before the appearance of clinical signs.
+
+**2.** Generating animal-wise and herd-level risk assessments.
 
 3. lntegrating data from sensors, farm management systems, laboratory records, and manual inputs.
-- **4.** Providing real-time alerts and notifications to farmers and veterinarians.
-- **5.** Continuously improving prediction accuracy through Al/ML-based learning models.
-- **6.** Supporting data-driven decision-making through user-friendly dashboards and visualization tools.
-- **7.** Recommending preventive and corrective interventions based on identified risk factors.
-- **8.** Supporting multilingual and mobile-enabled deployment for field-level adoption.
+
+**4.** Providing real-time alerts and notifications to farmers and veterinarians.
+
+**5.** Continuously improving prediction accuracy through Al/ML-based learning models.
+
+**6.** Supporting data-driven decision-making through user-friendly dashboards and visualization tools.
+
+**7.** Recommending preventive and corrective interventions based on identified risk factors.
+
+**8.** Supporting multilingual and mobile-enabled deployment for field-level adoption.
 
 - Data Parameters for Analysis The system should be capable of analysing and conelating multiple risk factors associated with mastitis occurrence, including:
 - Animal health and treatment records and herd strength
@@ -3139,9 +3378,12 @@ Modern smart warehouses rely on fleets of Autonomous Mobile Robots (AMRs) to mov
 
 **Problem Description:**
 The objective is to design a decentralized coordination and collision-avoidance framework for a multi-robot fleet (at least 3 AMRs) operating in a dynamic warehouse environment. The system must run locally on edge hardware (e.g., Raspberry Pi or Jetson Nano onboard each robot) and handle:
-- **1.** Decentralized Communication: Inter-robot messaging to share position and intent without a central server.
-- **2.** Dynamic Multi-Agent Conflict Resolution: Resolving deadlocks and avoiding collisions at narrow intersections or choke points in real-time.
-- **3.** Task Allocation & Re-routing: Automatically re-assigning pickup points or changing paths if one robot encounters a blocked aisle
+
+**1.** Decentralized Communication: Inter-robot messaging to share position and intent without a central server.
+
+**2.** Dynamic Multi-Agent Conflict Resolution: Resolving deadlocks and avoiding collisions at narrow intersections or choke points in real-time.
+
+**3.** Task Allocation & Re-routing: Automatically re-assigning pickup points or changing paths if one robot encounters a blocked aisle
 
 **Expected Solution:**
 A multi-robot simulation featuring:
@@ -3172,9 +3414,12 @@ Outdoor Unmanned Ground Vehicles (UGVs) face unpredictable terrain, changing lig
 
 **Problem Description:**
 The objective is to build an autonomous navigation system for a UGV operating in a GPS-denied outdoor environment using camera feeds as the primary sensor. Students must solve three key challenges:
-- **1.** Path Detection: Real-time identification of safe, traversable paths vs. hazards (e.g., rocks, ditches, trees).
-- **2.** Visual Localization: Estimating the UGV's position and orientation without GPS using visual data.
-- **3.** Collision Avoidance: Dynamically routing the vehicle around sudden obstacles toward a destination
+
+**1.** Path Detection: Real-time identification of safe, traversable paths vs. hazards (e.g., rocks, ditches, trees).
+
+**2.** Visual Localization: Estimating the UGV's position and orientation without GPS using visual data.
+
+**3.** Collision Avoidance: Dynamically routing the vehicle around sudden obstacles toward a destination
 
 **Expected Solution:**
 A functional software module consisting of:
@@ -3272,13 +3517,17 @@ SIH26137,137,Quantum-Inspired Intelligent Traffic Route Optimization in Transpor
 Modern urban transportation networks face persistent challenges of traffic congestion, inefficient route planning, and high operational costs. Classical optimization techniques struggle with large-scale Vehicle Routing Problems (VRP) because of their NP-hard nature. While quantum computers offer theoretical advantages for combinatorial optimization, current hardware limitations prevent their direct large-scale use. Quantum-inspired metaheuristic algorithms (e.g., Quantum Particle Swarm Optimization - QPSO) embed quantum-mechanical concepts into classical computation, delivering stronger global search, faster convergence, and a better balance between exploration and exploitation
 
 **Problem Description:**
-Develop a quantum-inspired metaheuristic optimization framework that dynamically generates near-optimal vehicle routes under real-time or simulated traffic conditions. The transportation network will be modelled as a weighted graph. The framework will focus on algorithms such as Quantum Particle Swarm Optimization (QPSO) and will be benchmarked against conventional metaheuristics and exact methods
+Develop a quantum-inspired metaheuristic optimization framework that dynamically generates near-optimal vehicle routes under real-time or simulated traffic conditions. The transportation network will be modelled as a weighted graph. The framework will focus on algorithms such as Quantum Particle Swarm Optimization (QPSO) and will be benchmarked against conventional metaheuristics and exact methods.
 
-**Objectives:**
+Objectives
+
 **1.** Design a quantum-inspired metaheuristic framework capable of solving large-scale VRP and shortest-path problems.
-- **2.** Minimize total travel time, distance, and traffic congestion.
-- **3.** Reduce computational complexity while improving convergence speed and solution quality compared with classical algorithms.
-- **4.** Demonstrate scalability for smart-city logistics and intelligent transportation systems
+
+**2.** Minimize total travel time, distance, and traffic congestion.
+
+**3.** Reduce computational complexity while improving convergence speed and solution quality compared with classical algorithms.
+
+**4.** Demonstrate scalability for smart-city logistics and intelligent transportation systems
 
 **Expected Solution:**
 A complete software platform that implements a Quantum-Inspired Metaheuristic Optimization Algorithm for intelligent traffic routing. The platform must include graph-based network modelling, mathematical formulation of the optimization problem, constraint handling, convergence analysis, and systematic performance benchmarking.
@@ -3382,8 +3631,10 @@ Marine oil spills inflict great damage on marine ecosystems and several times re
 
 **Problem Description:**
 The core challenge attempts to facilitate detection of oil spills and also in identifying the polluting vessel using remote sensing satellite data, such as SAR and EO imagery and AIS data. Participants are to design an intelligent automated pipeline to do the following:
-- **(a)** Detect and characterise the oil spill and calculating geometric properties and age if feasible.
-- **(b)** Using oceanographic and meteorological data, it is envisaged to trace the slick towards the origin point and time, predict the future flow of the slick, and (c) analyse and attribute the spill to a vessel using historic AIS data to reconstruct vessel traffic around the origin window in space and time. The irrelevant traffic is to be filtered out and potential suspect vessels are to be scored considering various aspects such as proximity, trajectory, behavioural anomalies etc
+
+**(a)** Detect and characterise the oil spill and calculating geometric properties and age if feasible.
+
+**(b)** Using oceanographic and meteorological data, it is envisaged to trace the slick towards the origin point and time, predict the future flow of the slick, and (c) analyse and attribute the spill to a vessel using historic AIS data to reconstruct vessel traffic around the origin window in space and time. The irrelevant traffic is to be filtered out and potential suspect vessels are to be scored considering various aspects such as proximity, trajectory, behavioural anomalies etc
 
 **Expected Solution:**
 An automated detection and hindcasting machine learning model that identified oils slicks from satellite imagery, mapping their drift paths backward and forward. It also ranks potential culprit vessel based on spatio-temporal correlation with AIS data. A suitable visual interface is also to be developed.",https://sih.gov.in/sih2026PS#ViewProblemStatement26143
@@ -3436,20 +3687,31 @@ Critical-infrastructure operators observe their gateway and peering links using 
 
 **Problem Description:**
 The objective is to design and build an AI/ML pipeline that ingests a one-directional stream of IP traffic from a simulated IP data and detects, classifies, and scores cyber-security threats in near real time, using only passively collected data. The pipeline must assume it can never re-contact the traffic's source or destination, cannot rely on completing any handshake itself, and cannot issue any action back across the ingest path. Its output is intelligence as labelled alerts, confidence scores, and supporting evidence displayed on visualisation dashboard. The system is designed to detect the following types of threat:
-- **a.** Volumetric / protocol DDoS: SYN floods, UDP reflection/amplification, and spoofed-source floods identified from flow-level rate and source-IP entropy statistics.
-- **b.** Botnet C2 beaconing: Periodicity and inter-arrival analysis on flows that repeat at regular intervals toward a small set of destinations.
-- **c.** DGA domains and DNS tunnelling: Entropy/n-gram analysis of DNS query names, plus query-length and record-type anomalies.
-- **d.** Malware inside encrypted sessions: Detection from TLS/QUIC metadata alone (JA3/JA3S or JA4 fingerprints, packet-size and timing sequences), without decrypting payload.
-- **e.** Reconnaissance and port scanning: Fan-out patterns from a single source across many destination ports or hosts.
-- **f.** Data exfiltration: Asymmetric flow-volume anomalies and unusual outbound-to-inbound byte ratios
+
+**a.** Volumetric / protocol DDoS: SYN floods, UDP reflection/amplification, and spoofed-source floods identified from flow-level rate and source-IP entropy statistics.
+
+**b.** Botnet C2 beaconing: Periodicity and inter-arrival analysis on flows that repeat at regular intervals toward a small set of destinations.
+
+**c.** DGA domains and DNS tunnelling: Entropy/n-gram analysis of DNS query names, plus query-length and record-type anomalies.
+
+**d.** Malware inside encrypted sessions: Detection from TLS/QUIC metadata alone (JA3/JA3S or JA4 fingerprints, packet-size and timing sequences), without decrypting payload.
+
+**e.** Reconnaissance and port scanning: Fan-out patterns from a single source across many destination ports or hosts.
+
+**f.** Data exfiltration: Asymmetric flow-volume anomalies and unusual outbound-to-inbound byte ratios
 
 **Expected Solution:**
 The system must be delivered as working prototype (source repository) implementing ingest, feature extraction, model inference, and alert output. Accompanying documentation of the model (s) used, features engineered, and the training/validation approach. The prototype must also include a simple dashboard of live or replayed detections with severity and confidence adhering to the following architectural constraints:
-- **a.** Read-only ingest: Treat the input as strictly read-only. Any design that assumes a return path, a live query to the source, or an inline block is out of scope.
-- **b.** No payload decryption: TLS/QUIC sessions must be analysed from metadata only, never from decrypted content.
-- **c.** Streaming, not batch: The pipeline must process traffic incrementally and raise alerts with bounded latency, not just produce an end-of-run report.
-- **d.** Defined throughput target: Solutions must state and demonstrate the traffic rate they were tested against (e.g., flows/sec or Mbps sustained).
-- **e.** Standardized alert schema: Alerts must be structured records for instance timestamp, flow identifier, threat class, confidence score, and supporting evidence feature.",https://sih.gov.in/sih2026PS#ViewProblemStatement26145
+
+**a.** Read-only ingest: Treat the input as strictly read-only. Any design that assumes a return path, a live query to the source, or an inline block is out of scope.
+
+**b.** No payload decryption: TLS/QUIC sessions must be analysed from metadata only, never from decrypted content.
+
+**c.** Streaming, not batch: The pipeline must process traffic incrementally and raise alerts with bounded latency, not just produce an end-of-run report.
+
+**d.** Defined throughput target: Solutions must state and demonstrate the traffic rate they were tested against (e.g., flows/sec or Mbps sustained).
+
+**e.** Standardized alert schema: Alerts must be structured records for instance timestamp, flow identifier, threat class, confidence score, and supporting evidence feature.",https://sih.gov.in/sih2026PS#ViewProblemStatement26145
 SIH26146,146,AI-Powered Monitoring & Analysis of Bitcoin Transaction Traffic,National Technical Research Organisation (NTRO),National Technical Research Organisation (NTRO),Software,Transportation & Logistics,0,500,20 September 2026,,,,"**Background:**
 Bitcoin's pseudonymous, peer-to-peer design lets criminal actors move, layer, and cash out illicit funds — ransomware payments, darknet-market proceeds, extortion, and laundering — while evading traditional financial surveillance.
 
@@ -3506,9 +3768,12 @@ Creating 'Next-Gen' programming language framework, named as 'JOCKY' using cross
 
 **Expected Solution:**
 The scope of the problem is to create scripts/functions in the proprietary programming language (named JOCKY) which enables the user to detect the adversaries:
-- **1.** Independent programming Language - Programming language or custom Language-independent intermediate representation (LLVM) frontend alters basic control-flow graphs, token generation, and binary structures, rendering signature-based detection ineffective.
-- **2.** Polymorphism in scripts/function generated - Rather than manually packing a binary, the scripts/function in framework uses a continuous delivery pipeline. Every iteration automatically passes through integrated obfuscators, variable-encryption routines, and polymorphic engines. This ensures that every deployment instance possesses unique hashes, modified entry points, and altered import tables, neutralizing traditional file-reputation databases.
-- **3.** Living-off-the-Land & BYOVD Execution - The scripts/functions in framework should avoid standard, noisy API calls for core operations like persistence, privilege escalation, and network routing (SOCKS5). Instead, it relies on:
+
+**1.** Independent programming Language - Programming language or custom Language-independent intermediate representation (LLVM) frontend alters basic control-flow graphs, token generation, and binary structures, rendering signature-based detection ineffective.
+
+**2.** Polymorphism in scripts/function generated - Rather than manually packing a binary, the scripts/function in framework uses a continuous delivery pipeline. Every iteration automatically passes through integrated obfuscators, variable-encryption routines, and polymorphic engines. This ensures that every deployment instance possesses unique hashes, modified entry points, and altered import tables, neutralizing traditional file-reputation databases.
+
+**3.** Living-off-the-Land & BYOVD Execution - The scripts/functions in framework should avoid standard, noisy API calls for core operations like persistence, privilege escalation, and network routing (SOCKS5). Instead, it relies on:
 
 A. In-Memory Execution: Utilizing multiple distinct file-less techniques (e.g., process hollowing, reflective DLL injection, API unhooking, direct system calls, or thread execution hijacking) to run secondary script entirely within the memory space of trusted processes.
 
@@ -3518,15 +3783,21 @@ With the rapid growth of digital storage technologies, organizations, government
 
 **Problem Description:**
 The proposed solution aims to develop an integrated software platform consisting of three core modules:
-- **(1)** Secure Drive Eraser,
-- **(2)** Secure File &
-- **(3)** Folder Eraser, and Advanced File Carving and Recovery. The Secure Drive Eraser Module should securely sanitize HDDs, SSDs, USB drives, memory cards, and external storage devices while providing verification mechanisms, audit logging, tamper-resistant reporting, and compliance with industry and government data destruction standards. The Secure File and Folder Eraser Module should enable selective secure deletion of files and folders, remove associated metadata and residual traces, support batch operations, verify erasure success, and provide audit reporting across multiple file systems and operating systems. The Advanced File Carving and Recovery Module should recover deleted files from formatted, damaged, or corrupted media using signature-based, structure-based, and intelligent carving techniques. It should support recovery without file system metadata, fragmented file reconstruction, automatic classification of recovered files, confidence scoring, and comprehensive forensic reporting while preserving evidential integrity
+
+**(1)** Secure Drive Eraser,
+
+**(2)** Secure File &
+
+**(3)** Folder Eraser, and Advanced File Carving and Recovery. The Secure Drive Eraser Module should securely sanitize HDDs, SSDs, USB drives, memory cards, and external storage devices while providing verification mechanisms, audit logging, tamper-resistant reporting, and compliance with industry and government data destruction standards. The Secure File and Folder Eraser Module should enable selective secure deletion of files and folders, remove associated metadata and residual traces, support batch operations, verify erasure success, and provide audit reporting across multiple file systems and operating systems. The Advanced File Carving and Recovery Module should recover deleted files from formatted, damaged, or corrupted media using signature-based, structure-based, and intelligent carving techniques. It should support recovery without file system metadata, fragmented file reconstruction, automatic classification of recovered files, confidence scoring, and comprehensive forensic reporting while preserving evidential integrity
 
 **Expected Solution:**
 The expected outcome is an integrated software platform that combines secure data sanitization and forensic recovery capabilities within a single environment. The solution should provide (1) secure drive erasure with verification and reporting, (2) secure file and folder deletion with metadata cleansing, (3) advanced file carving and recovery from formatted media, support for multiple storage devices and file systems, automated classification and validation of recovered files, comprehensive audit logs and forensic reports, a user-friendly graphical interface, and compliance with forensic and data sanitization standards. Expected deliverables include an integrated software tool,
-- **(1)** Secure Drive Eraser Module,
-- **(2)** Secure File and Folder Eraser Module,
-- **(3)** Advanced File Carving and Recovery Module, Reporting and Audit Management System, User Interface Dashboard, validation and testing documentation, user manuals, technical documentation, and performance evaluation reports. The solution should improve secure data disposal practices, reduce the risk of unauthorized data recovery, enhance forensic investigation capabilities, increase recovery rates from damaged storage media, reduce investigation time, improve compliance and auditability, and provide a unified platform for secure sanitization and forensic recovery operations.",https://sih.gov.in/sih2026PS#ViewProblemStatement26149
+
+**(1)** Secure Drive Eraser Module,
+
+**(2)** Secure File and Folder Eraser Module,
+
+**(3)** Advanced File Carving and Recovery Module, Reporting and Audit Management System, User Interface Dashboard, validation and testing documentation, user manuals, technical documentation, and performance evaluation reports. The solution should improve secure data disposal practices, reduce the risk of unauthorized data recovery, enhance forensic investigation capabilities, increase recovery rates from damaged storage media, reduce investigation time, improve compliance and auditability, and provide a unified platform for secure sanitization and forensic recovery operations.",https://sih.gov.in/sih2026PS#ViewProblemStatement26149
 SIH26150,150,"Development of a Multi-Vendor DVR/NVR Forensic Analysis Tool for Standardized Acquisition, Recovery, and Analysis of Surveillance Evidence.",National Technical Research Organisation (NTRO),National Technical Research Organisation (NTRO),Software,Blockchain & Cybersecurity,0,500,20 September 2026,,,,"**Background:**
 Digital/Network Video Recorders (DVR/NVRs) are widely used for surveillance in government agencies, law enforcement, critical infrastructure, businesses, and residential environments. Major DVR/NVR manufacturers such as Dahua Technology, CP Plus, Honeywell Security, TP-Link, Godrej, Uniview, HIKVISON, and Matrix use proprietary storage formats, file systems, metadata structures, and video encoding mechanisms. During forensic investigations, surveillance footage serves as crucial digital evidence; however, the lack of standardization across DVR/NVR vendors makes acquisition, recovery, analysis, and validation difficult. Investigators often rely on multiple vendor-specific tools, resulting in increased investigation time, inconsistent results, timestamp synchronization issues, challenges in deleted footage recovery, and difficulties in maintaining evidence integrity. Therefore, a unified vendor-agnostic DVR/NVR forensic analysis platform is required to provide standardized workflows for evidence acquisition, recovery, analysis, validation, and reporting
 
@@ -3583,19 +3854,22 @@ This challenge seeks AI systems capable of learning network behaviour, anticipat
 Traditional machine learning classifiers applied to network traffic treat each flow in isolation and map it to a binary benign/malicious label. This discards the temporal and causal structure of an infiltration: the sequence in which ports are probed, the pattern in which SYN flags precede ACK floods, the inter-arrival timing of reconnaissance packets before lateral movement begins. An infiltration is a process unfolding over time, not a single anomalous packet.
 
 - World Models — AI architectures that learn an internal causal simulation of how environment states evolve — offer a fundamentally different approach. Rather than classifying traffic, a world model learns the transition dynamics P (S_t+1 | S_t): given the current observed network state (active flows, flag distributions, port activity, packet timing), what is the probability distribution over future states. This enables forward simulation: roll out K steps ahead and identify whether the current trajectory converges to an infiltration state, before the attacker completes the kill chain.
-- **1.** Input Data — Two Levels of Traffic Feature Teams must work with both flow-level and packet-level features drawn from open-source network traffic datasets:
+
+**1.** Input Data — Two Levels of Traffic Feature Teams must work with both flow-level and packet-level features drawn from open-source network traffic datasets:
 
 - Flow-level features (NetFlow / IPFIX format): source and destination IP/port pairs, TCP flag bitmask (SYN, ACK, FIN, RST, PSH, URG), protocol, bytes transferred per flow, packets per flow, flow duration, inter-arrival time (IAT) statistics (mean, variance, max), and bidirectional flow ratios.
 - Packet-level features (PCAP-derived): Time-To-Live (TTL) values and their variance across a session, TCP window size, IP fragment flags, payload size distribution, port scan signatures (sequential or randomised port access patterns), and retransmission counts.
 
 The combination of both levels is required because flow-level features capture aggregate behaviour (a SYN flood) while packet-level features expose timing and sequencing patterns (a slow reconnaissance scan designed to evade flow-based thresholds).
-- **2.** World Model Architecture The core deliverable is a learned model of network state transition dynamics — not a static classifier. The model must:
+
+**2.** World Model Architecture The core deliverable is a learned model of network state transition dynamics — not a static classifier. The model must:
 
 - Represent network state as a structured feature vector or graph encoding active flows at time t.
 - Learn P (S_t+1 | S_t) — the probability distribution over the next network state given the current state — using a sequence model such as an LSTM, Temporal Transformer, or Graph Neural Network (GNN) operating over time-windowed traffic observations.
 - Be trained on labelled open-source datasets using supervised dynamics learning, where ground-truth state transitions are derived from the attack timeline annotations in the dataset.
 - Generalise to unseen attack patterns — not merely memorize signatures from the training set.
-- **3.** Infiltration Prediction and Attack Stage Mapping The world model must support forward simulation: given current observed traffic, roll out K steps and output
+
+**3.** Infiltration Prediction and Attack Stage Mapping The world model must support forward simulation: given current observed traffic, roll out K steps and output
 
 - A time-series probability score: likelihood of infiltration in the next K time windows.
 - Predicted attack stage: mapping to MITRE ATT&CK phases — Reconnaissance, Initial Access, Lateral Movement, Command & Control, or Exfiltration — based on the predicted future state.
@@ -3677,8 +3951,10 @@ In modern digital infrastructures, network devices act as the primary gatekeeper
 - Operational Gap:
 
 Administrators managing hybrid networks (composed of firewalls, switches, and routers from various vendors like Palo Alto, Cisco, Arista, etc.) lack a centralized 'Source of Truth' for compliance. The challenge is twofold:
-- **1.** Syntactic Diversity: Each vendor uses proprietary Command Line Interface (CLI) syntax, varied hierarchical structures, and distinct firmware/OS versioning. A 'secure password' setting in a Cisco IOS switch is syntactically distinct from the same setting in a Juniper SRX firewall.
-- **2.** Scalability & Adaptation: The network landscape is not static. As organizations adopt 'White Box' networking (SONiC), Cloud-native security groups (AWS/Azure), or specialized AI-driven infrastructure, traditional parsers fail because they cannot predict or interpret the configuration structures of newly acquired or proprietary hardware.
+
+**1.** Syntactic Diversity: Each vendor uses proprietary Command Line Interface (CLI) syntax, varied hierarchical structures, and distinct firmware/OS versioning. A 'secure password' setting in a Cisco IOS switch is syntactically distinct from the same setting in a Juniper SRX firewall.
+
+**2.** Scalability & Adaptation: The network landscape is not static. As organizations adopt 'White Box' networking (SONiC), Cloud-native security groups (AWS/Azure), or specialized AI-driven infrastructure, traditional parsers fail because they cannot predict or interpret the configuration structures of newly acquired or proprietary hardware.
 
 The requested solution is an AI-augmented, vendor-agnostic Compliance Engine. Rather than relying on a hard-coded library of commands—which becomes obsolete as vendors release firmware updates—the system will employ Ai based approaches ( for example (Pattern Recognition and Natural Language Processing (NLP)) to interpret configuration files.
 
@@ -3689,24 +3965,32 @@ The requested solution is an AI-augmented, vendor-agnostic Compliance Engine. Ra
 - Dynamic Adaptation (The 'Training' Loop): When the system encounters an unrecognized configuration structure, it will trigger an Interactive Training Interface. In this GUI, the administrator will be presented with the 'raw' unrecognized command lines. Using a user-friendly, low-code interface, the administrator will map these commands to specific security categories (e.g., 'This command sets the timeout limit'). The AI engine will then update its internal heuristics, effectively 'learning' to parse this new vendor's logic without requiring backend code redeployment.
 
 **The proposed solution should be a user-friendly, robust software platform featuring:**
-- **1.** Unified Ingestion Engine: A dashboard for uploading single or bulk configuration files from any network device.
-- **2.** AI-Powered Training Module: A dedicated, intuitive GUI where administrators can 'train' the system to parse unseen vendor formats by mapping specific command outputs to compliance parameters.
-- **3.** Multi-Framework Compliance Engine: A logic engine that evaluates configurations against user-selected benchmarks (CIS, NIST, STIGs, ISO).
 
-- **4.** Actionable Intelligence & PDF Reporting: A comprehensive, single PDF report for each device, covering:
+**1.** Unified Ingestion Engine: A dashboard for uploading single or bulk configuration files from any network device.
+
+**2.** AI-Powered Training Module: A dedicated, intuitive GUI where administrators can 'train' the system to parse unseen vendor formats by mapping specific command outputs to compliance parameters.
+
+**3.** Multi-Framework Compliance Engine: A logic engine that evaluates configurations against user-selected benchmarks (CIS, NIST, STIGs, ISO).
+
+**4.** Actionable Intelligence & PDF Reporting: A comprehensive, single PDF report for each device, covering:
 
 - Device Identification: Including serial numbers and hardware details.
 
 - Compliance Findings: Clear 'Pass/Fail' results with risk severity assessments.
 
 - Remediation Paths: Device-specific, step-by-step CLI command sequences to resolve non-compliance and harden the device.
-- **5.** Vendor-Agnostic Scalability: A modular architecture designed to support new vendors, standards, and OS versions without requiring manual code modifications for every update.
+
+**5.** Vendor-Agnostic Scalability: A modular architecture designed to support new vendors, standards, and OS versions without requiring manual code modifications for every update.
 
 - Suggested Development Workflow The development can be visualized in the following stages:
-- **1.** Normalization: Converting proprietary CLI outputs into a structured JSON/Schema model.
-- **2.** Compliance Engine: Using Python libraries (e.g., Netmiko or NAPALM) for data collection and custom logic for mapping.
-- **3.** AI/ML Integration: Using Natural Language Processing (NLP) or pattern matching to identify keywords in configurations that the system has not been pre-trained on.
-- **4.** Reporting: Generating dynamic PDFs (e.g., using ReportLab or FPDF in Python) that are customized based on the device's specific model and software version
+
+**1.** Normalization: Converting proprietary CLI outputs into a structured JSON/Schema model.
+
+**2.** Compliance Engine: Using Python libraries (e.g., Netmiko or NAPALM) for data collection and custom logic for mapping.
+
+**3.** AI/ML Integration: Using Natural Language Processing (NLP) or pattern matching to identify keywords in configurations that the system has not been pre-trained on.
+
+**4.** Reporting: Generating dynamic PDFs (e.g., using ReportLab or FPDF in Python) that are customized based on the device's specific model and software version
 
 **Expected Solution / Deliverables:**
 for Evaluation
@@ -3733,16 +4017,22 @@ The framework must be scalable, extensible, vendor-agnostic, and suitable for de
 
 **Expected Solution:**
 This solution should cover universal event schema and processing framework that enables:
-- **a)** Preserve complete raw event data without information loss.
-- **b)** Extract and parse source-specific attributes.
-- **c)** Normalize fields into a common event taxonomy.
-- **d)** Maintain traceability between normalized and original events.
-- **e)** Plug-and-play on boarding of new log sources.
-- **f)** Unified visibility across enterprise environments.
 
-g) Efficient SIEM and Data Lake integration.
+**a)** Preserve complete raw event data without information loss.
 
-h) AI/ML-ready security and operational analytics.
+**b)** Extract and parse source-specific attributes.
+
+**c)** Normalize fields into a common event taxonomy.
+
+**d)** Maintain traceability between normalized and original events.
+
+**e)** Plug-and-play on boarding of new log sources.
+
+**f)** Unified visibility across enterprise environments.
+
+**g)** Efficient SIEM and Data Lake integration.
+
+**h)** AI/ML-ready security and operational analytics.
 
 i) Reduced parser development effort.
 
@@ -3783,7 +4073,8 @@ NCIIPC seeks a deployable Supervisory Analytics Tool for SOC Assessment (SAT-SA)
 (iv).Improve the efficiency, consistency and scalability of supervisory assessments.
 
 The tool is intended to support human examiners and supervisory decision-making. It is not intended to replace supervisory judgement.
-- **1.** Out of Scope The proposed solution is not intended to:
+
+**1.** Out of Scope The proposed solution is not intended to:
 
 (i). Function or replace as a Security Operations Centre (SOC) of CSEs.
 
@@ -3798,12 +4089,14 @@ The tool is intended to support human examiners and supervisory decision-making.
 (vi).Serve as a national cyber monitoring platform.
 
 The solution should be viewed as a supervisory analytics capability, not an operational security capability.
-- **2.** Data Environment Participants may assume access to periodic submissions including:
+
+**2.** Data Environment Participants may assume access to periodic submissions including:
 
 (i). Alert metadata (ii).Case management records (iii).Investigation workflow data (iv).Escalation records (v). Alert disposition and closure information (vi). Asset and system inventory information (where available)
 
 Solutions should minimise dependence on raw logs, packet captures, customer information, or other sensitive operational data unless clearly justified.
-- **3.** Core Supervisory Problem Manual reviews often uncover weaknesses that are not visible through conventional reporting mechanisms. These weaknesses generally fall into two categories:
+
+**3.** Core Supervisory Problem Manual reviews often uncover weaknesses that are not visible through conventional reporting mechanisms. These weaknesses generally fall into two categories:
 
 A. Execution Gaps Situations where documented controls, governance arrangements, policies, procedures, metrics or reported capabilities suggest effective operation, but operational evidence indicates otherwise.
 
@@ -3838,30 +4131,48 @@ B. Negative Space Situations where expected evidence is absent.
 (vi).Absence of evidence that would normally be expected within comparable environments.
 
 The tool should help supervisors identify both known and previously unknown indicators of these conditions.
-- **4.** Functional Requirements Data Ingestion: The tool shall:
-- **1.** Ingest structured data from multiple CSEs.
-- **2.** Support common formats such as CSV, JSON, database exports and APIs where available.
-- **3.** Support analysis of large datasets spanning multiple entities and time periods.
+
+**4.** Functional Requirements Data Ingestion: The tool shall:
+
+**1.** Ingest structured data from multiple CSEs.
+
+**2.** Support common formats such as CSV, JSON, database exports and APIs where available.
+
+**3.** Support analysis of large datasets spanning multiple entities and time periods.
 
 **Supervisory Analytics: The tool shall:**
-- **4.** Identify indicators of detection, investigation and escalation weaknesses.
-- **5.** Detect potential execution gaps.
-- **6.** Detect potential negative space.
-- **7.** Identify anomalies, outliers and suspicious operational patterns.
-- **8.** Perform peer comparison and benchmarking across entities.
-- **9.** Generate entity-level supervisory risk indicators.
-- **10.** Prioritise entities, controls, processes and alert samples for manual review.
+
+**4.** Identify indicators of detection, investigation and escalation weaknesses.
+
+**5.** Detect potential execution gaps.
+
+**6.** Detect potential negative space.
+
+**7.** Identify anomalies, outliers and suspicious operational patterns.
+
+**8.** Perform peer comparison and benchmarking across entities.
+
+**9.** Generate entity-level supervisory risk indicators.
+
+**10.** Prioritise entities, controls, processes and alert samples for manual review.
 
 **Explainability: The tool shall:**
-- **11.** Provide clear rationale for findings.
-- **12.** Present supporting evidence.
-- **13.** Support traceability and auditability of results.
-- **14.** Allow supervisors to understand why an entity or activity was flagged.
+
+**11.** Provide clear rationale for findings.
+
+**12.** Present supporting evidence.
+
+**13.** Support traceability and auditability of results.
+
+**14.** Allow supervisors to understand why an entity or activity was flagged.
 
 - Reporting: The tool shall:
-- **15.** Generate supervisory dashboards and reports.
-- **16.** Support trend analysis across entities and time periods.
-- **17.** Enable drill-down from supervisory findings to underlying evidence.
+
+**15.** Generate supervisory dashboards and reports.
+
+**16.** Support trend analysis across entities and time periods.
+
+**17.** Enable drill-down from supervisory findings to underlying evidence.
 
 - Illustrative Supervisory Use Cases The following examples are illustrative and not exhaustive.
 
@@ -3886,7 +4197,8 @@ The tool should help supervisors identify both known and previously unknown indi
 (ix).Investigation or escalation workloads inconsistent with expected activity levels.
 
 Participants are encouraged to identify additional supervisory signals beyond these examples.
-- **5.** Deployment Requirements The solution shall operate within an NCIIPC-controlled environment.
+
+**5.** Deployment Requirements The solution shall operate within an NCIIPC-controlled environment.
 
 **The solution must:**
 
@@ -3915,7 +4227,8 @@ Participants are encouraged to identify additional supervisory signals beyond th
 (v).Explainability controls.
 
 (vi).Auditability controls.
-- **6.** Deliverables Participants should provide:
+
+**6.** Deliverables Participants should provide:
 
 (i)
 
@@ -3933,11 +4246,14 @@ architecture.
 (vii).Validation methodology.
 
 (viii).Estimated deployment and operational requirements.
-- **7.** Performance Criteria Criterion Weight. Ability to Support Supervisory Assessment, Detection of Execution Gaps, Detection of Negative Space, Explainability and Auditability, Scalability and Performance, Innovation and Additional Supervisory Insights
-- **8.** Validation Requirement Participants shall explain how the proposed solution will be validated against findings derived from expert manual review.
+
+**7.** Performance Criteria Criterion Weight. Ability to Support Supervisory Assessment, Detection of Execution Gaps, Detection of Negative Space, Explainability and Auditability, Scalability and Performance, Innovation and Additional Supervisory Insights
+
+**8.** Validation Requirement Participants shall explain how the proposed solution will be validated against findings derived from expert manual review.
 
 Solutions should demonstrate their ability to identify supervisory signals, operational weaknesses and areas requiring attention with effectiveness comparable to or better than current manual sampling approaches.
-- **9.** Success Criterion A successful solution will enable NCIIPC to efficiently analyse large volumes of SOC alert and case-management data from multiple CSEs, identify entities and operational areas requiring supervisory attention, prioritise manual review effort, and preserve the quality of supervisory assurance currently obtained through expert human examination
+
+**9.** Success Criterion A successful solution will enable NCIIPC to efficiently analyse large volumes of SOC alert and case-management data from multiple CSEs, identify entities and operational areas requiring supervisory attention, prioritise manual review effort, and preserve the quality of supervisory assurance currently obtained through expert human examination
 
 **Expected Solution / Deliverables:**
 for Evaluation
@@ -3954,46 +4270,36 @@ Generation of accurate 3D models of buildings, infrastructure, terrain, and obje
 **Problem Description:**
 Design and develop an AI-enabled system capable of generating a georeferenced and metrically accurate 3D model of a scene using only a single-pass drone video stream captured from a moving UAV. The system should process video frames captured during one flight path and reconstruct:
 
-(i) 3D terrain and structures
-- **(ii)** Building facades and rooftops
-- **(iii)** Roads and infrastructure
-- **(iv)** Vegetation and obstacles
-- **(v)** Textured 3D meshes or point clouds
+(i) 3D terrain and structures (ii) Building facades and rooftops (iii) Roads and infrastructure (iv) Vegetation and obstacles (v) Textured 3D meshes or point clouds
 
 **Expected Solution / Deliverables:**
 The generated model should be suitable for visualization, measurement, and analysis purposes.
 
-- Key Challenges
-- **(i)** Limited viewing angles due to single flight path.
-- **(ii)** Motion blur and video compression artifacts.
-- **(iii)** Variable illumination and shadows.
-- **(iv)** Dynamic objects (vehicles, humans, animals).
-- **(v)** GPS inaccuracies and sensor noise.
-- **(vi)** Real-time or near-real-time processing requirements.
-- **(vii)** Reconstruction of occluded surfaces.
-- **(viii)** Maintaining metric accuracy without extensive Ground Control Points (GCPs)
+- Key Challenges (i) Limited viewing angles due to single flight path.
+
+(ii) Motion blur and video compression artifacts.
+
+(iii) Variable illumination and shadows.
+
+(iv) Dynamic objects (vehicles, humans, animals).
+
+(v) GPS inaccuracies and sensor noise.
+
+(vi) Real-time or near-real-time processing requirements.
+
+(vii) Reconstruction of occluded surfaces.
+
+(viii) Maintaining metric accuracy without extensive Ground Control Points (GCPs)
 
 **Relevant Data Availability:**
-- Mandatory
-- **(i)** Drone video (1080p/4K)
-- **(ii)** GPS coordinates
-- **(iii)** Flight metadata
+- Mandatory (i) Drone video (1080p/4K)
 
-- Optional
-- **(i)** IMU data
-- **(ii)** Barometric altitude
-- **(iii)** Camera intrinsic parameters
-- **(iv)** RTK/PPK corrections Add 'Desired Output' and 'Evaluation Criteria' table here
+(ii) GPS coordinates (iii) Flight metadata
+
+- Optional (i) IMU data (ii) Barometric altitude (iii) Camera intrinsic parameters (iv) RTK/PPK corrections Add 'Desired Output' and 'Evaluation Criteria' table here
 
 **Impact & Applications:**
-- **(i)** Border and strategic area mapping
-- **(ii)** Disaster damage assessment
-- **(iii)** Urban planning and smart cities
-- **(iv)** Infrastructure inspection
-- **(v)** Construction progress monitoring
-- **(vi)** Archaeological documentation
-- **(vii)** Digital twin generation
-- **(viii)** Military reconnaissance and mission planning",https://sih.gov.in/sih2026PS#ViewProblemStatement26158
+(i) Border and strategic area mapping (ii) Disaster damage assessment (iii) Urban planning and smart cities (iv) Infrastructure inspection (v) Construction progress monitoring (vi) Archaeological documentation (vii) Digital twin generation (viii) Military reconnaissance and mission planning",https://sih.gov.in/sih2026PS#ViewProblemStatement26158
 SIH26159,159,SecureMailScope: AI-Assisted Cryptographic Security Posture Assessment for Secure Email Communications,National Technical Research Organisation (NTRO),National Technical Research Organisation (NTRO),Software,Blockchain & Cybersecurity,0,500,20 September 2026,"Synthetic - Participants May generate IMAPS, POP3S,SMTPS Data using any E-mail server /client of their interest and capture pcap dump",,,"**Background:**
 Electronic mail remains one of the most critical communication services for governments, enterprises, financial institutions, and academic organizations. Despite the widespread adoption of Transport Layer Security (TLS), many SMTP, IMAP, and POP3 deployments continue to suffer from cryptographic misconfigurations such as obsolete TLS versions, weak cipher suites, insecure STARTTLS implementations, expired or improperly configured certificates, and non-compliance with modern security standards. These weaknesses expose email infrastructures to downgrade attacks, man-in-the-middle attacks, passive interception, and other cryptographic threats.
 
@@ -4061,7 +4367,8 @@ Traditional protocol analysis tools provide packet-level visibility but often re
 Design and develop an AI-driven protocol analysis platform capable of automatically analysing IPsec VPN deployments established under different security configurations. The platform should inspect captured traffic or live network streams, identify protocol characteristics, infer VPN operating modes, evaluate cryptographic configurations and generate an automated security assessment report.
 
 The solution should assist analysts in understanding the security posture of IPsec deployments without requiring manual packet inspection. Participants are expected to develop an intelligent framework capable of performing the following tasks.
-- **a)** VPN Testbed Generation: Develop a laboratory environment capable of establishing IPsec VPNs using multiple configurations. The framework should support variations such as:
+
+**a)** VPN Testbed Generation: Develop a laboratory environment capable of establishing IPsec VPNs using multiple configurations. The framework should support variations such as:
 
 - Tunnel Mode
 - Transport Mode
@@ -4073,13 +4380,15 @@ The solution should assist analysts in understanding the security posture of IPs
 - Perfect Forward Secrecy enabled/disabled
 - IPv4 and IPv6 communication
 - Different types of traffic – VoIP, Whatsapp, E-mail, Web-browsing, ICMP, Video streaming etc.
-- **b)** Traffic Capture: Acquire network traces using tools such as Wireshark, TCP-dump, Custom packet capture utilities. Captured dataset should include
+
+**b)** Traffic Capture: Acquire network traces using tools such as Wireshark, TCP-dump, Custom packet capture utilities. Captured dataset should include
 
 - IKE negotiation
 - ESP packets
 - AH packets (optional)
 - Normal communication
-- **c)** AI-Based Protocol Identification: Develop an AI engine capable of automatically identifying
+
+**c)** AI-Based Protocol Identification: Develop an AI engine capable of automatically identifying
 - IPsec protocol
 - IKE version
 - Tunnel Mode
@@ -4089,7 +4398,8 @@ The solution should assist analysts in understanding the security posture of IPs
 - Key exchange method
 - Security Association characteristics
 - Predict Type of traffic inside ESP-IPsec
-- **d)** Security Assessment: The framework should automatically evaluate
+
+**d)** Security Assessment: The framework should automatically evaluate
 - Cryptographic strength
 - Configuration compliance
 - Security Association parameters
@@ -4098,7 +4408,8 @@ The solution should assist analysts in understanding the security posture of IPs
 - Forward Secrecy configuration
 - Cipher suite strength
 - Metadata exposure
-- **e)** The output should include a comprehensive security score, traffic analysis and metadata inference. Automatically generate
+
+**e)** The output should include a comprehensive security score, traffic analysis and metadata inference. Automatically generate
 - Executive Report & Technical Report
 - Risk Score
 - Threat Matrix
@@ -4151,10 +4462,14 @@ As a security analyst, the task is to evaluate the application's security postur
 
 **Problem Description:**
 Conduct an authorized security assessment of the World Monitor application to:
-- **1.** Identify security vulnerabilities in the application.
-- **2.** Assess the potential impact of each vulnerability.
-- **3.** Demonstrate proof-of-concept exploitation in a controlled environment.
-- **4.** Recommend remediation measures to mitigate the identified risks
+
+**1.** Identify security vulnerabilities in the application.
+
+**2.** Assess the potential impact of each vulnerability.
+
+**3.** Demonstrate proof-of-concept exploitation in a controlled environment.
+
+**4.** Recommend remediation measures to mitigate the identified risks
 
 **Scope of Work:**
 The assessment should focus on:
@@ -4208,9 +4523,12 @@ OIL collects large volumes of UA/UC observations, near-miss and incident reports
 
 **Problem Description:**
 Build a prototype that ingests OIL's free-text safety reports and automatically
-- **a)** Classifies each as SIF-potential vs non-SIF-potential
-- **b)** Tags it to the relevant IOGP Life-Saving Rule (e.g., Energy Isolation, Hot Work, Confined Space, Line of Fire)
-- **c)** Surfaces recurring precursor patterns (activity, location, barrier failure) via a dashboard.
+
+**a)** Classifies each as SIF-potential vs non-SIF-potential
+
+**b)** Tags it to the relevant IOGP Life-Saving Rule (e.g., Energy Isolation, Hot Work, Confined Space, Line of Fire)
+
+**c)** Surfaces recurring precursor patterns (activity, location, barrier failure) via a dashboard.
 
 Expected Outcome/Solution A working AI/NLP with an interactive dashboard that ranks sites/activities by SIF-precursor density and auto-maps to Life-Saving Rules, enabling HSE to focus interventions where fatal potential is highest
 
@@ -4334,8 +4652,10 @@ IO-VNBD: Inertial and Odometry benchmark dataset for ground vehicle positioning.
 This dataset should be used to train & test the models and submit for screening of proposals. Teams are required to include the preliminary AI models and the results of the position plot inferenced from the subset of IO-VNBD dataset as part of their proposals submitted for evaluation. During the screening process more datasets will be provided for further evaluation of the AI models.
 
 The On-Device Workflow Dead reckoning and GNSS fusion algorithms are hybrid. Complex training happens in the cloud/desktop apriori, while inference happens on the smartphone.
-- **1.** Model Training (Cloud/Desktop): Teams should train AI-ML models using IMU sensors datasets collected using a smartphone mounted on their vehicles or datasets available in open-source domain (for eg. 'IO-VNBD dataset') and bring trained models with them for SIH finale. Teams can bring the downloaded map database (e.g., Open Street Map).
-- **2.** On-Device Execution (Smartphone): During SIH Finale, the trained, lightweight model will need to be exported to the smartphone. It should receive live inputs from the phone's built-in Inertial Measurement Unit (IMU)—the accelerometer, gyroscope, and magnetometer/compass and GNSS data if available. The AI-ML based algorithms should remove IMU sensors noise & bias, predict corrections, perform map matching and determine continuous position using AI-ML based algorithms for both dead reckoning and GNSS+INS Fusion. For complete details regarding final solution, refer to the expected solution section
+
+**1.** Model Training (Cloud/Desktop): Teams should train AI-ML models using IMU sensors datasets collected using a smartphone mounted on their vehicles or datasets available in open-source domain (for eg. 'IO-VNBD dataset') and bring trained models with them for SIH finale. Teams can bring the downloaded map database (e.g., Open Street Map).
+
+**2.** On-Device Execution (Smartphone): During SIH Finale, the trained, lightweight model will need to be exported to the smartphone. It should receive live inputs from the phone's built-in Inertial Measurement Unit (IMU)—the accelerometer, gyroscope, and magnetometer/compass and GNSS data if available. The AI-ML based algorithms should remove IMU sensors noise & bias, predict corrections, perform map matching and determine continuous position using AI-ML based algorithms for both dead reckoning and GNSS+INS Fusion. For complete details regarding final solution, refer to the expected solution section
 
 **Expected Solution:**
 The final deliverable must be a working mobile application and an Edge deployable software engine exhibiting the following technical capabilities:
@@ -4626,34 +4946,41 @@ Only critical alerts, summarized insights, and risk assessments should be transm
 
 **Expected Solution:**
 The proposed solution should include:
-- **1.** Distributed Smart Sensor Nodes
+
+**1.** Distributed Smart Sensor Nodes
 
 - Environmental sensors for water level, rainfall, temperature, humidity, smoke, air quality (PM2.5/PM10), gas leakage, soil moisture, and vibration.
 - Solar-powered, low-maintenance deployments suitable for remote locations.
-- **2.** On-Device AI Analytics
+
+**2.** On-Device AI Analytics
 
 - Real-time anomaly detection at the edge.
 - AI models capable of identifying flood risk, wildfire indicators, air-quality deterioration, and landslide warning signs.
 - Operation without continuous cloud connectivity.
-- **3.** Multi-Hazard Early Warning System
+
+**3.** Multi-Hazard Early Warning System
 
 - Automated alerts for:
 
 - Flooding and flash floods o Forest fires o Hazardous pollution episodes o Extreme weather conditions o Industrial safety incidents
-- **4.** Regional Environmental Risk Mapping
+
+**4.** Regional Environmental Risk Mapping
 
 - Geospatial visualization of sensor data.
 - Dynamic risk maps showing hotspots, risk trends, and affected zones.
 - Integration with emergency management dashboards.
-- **5.** Community and Authority Notification
+
+**5.** Community and Authority Notification
 
 - Mobile and web alerts for local authorities and citizens.
 - Prioritized warning levels based on severity and confidence scores.
-- **6.** Cloud and Edge Hybrid Architecture
+
+**6.** Cloud and Edge Hybrid Architecture
 
 - Edge processing for immediate decisions.
 - Centralized analytics for long-term trend analysis, forecasting, and policy support.
-- **7.** Scalable and Cost-Effective Deployment
+
+**7.** Scalable and Cost-Effective Deployment
 
 - Modular architecture that can scale from a single village to a smart city or state-wide deployment.
 - Support for IoT protocols such as LoRaWAN, NB-IoT, Wi-Fi, or 5G.",https://sih.gov.in/sih2026PS#ViewProblemStatement26178
@@ -4667,41 +4994,48 @@ Design an Intelligent Retail Analytics System that uses smart cameras and on-dev
 
 **Expected Solution:**
 The proposed solution should implement some or all of the following:
-- **1.** Shopper Analytics
+
+**1.** Shopper Analytics
 
 - Detect and count customers entering and exiting the store.
 - Analyze footfall trends by time, day, and store zone.
 - Measure shopper dwell time near products and promotional displays.
 - Generate heatmaps showing customer movement patterns.
-- **2.** Inventory Monitoring
+
+**2.** Inventory Monitoring
 
 - Detect low-stock and out-of-stock situations using shelf-facing cameras.
 - Monitor planogram compliance and product placement.
 - Alert store staff when replenishment is required.
 - Track merchandise availability in real time.
-- **3.** Queue Intelligence
+
+**3.** Queue Intelligence
 
 - Monitor checkout counters and queue lengths.
 - Predict congestion before queues become excessive.
 - Recommend opening additional billing counters.
 - Measure average waiting and service times.
-- **4.** Edge AI Processing
+
+**4.** Edge AI Processing
 
 - Run all computer vision models locally on edge hardware.
 - Operate even during internet disruptions.
 - Reduce cloud bandwidth and operational costs.
 - Support rapid, low-latency decision-making.
-- **5.** Privacy-Aware Analytics
+
+**5.** Privacy-Aware Analytics
 
 - Use anonymous people detection and tracking.
 - Avoid storing personally identifiable information.
 - Process sensitive data locally where possible.
-- **6.** Store Operations Dashboard
+
+**6.** Store Operations Dashboard
 
 - Real-time alerts for stock shortages and queue build-up.
 - Daily and weekly analytics reports.
 - KPI visualization including footfall, conversion indicators, inventory status, and staff efficiency.
-- **7.** Scalable Deployment
+
+**7.** Scalable Deployment
 
 - Support deployment across small stores, supermarkets, and retail chains.
 - Integrate with POS, inventory management, and ERP systems.
@@ -4716,44 +5050,52 @@ Develop a Smart Farming Assistant, an edge AI-powered solution that continuously
 
 **Expected Solution:**
 The proposed solution should implement some or all of the following:
-- **1.** Crop Health Monitoring
+
+**1.** Crop Health Monitoring
 
 - Detect visible signs of crop diseases from leaf and plant images.
 - Identify nutrient deficiencies through color, texture, and growth analysis.
 - Monitor crop growth stages and overall field health.
-- **2.** Pest Detection and Early Warning
+
+**2.** Pest Detection and Early Warning
 
 - Detect common insect pests and infestation patterns using camera-based AI.
 - Generate early alerts before infestations spread across fields.
 - Support targeted intervention rather than blanket pesticide application.
-- **3.** Smart Irrigation Management
+
+**3.** Smart Irrigation Management
 
 - Monitor soil moisture, temperature, humidity, and weather conditions.
 - Detect water stress and over-irrigation scenarios.
 - Recommend optimal irrigation schedules to conserve water.
-- **4.** Environmental Risk Monitoring
+
+**4.** Environmental Risk Monitoring
 
 - Track conditions associated with drought, excessive rainfall, flooding, heat stress, and disease outbreaks.
 - Identify abnormal environmental patterns affecting crop productivity.
 - Provide localized field-level alerts.
-- **5.** Edge AI Processing
+
+**5.** Edge AI Processing
 
 - Perform image analysis and sensor data processing directly on the device.
 - Operate in remote areas with limited or intermittent connectivity.
 - Deliver low-latency recommendations and alerts.
-- **6.** Farmer Advisory System
+
+**6.** Farmer Advisory System
 
 - Provide simple recommendations such as:
 
 - Irrigate now / delay irrigation o Possible disease detected o Pest activity increasing o Heat-stress warning o Flood-risk alert
 
 - Deliver advice through a mobile app, local display, or SMS notifications.
-- **7.** Farm Analytics Dashboard
+
+**7.** Farm Analytics Dashboard
 
 - Historical trends in crop health and environmental conditions.
 - Field-level performance monitoring.
 - Yield-risk forecasting and decision-support insights.
-- **8.** Scalable Deployment
+
+**8.** Scalable Deployment
 
 - Suitable for smallholder farms, cooperatives, and large agricultural enterprises.
 - Support integration with weather data, farm equipment, and irrigation systems.",https://sih.gov.in/sih2026PS#ViewProblemStatement26180
@@ -4769,45 +5111,53 @@ Develop a Personal Health Companion, a privacy-preserving wearable or mobile app
 
 **Expected Solution:**
 The proposed solution should implement some or all of the following:
-- **1.** Continuous Health Monitoring
+
+**1.** Continuous Health Monitoring
 
 - Monitor heart rate, SpO?, body temperature, activity levels, and sleep quality.
 - Track changes in baseline health patterns.
 - Generate personalized wellness indicators.
-- **2.** AI-Based Health Anomaly Detection
+
+**2.** AI-Based Health Anomaly Detection
 
 - Detect abnormal heart rate patterns.
 - Identify indicators of heat stress, dehydration, fatigue, and respiratory issues.
 - Recognize sudden changes that may require medical attention.
 - Provide risk assessments using on-device AI inference.
-- **3.** Disaster-Specific Health Alerts
+
+**3.** Disaster-Specific Health Alerts
 
 - Heat-wave exposure warnings.
 - Air-quality and respiratory-risk alerts.
 - Flood and cyclone-related health advisories.
 - High-risk notifications for vulnerable individuals during extreme weather events.
-- **4.** Environmental Awareness
+
+**4.** Environmental Awareness
 
 - Integrate data from local temperature, humidity, and air-quality sensors.
 - Assess environmental conditions that may affect health.
 - Generate personalized recommendations based on local risks.
-- **5.** Privacy-Preserving Edge AI
+
+**5.** Privacy-Preserving Edge AI
 
 - Perform all health analysis locally on the device.
 - Minimize transmission of sensitive personal information.
 - Operate effectively with intermittent or no internet connectivity.
 - Maintain user control over data sharing.
-- **6.** Emergency Assistance Features
+
+**6.** Emergency Assistance Features
 
 - Automatic detection of falls or medical distress.
 - SOS alerts to caregivers or emergency contacts.
 - Location-enabled emergency assistance when permitted by the user.
-- **7.** Personal Wellness Dashboard
+
+**7.** Personal Wellness Dashboard
 
 - Daily health summaries and trend analysis.
 - Risk scores for heat, respiratory, and cardiovascular stress.
 - Personalized recommendations for hydration, rest, activity, and medical consultation.
-- **8.** Scalable Deployment
+
+**8.** Scalable Deployment
 
 - Support smartphones, smartwatches, fitness bands, and specialized healthcare wearables.
 - Suitable for individual consumers, healthcare providers, disaster-response agencies, and public health programs.",https://sih.gov.in/sih2026PS#ViewProblemStatement26181
@@ -4958,13 +5308,17 @@ Enhancing coordination between law enforcement and financial entities will ensur
 
 **Key Deliverables:**
 Component:- Description
-- **a.** Predictive Analytics Engine :-AI/ML-based system to analyse historical cybercrime and financial data to predict potential withdrawal hotspots
+
+**a.** Predictive Analytics Engine :-AI/ML-based system to analyse historical cybercrime and financial data to predict potential withdrawal hotspots
 
 **Key Features:**
 include pattern detection, geospatial risk modelling, and real-time alerts.
-- **b.** Risk Heatmap Dashboard:-GIS-enabled dashboard visualizing real-time and potential risk zones with drill-down filters by time, location, and crime category etc.
-- **c.** Law Enforcement Interface:-Secure interface for investigators to access alerts, intelligence reports, and evidence documentation.
-- **d.** Alert & Notification System:-Real-time notifications to law enforcements, banks, and I4C officers via SMS, email, API, or dashboard triggers.",https://sih.gov.in/sih2026PS#ViewProblemStatement26184
+
+**b.** Risk Heatmap Dashboard:-GIS-enabled dashboard visualizing real-time and potential risk zones with drill-down filters by time, location, and crime category etc.
+
+**c.** Law Enforcement Interface:-Secure interface for investigators to access alerts, intelligence reports, and evidence documentation.
+
+**d.** Alert & Notification System:-Real-time notifications to law enforcements, banks, and I4C officers via SMS, email, API, or dashboard triggers.",https://sih.gov.in/sih2026PS#ViewProblemStatement26184
 SIH26185,185,Helmet mounted conformal antenna for tactical communications in urban CQB environments.,Ministry of Home Affairs,"National Security Guard (NSG), Police II Division",Hardware,Miscellaneous,0,500,20 September 2026,,,,"**Background:**
 During high-intensity urban counter-terrorism (CT) and Close-Quarter Battle (CQB) operations, the National Security Guard (NSG) operates in highly restrictive indoor spaces like closed rooms, basement areas, narrow corridors and stairwells. For seamless communication, commandos rely on vest-mounted handheld tactical radios. These systems traditionally use rigid, protruding omnidirectional whip antennas mounted on top of the radio itself. In fast-paced operations in confined spaces, these external whip antennas not only restricts ranges but also present an obstruction or cause frequent snagging on obstacles like door frames, windows or loose and hanging objects which can damage the the radio interface or obstruct his tactical movement
 
@@ -4975,10 +5329,14 @@ When an assault team enters a reinforced concrete or steel/glass-framed building
 
 **Expected Solution:**
 A ruggedized, zero-profile wearable antenna system should be developed with the following parameters:-
-- **(a)** Lightweight, ultra-thin and flexible microstrip patch antenna elements designed for integration with NSG ballistic helmets without degrading impact or ballistic protection ratings.
-- **(b)** The conformal array must support UHF and L band frequencies to be able to operate with handheld radios and with the svl equipment like helmet mounted/ body worn cameras to transmit live video streams.
-- **(c)** Advanced RF shielding layers built into the underside of the array to isolate the commando's head from radiation while directing an optimized radiation pattern upward and outward.
-- **(d)** A ruggedized coaxial interface cable routed cleanly along the helmet to connect directly into the NSG existing handheld radios and body-worn camera systems being procured.",https://sih.gov.in/sih2026PS#ViewProblemStatement26185
+
+**(a)** Lightweight, ultra-thin and flexible microstrip patch antenna elements designed for integration with NSG ballistic helmets without degrading impact or ballistic protection ratings.
+
+**(b)** The conformal array must support UHF and L band frequencies to be able to operate with handheld radios and with the svl equipment like helmet mounted/ body worn cameras to transmit live video streams.
+
+**(c)** Advanced RF shielding layers built into the underside of the array to isolate the commando's head from radiation while directing an optimized radiation pattern upward and outward.
+
+**(d)** A ruggedized coaxial interface cable routed cleanly along the helmet to connect directly into the NSG existing handheld radios and body-worn camera systems being procured.",https://sih.gov.in/sih2026PS#ViewProblemStatement26185
 SIH26186,186,AI-Based Predictive Personnel Stress and Welfare Monitoring System for Uniformed Forces,Ministry of Home Affairs,"Central Reserve Police Force (CRPF), Police II Division",Software,MedTech / BioTech / HealthTech,0,500,20 September 2026,"Anonymized HR datasets, deployment records, leave history, wellness survey data, workload data, and simulated behavioral datasets.",,,"**Background:**
 Personnel serving in Central Armed Police Forces (CAPFs), Armed Forces, and other uniformed services operate under physically demanding, psychologically stressful, and often hazardous conditions. Extended deployments, operational pressures, separation from families, irregular working hours, and exposure to traumatic incidents can significantly impact mental well-being. Currently, stress identification largely depends on manual observation and self-reporting, which may delay timely intervention. There is a need for a proactive, technology-driven solution that can identify early indicators of stress, burnout, and psychological distress while maintaining privacy and organizational trust
 
@@ -5007,31 +5365,52 @@ Develop an AI-driven predictive analytics platform comprising:
 The solution should identify trends and risk factors while ensuring that individual dignity, confidentiality, and data protection requirements are maintained.
 
 - Expected Benefits
-- **1.** Early identification of personnel requiring welfare support.
-- **2.** Reduction in stress-related incidents and operational fatigue.
-- **3.** Improved mental well-being and workforce resilience.
-- **4.** Enhanced readiness and operational effectiveness.
-- **5.** Better workload distribution and personnel management.
-- **6.** Improved retention and job satisfaction.
-- **7.** Data-driven welfare planning and resource allocation.
-- **8.** Reduction in incidents arising from prolonged occupational stress.
+
+**1.** Early identification of personnel requiring welfare support.
+
+**2.** Reduction in stress-related incidents and operational fatigue.
+
+**3.** Improved mental well-being and workforce resilience.
+
+**4.** Enhanced readiness and operational effectiveness.
+
+**5.** Better workload distribution and personnel management.
+
+**6.** Improved retention and job satisfaction.
+
+**7.** Data-driven welfare planning and resource allocation.
+
+**8.** Reduction in incidents arising from prolonged occupational stress.
 
 - Preliminary Scope
-- **1.** Development of predictive behavioral analytics algorithms.
-- **2.** Mobile-based wellness self-reporting platform.
-- **3.** AI-driven stress and burnout risk assessment engine.
-- **4.** Commander and Welfare Officer dashboard.
-- **5.** Automated intervention recommendation system.
-- **6.** Secure integration with HRMS and personnel management systems.
-- **7.** Privacy-preserving analytics and role-based access controls.
+
+**1.** Development of predictive behavioral analytics algorithms.
+
+**2.** Mobile-based wellness self-reporting platform.
+
+**3.** AI-driven stress and burnout risk assessment engine.
+
+**4.** Commander and Welfare Officer dashboard.
+
+**5.** Automated intervention recommendation system.
+
+**6.** Secure integration with HRMS and personnel management systems.
+
+**7.** Privacy-preserving analytics and role-based access controls.
 
 - Key Technical Challenges
-- **1.** Ensuring privacy and confidentiality of sensitive personnel data.
-- **2.** Preventing stigmatization of personnel identified as potentially at risk.
-- **3.** Minimizing false positives and false negatives in risk prediction.
-- **4.** Ensuring ethical and transparent AI decision-making.
-- **5.** Securing highly sensitive psychological and welfare-related information against cyber threats.
-- **6.** Building trust among personnel regarding system usage and data protection.
+
+**1.** Ensuring privacy and confidentiality of sensitive personnel data.
+
+**2.** Preventing stigmatization of personnel identified as potentially at risk.
+
+**3.** Minimizing false positives and false negatives in risk prediction.
+
+**4.** Ensuring ethical and transparent AI decision-making.
+
+**5.** Securing highly sensitive psychological and welfare-related information against cyber threats.
+
+**6.** Building trust among personnel regarding system usage and data protection.
 
 - Strategic Importance
 - Enhances force readiness and personnel welfare.
@@ -5040,13 +5419,20 @@ The solution should identify trends and risk factors while ensuring that individ
 - Promotes preventive mental health care rather than reactive interventions.
 - Creates an indigenous capability tailored to the unique operational and cultural environment of Indian CAPFs and Armed Forces.
 - Potential Market
-- **1.** Central Armed Police Forces (CAPFs).
-- **2.** Indian Armed Forces.
-- **3.** State Police Organizations.
-- **4.** Disaster Response and Emergency Services.
-- **5.** Government Organizations with high-stress workforces.
-- **6.** Corporate Human Resource and Employee Wellness Platforms.
-- **7.** International security and workforce welfare markets.
+
+**1.** Central Armed Police Forces (CAPFs).
+
+**2.** Indian Armed Forces.
+
+**3.** State Police Organizations.
+
+**4.** Disaster Response and Emergency Services.
+
+**5.** Government Organizations with high-stress workforces.
+
+**6.** Corporate Human Resource and Employee Wellness Platforms.
+
+**7.** International security and workforce welfare markets.
 
 - Expected Impact The proposed AI-enabled Personnel Stress and Welfare Monitoring System will help transform welfare management from a reactive process to a proactive and preventive framework. By enabling early identification of stress indicators and facilitating timely interventions, the solution can improve personnel well-being, enhance operational effectiveness, and strengthen the long-term resilience of uniformed services while maintaining the highest standards of privacy, ethics, and data security.",https://sih.gov.in/sih2026PS#ViewProblemStatement26186
 SIH26187,187,AI-Based Intelligent Video Analytics Platform for Border Surveillance using existing CCTV Infrastructure.,Ministry of Home Affairs,"Sashastra Seema Bal (SSB), Police II Division",Software,Smart Automation,0,500,20 September 2026,,,,"**Background:**

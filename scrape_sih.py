@@ -186,8 +186,8 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
             list_match = re.match(r'^([a-z0-9]+[\.\)])\s*(.*)$', txt, re.IGNORECASE)
             if list_match:
                 prefix = list_match.group(1)
-                heading_content = list_match.group(2)
-                b.replace_with(f'\n- **{prefix}** {heading_content}\n')
+                heading_content = list_match.group(2).strip()
+                b.replace_with(f'\n\n**{prefix}** {heading_content}\n')
             else:
                 b.replace_with(f' **{txt}** ')
                 
@@ -207,30 +207,36 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
     text = fix_punctuation_spacing(text)
     text = re.sub(r'([A-Za-z0-9]):([A-Za-z])', r'\1: \2', text)
     
-    # Check for inline list patterns: ' a. Collect... b. Use...' or ' a) ... b) ...'
-    text = re.sub(r'(\s+)([a-f]\.|\([a-f]\)|[a-f]\))\s+([A-Z])', r'\n- **\2** \3', text)
-    text = re.sub(r'(\s+)(\d+\.|\(\d+\)|\d+\))\s+([A-Z])', r'\n- **\2** \3', text)
-    text = re.sub(r'(\s+)(\([i|v|x]+\))\s+([A-Z])', r'\n- **\2** \3', text)
+    # Inlined list splitters: ' b. Text', ' c. Text' (put on new line with **b.**)
+    text = re.sub(r'(\s+)([a-h]\.|\([a-h]\)|[a-h]\))\s+([A-Z])', r'\n\n**\2** \3', text)
+    text = re.sub(r'(\s+)(\d+\.|\(\d+\)|\d+\))\s+([A-Z])', r'\n\n**\2** \3', text)
     
     # Process lines
+    lines = text.splitlines()
     cleaned_lines = []
-    for line in text.splitlines():
-        line = line.strip()
-        if not line:
+    
+    for line in lines:
+        l = line.strip()
+        if not l:
             cleaned_lines.append('')
             continue
             
         # Clean double bullets or weird bullet chars
-        line = re.sub(r'^(?:[•·â€¢]\s*)+', '- ', line)
-        line = re.sub(r'^[oO]\s+(?=[A-Z])', '- ', line)
-        line = re.sub(r'^-\s*[•·â€¢]\s*', '- ', line)
-        line = re.sub(r'^\*\s*(?!\*)', '- ', line)
+        l = re.sub(r'^(?:[•·â€¢]\s*)+', '- ', l)
+        l = re.sub(r'^[oO]\s+(?=[A-Z])', '- ', l)
+        l = re.sub(r'^-\s*[•·â€¢]\s*', '- ', l)
+        l = re.sub(r'^\*\s*(?!\*)', '- ', l)
         
-        # Strip lines that contain only bullet characters or lone asterisks (e.g. '- *', '• *', '*')
-        if re.match(r'^(?:[•·â€¢\-\*]\s*)+$', line):
+        # If line is solely bullets, dashes, asterisks, whitespace
+        if re.fullmatch(r'[\s•·â€¢\-\*]+', l):
             continue
             
-        cleaned_lines.append(line)
+        # If line starts with '- **Header:**' or '- **a.**' remove the leading '- '
+        l = re.sub(r'^-\s*(\*\*[^*]+:\*\*)$', r'\1', l)
+        l = re.sub(r'^-\s*(\*\*[a-z0-9]+[\.\)]\*\*)\s*', r'\1 ', l, flags=re.IGNORECASE)
+        l = re.sub(r'^-\s*(\*\*A scalable [^*]+\*\*)\s*', r'\1\n', l, flags=re.IGNORECASE)
+        
+        cleaned_lines.append(l)
         
     text = '\n'.join(cleaned_lines)
     text = re.sub(r'@@HEADER@@(.*?)@@', r'**\1:**', text)
@@ -242,10 +248,6 @@ def clean_problem_description(raw_input: str) -> tuple[str, str]:
         
     # Clean double header artifacts like '**Header:**\n**Header:**'
     text = re.sub(r'(\*\*[^*]+:\*\*)\s*\n+\s*\1', r'\1', text)
-    
-    # Clean stray '- *' or empty bullets
-    text = re.sub(r'(?:\n|^)\s*-\s*\*\s*(?=\n|$)', '', text)
-    text = re.sub(r'(?:\n|^)\s*-\s*(?=\n|$)', '', text)
     text = re.sub(r'\n{3,}', '\n\n', text).strip()
     
     # Extract dataset availability if present in text
