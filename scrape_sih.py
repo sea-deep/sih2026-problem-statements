@@ -83,50 +83,136 @@ def fix_punctuation_spacing(text: str) -> str:
     
     return text
 
-def clean_problem_description(text: str) -> tuple[str, str]:
-    """Clean markdown text, normalize headers, fix inlined lists and missing spaces."""
-    if not text:
+KNOWN_HEADERS = {
+    'background': 'Background',
+    'context': 'Background',
+    'overview': 'Overview',
+    'introduction': 'Overview',
+    'problem description': 'Problem Description',
+    'description': 'Problem Description',
+    'detailed description': 'Problem Description',
+    'problem statement': 'Problem Statement',
+    'problem definition': 'Problem Definition',
+    'existing problem': 'Existing Problem',
+    'existing system': 'Existing System',
+    'core challenge': 'Core Challenge',
+    'challenge': 'Challenge',
+    'challenges': 'Challenges',
+    'expected solution / outcome': 'Expected Solution / Outcome',
+    'expected outcome / solution': 'Expected Solution / Outcome',
+    'expected outcome': 'Expected Outcome',
+    'expected outcomes': 'Expected Outcome',
+    'expected solution': 'Expected Solution',
+    'expected solutions': 'Expected Solution',
+    'expected solution (indicative)': 'Expected Solution (Indicative)',
+    'expected solution/deliverables': 'Expected Solution / Deliverables',
+    'desired outcome': 'Desired Outcome',
+    'desired outcomes': 'Desired Outcome',
+    'desired solution': 'Desired Solution',
+    'proposed solution': 'Proposed Solution',
+    'solution': 'Expected Solution',
+    'expected output': 'Expected Output',
+    'expected outputs': 'Expected Output',
+    'objective': 'Objectives',
+    'objectives': 'Objectives',
+    'goal': 'Objectives',
+    'goals': 'Objectives',
+    'purpose': 'Objectives',
+    'aim': 'Objectives',
+    'scope of work': 'Scope of Work',
+    'scope of the project': 'Scope of Work',
+    'scope': 'Scope of Work',
+    'key deliverables': 'Key Deliverables',
+    'deliverables': 'Key Deliverables',
+    'deliverable': 'Key Deliverables',
+    'key features': 'Key Features',
+    'key functionalities': 'Key Features',
+    'features': 'Key Features',
+    'technical requirements': 'Technical Requirements',
+    'hardware & runtime environment': 'Hardware & Runtime Environment',
+    'hardware requirements': 'Hardware Requirements',
+    'technology stack': 'Technology Stack',
+    'tech stack': 'Technology Stack',
+    'allowed frameworks': 'Allowed Frameworks',
+    'relevant data availability': 'Relevant Data Availability',
+    'relevant data availability (if any)': 'Relevant Data Availability',
+    'dataset availability': 'Relevant Data Availability',
+    'dataset details': 'Relevant Data Availability',
+    'input data': 'Relevant Data Availability',
+    'data availability': 'Relevant Data Availability',
+    'proposed methodology': 'Methodology & Approach',
+    'methodology': 'Methodology & Approach',
+    'approach': 'Methodology & Approach',
+    'architecture': 'Architecture & Design',
+    'evaluation criteria': 'Evaluation Criteria',
+    'success criteria': 'Evaluation Criteria',
+    'key metrics for evaluation': 'Evaluation Criteria',
+    'key metrics': 'Evaluation Criteria',
+    'performance metrics': 'Evaluation Criteria',
+    'impact': 'Impact & Applications',
+    'benefits': 'Impact & Applications',
+    'potential applications': 'Impact & Applications',
+    'use cases': 'Use Cases'
+}
+
+def clean_problem_description(raw_input: str) -> tuple[str, str]:
+    """Convert raw description HTML or text to clean, normalized Markdown without artifacts."""
+    if not raw_input:
         return '', ''
+        
+    s = str(raw_input)
+    if '&lt;' in s and '&gt;' in s:
+        s = html_module.unescape(s)
+        
+    s = re.sub(r'<!--.*?-->', '', s, flags=re.DOTALL)
+    s = re.sub(r'<br\s*/?>', '\n', s, flags=re.IGNORECASE)
+    s = re.sub(r'</p>', '\n\n', s, flags=re.IGNORECASE)
+    s = re.sub(r'<p[^>]*>', '', s, flags=re.IGNORECASE)
     
-    # 1. Unescape HTML entities & clean mojibake
+    soup = BeautifulSoup(s, 'html.parser')
+    
+    # Process headings and bold tags
+    for b in soup.find_all(['b', 'strong', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'u']):
+        txt = b.get_text().strip()
+        if not txt:
+            b.decompose()
+            continue
+            
+        txt_clean = re.sub(r'[:\-—\s]+$', '', txt).strip().lower()
+        if txt_clean in KNOWN_HEADERS:
+            canonical_title = KNOWN_HEADERS[txt_clean]
+            b.replace_with(f'\n\n@@HEADER@@{canonical_title}@@\n')
+        else:
+            list_match = re.match(r'^([a-z0-9]+[\.\)])\s*(.*)$', txt, re.IGNORECASE)
+            if list_match:
+                prefix = list_match.group(1)
+                heading_content = list_match.group(2)
+                b.replace_with(f'\n- **{prefix}** {heading_content}\n')
+            else:
+                b.replace_with(f' **{txt}** ')
+                
+    # Process anchor links
+    for a in soup.find_all('a'):
+        href = a.get('href', '').strip()
+        txt = a.get_text(strip=True)
+        if href and href not in ['#', '']:
+            if txt and txt != href:
+                a.replace_with(f' [{txt}]({href}) ')
+            else:
+                a.replace_with(f' {href} ')
+                
+    text = soup.get_text()
     text = html_module.unescape(text)
     text = fix_mojibake(text)
-    
-    # 2. Strip HTML comments and tags
-    text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
-    text = re.sub(r'</?(?:div|span|p|br|table|tr|td|th)[^>]*>', '\n', text, flags=re.IGNORECASE)
-    
-    # 3. Fix typographic punctuation spacing
     text = fix_punctuation_spacing(text)
     text = re.sub(r'([A-Za-z0-9]):([A-Za-z])', r'\1: \2', text)
     
-    # Comprehensive header vocabulary across all SIH problem statements
-    header_list = [
-        'Expected Solution / Outcome', 'Expected Solution/Outcome', 'Expected Outcome / Solution', 'Expected Outcome/Solution',
-        'Expected Solution / Deliverables', 'Expected Solution/Deliverables', 'Expected Solution (Indicative)', 'Expected Solution(Indicative)',
-        'Expected Solution', 'Expected Solutions', 'Expected Outcome', 'Expected Outcomes', 'Expected Output', 'Expected Outputs',
-        'Problem Description', 'Problem Statement', 'Problem Definition', 'Detailed Description', 'Description',
-        'Background', 'Context', 'Overview', 'Introduction', 'Existing System', 'Existing Problem',
-        'Core Challenge', 'Challenge', 'Challenges',
-        'Desired Outcome', 'Desired Outcomes', 'Desired Solution', 'Proposed Solution', 'Solution',
-        'Objective', 'Objectives', 'Goal', 'Goals', 'Purpose', 'Aim',
-        'Scope of Work', 'Scope of the Project', 'Scope',
-        'Key Deliverables', 'Expected Deliverables', 'Deliverable', 'Deliverables',
-        'Key Features', 'Key Functionalities', 'Features', 'Core Features',
-        'Technical Requirements', 'Hardware & Runtime Environment', 'Hardware Requirements', 'Technology Stack', 'Tech Stack', 'Allowed Frameworks',
-        'Relevant Data Availability', 'Dataset Availability', 'Dataset Details', 'Input Data', 'Data Availability', 'Data Sources',
-        'Proposed Methodology', 'Methodology', 'Approach', 'Architecture',
-        'Evaluation Criteria', 'Success Criteria', 'Key Metrics for Evaluation', 'Key Metrics', 'Performance Metrics', 'Key Milestones',
-        'Impact', 'Benefits', 'Target Audience', 'Stakeholders', 'Potential Applications', 'Use Cases'
-    ]
+    # Check for inline list patterns: ' a. Collect... b. Use...' or ' a) ... b) ...'
+    text = re.sub(r'(\s+)([a-f]\.|\([a-f]\)|[a-f]\))\s+([A-Z])', r'\n- **\2** \3', text)
+    text = re.sub(r'(\s+)(\d+\.|\(\d+\)|\d+\))\s+([A-Z])', r'\n- **\2** \3', text)
+    text = re.sub(r'(\s+)(\([i|v|x]+\))\s+([A-Z])', r'\n- **\2** \3', text)
     
-    header_list_sorted = sorted(header_list, key=len, reverse=True)
-    header_regex_str = '|'.join(re.escape(h) for h in header_list_sorted)
-    header_line_pattern = re.compile(
-        r'^(?:[•\-*·]\s*)?\*?\*?(' + header_regex_str + r')\*?\*?(?:\s*[:\-—•]\s*|\s+(?=[A-Z0-9\(\'\"])|$)',
-        re.IGNORECASE
-    )
-    
+    # Process lines
     cleaned_lines = []
     for line in text.splitlines():
         line = line.strip()
@@ -134,92 +220,45 @@ def clean_problem_description(text: str) -> tuple[str, str]:
             cleaned_lines.append('')
             continue
             
-        m = header_line_pattern.match(line)
-        if m:
-            matched_header = m.group(1).strip()
-            # Standardize header casing and naming
-            std_header = matched_header.title()
-            if 'Outcome' in std_header and 'Solution' in std_header:
-                std_header = 'Expected Solution / Outcome'
-            elif std_header in ['Description', 'Detailed Description']:
-                std_header = 'Problem Description'
-            
-            rest = line[m.end():].strip()
-            rest = re.sub(r'^[•\-*·]\s*', '- ', rest)
-            cleaned_lines.append('')
-            cleaned_lines.append(f'**{std_header}:**')
-            if rest:
-                cleaned_lines.append(rest)
-            continue
-            
-        # Format inline list items: a) ... b) ... c) ...
-        line = re.sub(r'(?:^|[\n\s]+)([a-d]\))\s+([A-Z])', r'\n- **\1** \2', line)
-        line = re.sub(r'(?:^|[\n\s]+)(\([a-d]\))\s+([A-Z])', r'\n- **\1** \2', line)
-        line = re.sub(r'(?:^|[\n\s]+)(\([i|v|x]+\))\s+([A-Z])', r'\n- **\1** \2', line)
-        
-        # Standard bullets
+        # Clean double bullets or weird bullet chars
         line = re.sub(r'^(?:[•·â€¢]\s*)+', '- ', line)
         line = re.sub(r'^[oO]\s+(?=[A-Z])', '- ', line)
         line = re.sub(r'^-\s*[•·â€¢]\s*', '- ', line)
         line = re.sub(r'^\*\s*(?!\*)', '- ', line)
-        line = re.sub(r'^-\s*(\*\*[^*]+:\*\*)$', r'\1', line)
         
+        # Strip lines that contain only bullet characters or lone asterisks (e.g. '- *', '• *', '*')
+        if re.match(r'^(?:[•·â€¢\-\*]\s*)+$', line):
+            continue
+            
         cleaned_lines.append(line)
         
-    result = '\n'.join(cleaned_lines)
-    result = re.sub(r'\n{3,}', '\n\n', result).strip()
+    text = '\n'.join(cleaned_lines)
+    text = re.sub(r'@@HEADER@@(.*?)@@', r'**\1:**', text)
+    
+    # Also handle plain text headers that weren't inside <b> tags
+    for raw_k, canon_title in sorted(KNOWN_HEADERS.items(), key=lambda x: len(x[0]), reverse=True):
+        pattern = r'(?:\n|^|\.\s+)(?:[•\-*·]\s*)?' + re.escape(raw_k) + r'(?:\s*[:\-—]\s*|\s+(?=[A-Z0-9]))'
+        text = re.sub(pattern, f'\n\n**{canon_title}:**\n', text, flags=re.IGNORECASE)
+        
+    # Clean double header artifacts like '**Header:**\n**Header:**'
+    text = re.sub(r'(\*\*[^*]+:\*\*)\s*\n+\s*\1', r'\1', text)
+    
+    # Clean stray '- *' or empty bullets
+    text = re.sub(r'(?:\n|^)\s*-\s*\*\s*(?=\n|$)', '', text)
+    text = re.sub(r'(?:\n|^)\s*-\s*(?=\n|$)', '', text)
+    text = re.sub(r'\n{3,}', '\n\n', text).strip()
     
     # Extract dataset availability if present in text
     extracted_data_info = ''
-    data_match = re.search(r'\*\*(?:Relevant Data Availability|Dataset Availability|Dataset Details|Input Data):\*\*\s*\n*(.*?)(?=\n\n\*\*|\Z)', result, flags=re.DOTALL)
+    data_match = re.search(r'\*\*(?:Relevant Data Availability):\*\*\s*\n*(.*?)(?=\n\n\*\*|\Z)', text, flags=re.DOTALL)
     if data_match:
         extracted_data_info = data_match.group(1).strip()
         
-    return result, extracted_data_info
+    return text, extracted_data_info
 
 def clean_html_to_markdown(raw_input) -> str:
     """Convert HTML content element to clean, formatted Markdown."""
-    if raw_input is None:
-        return ""
-    
-    if hasattr(raw_input, 'contents'):
-        s = ''.join(str(c) for c in raw_input.contents)
-    else:
-        s = str(raw_input)
-        
-    # Unescape HTML entities if double encoded (e.g. &lt;b&gt; -> <b>)
-    if '&lt;' in s and '&gt;' in s:
-        s = html_module.unescape(s)
-        
-    # Remove outer div wrappers
-    s = re.sub(r'^<div[^>]*>', '', s.strip())
-    s = re.sub(r'</div>$', '', s.strip())
-    
-    # Replace breaks and paragraph tags with newlines
-    s = re.sub(r'<br\s*/?>', '\n', s)
-    s = re.sub(r'</p>', '\n\n', s)
-    s = re.sub(r'<p[^>]*>', '', s)
-    
-    sub_soup = BeautifulSoup(s, 'html.parser')
-    
-    # Format headings and bold tags
-    for b in sub_soup.find_all(['b', 'strong', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'u']):
-        txt = b.get_text()
-        if txt.strip():
-            b.replace_with(f' **{txt.strip()}** ')
-            
-    # Format anchor links
-    for a in sub_soup.find_all('a'):
-        href = a.get('href', '').strip()
-        txt = a.get_text(strip=True)
-        if href and href != '#':
-            if txt and txt != href:
-                a.replace_with(f' [{txt}]({href}) ')
-            else:
-                a.replace_with(f' {href} ')
-                
-    text = sub_soup.get_text()
-    cleaned, _ = clean_problem_description(text)
+    cleaned, _ = clean_problem_description(raw_input)
     return cleaned
 
 def parse_sections(markdown_text: str) -> dict:
@@ -492,11 +531,11 @@ def clean_existing_dataset(
     structured_sections_count = 0
     
     for p in data['problem_statements']:
-        raw_desc = p.get('raw_description') or p['description']
-        cleaned_desc, extracted_data = clean_problem_description(raw_desc)
+        raw_input = p.get('description_html') or p.get('raw_description') or p['description']
+        cleaned_desc, extracted_data = clean_problem_description(raw_input)
         
         if 'raw_description' not in p:
-            p['raw_description'] = raw_desc
+            p['raw_description'] = p['description']
         p['description'] = cleaned_desc
         
         if not p.get('dataset_info') and extracted_data and extracted_data.lower() not in ['none', 'n/a', 'nil', 'none.']:
