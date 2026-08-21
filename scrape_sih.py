@@ -534,6 +534,17 @@ def clean_existing_dataset(
         raw_input = p.get('description_html') or p.get('raw_description') or p['description']
         cleaned_desc, extracted_data = clean_problem_description(raw_input)
         
+        # Strip lone bullet/asterisk lines
+        lines = []
+        for line in cleaned_desc.splitlines():
+            l = line.strip()
+            if re.fullmatch(r'[\s•·â€¢\-\*]+', l):
+                continue
+            l = re.sub(r'^[•·â€¢\-]\s*\*(?!\*)\s*', '- ', l)
+            lines.append(l)
+        cleaned_desc = '\n'.join(lines)
+        cleaned_desc = re.sub(r'\n{3,}', '\n\n', cleaned_desc).strip()
+        
         if 'raw_description' not in p:
             p['raw_description'] = p['description']
         p['description'] = cleaned_desc
