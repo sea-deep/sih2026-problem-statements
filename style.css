@@ -167,6 +167,19 @@ body.no-scroll {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 4px;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-badge {
