@@ -623,35 +623,46 @@ function closeDetailModal() {
   state.activeModalProblem = null;
 }
 
-// Convert clean markdown strings to readable HTML with bold, paragraphs & nested lists
+// Convert clean markdown strings to readable HTML with bold, paragraphs & nested lists using standard marked library
 function formatMarkdownToHtml(md) {
   if (!md) return '';
-  let str = escapeHtml(md.trim());
+  const trimmed = md.trim();
   
-  // Convert markdown links
-  str = str.replace(/\[(.*?)\]\((https?:\/\/.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600; text-decoration:underline;">$1 &nearr;</a>');
+  if (typeof marked !== 'undefined' && marked.parse) {
+    // Configure standard marked parser
+    marked.setOptions({
+      gfm: true,
+      breaks: true
+    });
+    
+    let html = marked.parse(trimmed);
+    
+    // Add target="_blank" to external links
+    html = html.replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)"([^>]*)>/gi, (match, href, rest) => {
+      if (href.startsWith('http://') || href.startsWith('https://')) {
+        return `<a href="${href}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600; text-decoration:underline;"${rest}>`;
+      }
+      return match;
+    });
+    
+    if (typeof DOMPurify !== 'undefined') {
+      return DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
+    }
+    return html;
+  }
   
-  // Convert bold
+  // Fallback if marked CDN fails to load
+  let str = escapeHtml(trimmed);
   str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  
-  // Convert indented sub-bullets (2 or more leading spaces)
-  str = str.replace(/^[ ]{2,}[•\-*]\s*(.*?)$/gm, '<li class="prose-sub-li">$1</li>');
-  str = str.replace(/((?:<li class="prose-sub-li">.*?<\/li>\s*)+)/g, '<ul class="prose-sub-ul">$1</ul>');
-  
-  // Convert top-level bullets
   str = str.replace(/^[•\-*]\s*(.*?)$/gm, '<li class="prose-li">$1</li>');
   str = str.replace(/((?:<li class="prose-li">.*?<\/li>\s*)+)/g, '<ul class="prose-ul">$1</ul>');
-  
-  // Split by double newlines into clean blocks
   const blocks = str.split(/\n{2,}/);
-  const htmlBlocks = blocks.map(b => {
+  return blocks.map(b => {
     b = b.trim();
     if (!b) return '';
     if (b.startsWith('<ul') || b.startsWith('<ol')) return b;
     return `<p class="prose-p">${b.replace(/\n/g, '<br/>')}</p>`;
-  }).filter(Boolean);
-  
-  return htmlBlocks.join('');
+  }).filter(Boolean).join('');
 }
 
 // Toggle Bookmark

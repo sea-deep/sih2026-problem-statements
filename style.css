@@ -1445,31 +1445,49 @@ mark {
   color: var(--text-dark);
 }
 
+.flat-prose p,
+.section-content p,
 .prose-p {
   margin-bottom: 0.85rem;
 }
 
+.flat-prose p:last-child,
+.section-content p:last-child,
 .prose-p:last-child {
   margin-bottom: 0;
 }
 
+.flat-prose ul,
+.section-content ul,
 .prose-ul {
   margin: 0.4rem 0 0.85rem 1.25rem;
   padding-left: 0.5rem;
   list-style-type: disc;
 }
 
+.flat-prose ol,
+.section-content ol {
+  margin: 0.4rem 0 0.85rem 1.25rem;
+  padding-left: 0.5rem;
+}
+
+.flat-prose li,
+.section-content li,
 .prose-li {
   margin-bottom: 0.3rem;
   line-height: 1.55;
 }
 
+.flat-prose ul ul,
+.section-content ul ul,
 .prose-sub-ul {
-  margin: 0.3rem 0 0.6rem 2.25rem;
+  margin: 0.3rem 0 0.6rem 1.25rem;
   padding-left: 0.5rem;
   list-style-type: circle;
 }
 
+.flat-prose ul ul li,
+.section-content ul ul li,
 .prose-sub-li {
   margin-bottom: 0.25rem;
   line-height: 1.5;
