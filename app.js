@@ -1049,7 +1049,14 @@ function setupEventListeners() {
   // Export Menu Toggle
   function toggleExportMenu(e) {
     e.stopPropagation();
-    el.exportMenu.classList.toggle('show');
+    const btn = e.currentTarget;
+    const parent = btn.closest('.export-dropdown');
+    if (parent && el.exportMenu) {
+      if (el.exportMenu.parentElement !== parent) {
+        parent.appendChild(el.exportMenu);
+      }
+      el.exportMenu.classList.toggle('show');
+    }
   }
   
   if (el.desktopExportBtn) el.desktopExportBtn.addEventListener('click', toggleExportMenu);
@@ -1057,7 +1064,7 @@ function setupEventListeners() {
   
   document.addEventListener('click', e => {
     if (!e.target.closest('.export-dropdown')) {
-      el.exportMenu.classList.remove('show');
+      if (el.exportMenu) el.exportMenu.classList.remove('show');
     }
   });
   

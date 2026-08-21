@@ -819,16 +819,16 @@ body.no-scroll {
 
 .flat-dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 6px);
   right: 0;
-  margin-top: 0.5rem;
   background-color: #FFFFFF;
   border: 2px solid var(--border-dark);
   border-radius: var(--radius-md);
   width: 280px;
+  max-width: calc(100vw - 2rem);
   padding: 0.5rem;
   display: none;
-  z-index: 50;
+  z-index: 100;
 }
 
 .flat-dropdown-menu.show {
