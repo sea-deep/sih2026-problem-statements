@@ -71,7 +71,7 @@
   <div class="mobile-action-bar">
     <button class="btn btn-primary btn-mobile-filter" id="mobileFilterToggle">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
-      <span>Filters</span>
+      <span>Filter Categories</span>
       <span class="filter-count-badge" id="mobileActiveFilterCount" style="display:none;">0</span>
     </button>
 
@@ -95,12 +95,12 @@
     <!-- Sidebar Overlay for Mobile -->
     <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-    <!-- Filter Sidebar -->
+    <!-- Filter Sidebar (Pure Filters - Decoupled from Search) -->
     <aside class="sidebar-drawer" id="sidebarDrawer">
       <div class="sidebar-header">
         <div class="sidebar-title-wrap">
-          <h2 class="sidebar-heading">Filter Statements</h2>
-          <span class="sidebar-subheading">Refine 2026 problem statements</span>
+          <h2 class="sidebar-heading">Refine Results</h2>
+          <span class="sidebar-subheading">Categories, themes & ministries</span>
         </div>
         <div class="sidebar-header-actions">
           <button class="btn-text-bold" id="resetFiltersBtn">Reset All</button>
@@ -110,25 +110,6 @@
 
       <div class="sidebar-scrollable">
         
-        <!-- Search Field -->
-        <div class="filter-block">
-          <label class="block-label" for="searchInput">Keyword Search</label>
-          <div class="input-container">
-            <input type="text" id="searchInput" placeholder="Search keywords, ID, title..." autocomplete="off">
-            <button class="clear-search-btn" id="clearSearchBtn" style="display:none;">&times;</button>
-          </div>
-          <div class="scope-row">
-            <label class="scope-text" for="searchScopeSelect">Scope:</label>
-            <select id="searchScopeSelect" class="form-select-sm">
-              <option value="all">Full Text (Everywhere)</option>
-              <option value="title">Title Only</option>
-              <option value="description">Description & Solution</option>
-              <option value="organization">Organization Only</option>
-              <option value="id">Problem ID Only</option>
-            </select>
-          </div>
-        </div>
-
         <!-- Category Segment Buttons -->
         <div class="filter-block">
           <label class="block-label">Category</label>
@@ -229,6 +210,30 @@
 
     <!-- Main Results Column -->
     <main class="main-body">
+
+      <!-- Decoupled Prominent Search Command Bar -->
+      <section class="search-command-section">
+        <div class="search-command-bar">
+          <div class="search-icon-badge">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <div class="search-input-wrap">
+            <input type="text" id="searchInput" placeholder="Search keywords, PS ID (e.g. SIH26001), topics, technologies, ministries..." autocomplete="off">
+            <button class="clear-search-btn" id="clearSearchBtn" style="display:none;" title="Clear search">&times;</button>
+          </div>
+          <div class="search-scope-block">
+            <label class="scope-label" for="searchScopeSelect">In:</label>
+            <select id="searchScopeSelect" class="search-scope-select">
+              <option value="all">Full Text</option>
+              <option value="title">Title Only</option>
+              <option value="description">Description Only</option>
+              <option value="organization">Organization</option>
+              <option value="id">Problem ID</option>
+            </select>
+          </div>
+          <div class="shortcut-pill" title="Press '/' to focus search">/</div>
+        </div>
+      </section>
 
       <!-- Desktop Top Action Bar -->
       <div class="desktop-top-bar">
