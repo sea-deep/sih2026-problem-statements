@@ -147,6 +147,19 @@ body {
   gap: 1.5rem;
 }
 
+.brand-top-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .brand-badge {
   display: inline-block;
   background-color: var(--accent);
@@ -157,7 +170,6 @@ body {
   text-transform: uppercase;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-sm);
-  margin-bottom: 0.5rem;
 }
 
 .hero-title {
@@ -174,6 +186,41 @@ body {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   margin-top: 0.25rem;
+}
+
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+/* GitHub Button */
+.btn-github {
+  background-color: #111827;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-github:hover {
+  background-color: #000000;
+  border-color: #FFFFFF;
+  transform: scale(1.04);
+}
+
+.github-subtext {
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 /* Stats Blocks */
@@ -225,7 +272,31 @@ body {
   top: 0;
   z-index: 30;
   justify-content: space-between;
+  align-items: center;
   gap: 0.75rem;
+}
+
+.mobile-right-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon-round {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-muted);
+  color: var(--text-main);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-icon-round:hover {
+  background-color: #E5E7EB;
 }
 
 .btn-mobile-filter {
@@ -1308,6 +1379,15 @@ mark {
   
   .hero-title {
     font-size: 1.75rem;
+  }
+
+  .hero-right-col {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .btn-github {
+    display: none; /* Accessible from mobile action bar */
   }
   
   .hero-stats {
