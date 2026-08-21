@@ -14,7 +14,7 @@ const state = {
     search: '',
     searchScope: 'all',
     category: 'ALL',
-    techTag: null,
+    techTags: new Set(), // Multi-select Set of tag IDs
     theme: '',
     organization: '',
     department: '',
@@ -215,29 +215,16 @@ function updateDeptDropdown(selectedOrg) {
   }
 }
 
-// Render Tech Tag filter pills
+// Render Multi-Select Tech Tag filter pills
 function renderTechTags() {
-  el.techTagsContainer.innerHTML = TECH_TAGS.map(tag => `
-    <button class="tech-tag-pill" data-tech-id="${tag.id}">
-      ${tag.label}
-    </button>
-  `).join('');
-  
-  el.techTagsContainer.addEventListener('click', e => {
-    const btn = e.target.closest('.tech-tag-pill');
-    if (!btn) return;
-    const tagId = btn.dataset.techId;
-    
-    if (state.filters.techTag === tagId) {
-      state.filters.techTag = null;
-      btn.classList.remove('active');
-    } else {
-      state.filters.techTag = tagId;
-      el.techTagsContainer.querySelectorAll('.tech-tag-pill').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-    applyFilters();
-  });
+  el.techTagsContainer.innerHTML = TECH_TAGS.map(tag => {
+    const isActive = state.filters.techTags.has(tag.id);
+    return `
+      <button class="tech-tag-pill ${isActive ? 'active' : ''}" data-tech-id="${tag.id}">
+        ${tag.label}
+      </button>
+    `;
+  }).join('');
 }
 
 // Apply Filters & Search
@@ -246,7 +233,7 @@ function applyFilters() {
     search,
     searchScope,
     category,
-    techTag,
+    techTags,
     theme,
     organization,
     department,
@@ -259,7 +246,9 @@ function applyFilters() {
   } = state.filters;
   
   const query = search.trim().toLowerCase();
-  const selectedTagObj = techTag ? TECH_TAGS.find(t => t.id === techTag) : null;
+  
+  // Selected Tech Tag Objects
+  const activeTagObjs = Array.from(techTags).map(id => TECH_TAGS.find(t => t.id === id)).filter(Boolean);
   
   let results = state.allProblems.filter(item => {
     // Category filter
@@ -281,10 +270,11 @@ function applyFilters() {
     if (hasContact && !item.contact_info) return false;
     if (favoritesOnly && !state.bookmarkedIds.has(item.id)) return false;
     
-    // Tech Tag regex filter
-    if (selectedTagObj) {
+    // Multi-Select Tech Tags: Match ANY of the selected tags (OR condition)
+    if (activeTagObjs.length > 0) {
       const fullText = `${item.title} ${item.description} ${item.theme}`;
-      if (!selectedTagObj.regex.test(fullText)) return false;
+      const matchesAnyTag = activeTagObjs.some(t => t.regex.test(fullText));
+      if (!matchesAnyTag) return false;
     }
     
     // Search Query
@@ -346,7 +336,7 @@ function updateMobileFilterBadge() {
   let count = 0;
   if (state.filters.search) count++;
   if (state.filters.category !== 'ALL') count++;
-  if (state.filters.techTag) count++;
+  count += state.filters.techTags.size;
   if (state.filters.theme) count++;
   if (state.filters.organization) count++;
   if (state.filters.department) count++;
@@ -500,17 +490,19 @@ function renderTable() {
 // Render Active Filter Chips
 function renderActiveFilterChips() {
   const chips = [];
-  const { search, category, techTag, theme, organization, department, hasDataset, hasLinks, hasVideo, hasContact, favoritesOnly } = state.filters;
+  const { search, category, techTags, theme, organization, department, hasDataset, hasLinks, hasVideo, hasContact, favoritesOnly } = state.filters;
   
   if (search) chips.push({ label: `"${search}"`, key: 'search' });
-  if (category !== 'ALL') chips.push({ label: category, key: 'category' });
-  if (techTag) {
-    const t = TECH_TAGS.find(x => x.id === techTag);
-    if (t) chips.push({ label: t.label, key: 'techTag' });
-  }
-  if (theme) chips.push({ label: theme, key: 'theme' });
-  if (organization) chips.push({ label: organization, key: 'organization' });
-  if (department) chips.push({ label: department, key: 'department' });
+  if (category !== 'ALL') chips.push({ label: `Category: ${category}`, key: 'category' });
+  
+  techTags.forEach(tagId => {
+    const t = TECH_TAGS.find(x => x.id === tagId);
+    if (t) chips.push({ label: `Tag: ${t.label}`, key: `techTag_${tagId}` });
+  });
+  
+  if (theme) chips.push({ label: `Theme: ${theme}`, key: 'theme' });
+  if (organization) chips.push({ label: `Org: ${organization}`, key: 'organization' });
+  if (department) chips.push({ label: `Dept: ${department}`, key: 'department' });
   if (hasDataset) chips.push({ label: 'With Dataset', key: 'hasDataset' });
   if (hasLinks) chips.push({ label: 'With Links', key: 'hasLinks' });
   if (hasVideo) chips.push({ label: 'With Video', key: 'hasVideo' });
@@ -620,12 +612,14 @@ function openDetailModal(problemId) {
   document.getElementById('tab-full-desc').classList.add('active');
   
   el.detailModalBackdrop.classList.add('show');
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('no-scroll');
 }
 
 function closeDetailModal() {
   el.detailModalBackdrop.classList.remove('show');
-  document.body.style.overflow = '';
+  if (!el.sidebarDrawer.classList.contains('open')) {
+    document.body.classList.remove('no-scroll');
+  }
   state.activeModalProblem = null;
 }
 
@@ -792,19 +786,37 @@ function setupEventListeners() {
   function openMobileDrawer() {
     el.sidebarDrawer.classList.add('open');
     el.sidebarBackdrop.classList.add('show');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll');
   }
   
   function closeMobileDrawer() {
     el.sidebarDrawer.classList.remove('open');
     el.sidebarBackdrop.classList.remove('show');
-    document.body.style.overflow = '';
+    if (!el.detailModalBackdrop.classList.contains('show')) {
+      document.body.classList.remove('no-scroll');
+    }
   }
   
   el.mobileFilterToggle.addEventListener('click', openMobileDrawer);
   el.closeSidebarBtn.addEventListener('click', closeMobileDrawer);
   el.sidebarBackdrop.addEventListener('click', closeMobileDrawer);
   el.applyMobileFiltersBtn.addEventListener('click', closeMobileDrawer);
+
+  // Multi-Select Tech Tag Click Handler
+  el.techTagsContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.tech-tag-pill');
+    if (!btn) return;
+    const tagId = btn.dataset.techId;
+    
+    if (state.filters.techTags.has(tagId)) {
+      state.filters.techTags.delete(tagId);
+      btn.classList.remove('active');
+    } else {
+      state.filters.techTags.add(tagId);
+      btn.classList.add('active');
+    }
+    applyFilters();
+  });
 
   // Search input debounce
   let debounceTimer;
@@ -893,7 +905,7 @@ function setupEventListeners() {
       search: '',
       searchScope: 'all',
       category: 'ALL',
-      techTag: null,
+      techTags: new Set(),
       theme: '',
       organization: '',
       department: '',
@@ -942,9 +954,11 @@ function setupEventListeners() {
     } else if (key === 'category') {
       state.filters.category = 'ALL';
       el.categoryGroup.querySelectorAll('.flat-segment').forEach(s => s.classList.toggle('active', s.dataset.category === 'ALL'));
-    } else if (key === 'techTag') {
-      state.filters.techTag = null;
-      el.techTagsContainer.querySelectorAll('.tech-tag-pill').forEach(b => b.classList.remove('active'));
+    } else if (key.startsWith('techTag_')) {
+      const tagId = key.replace('techTag_', '');
+      state.filters.techTags.delete(tagId);
+      const pill = el.techTagsContainer.querySelector(`.tech-tag-pill[data-tech-id="${tagId}"]`);
+      if (pill) pill.classList.remove('active');
     } else if (key === 'theme') {
       state.filters.theme = '';
       el.themeSelect.value = '';
@@ -1055,7 +1069,10 @@ function setupEventListeners() {
         exported_at: new Date().toISOString(),
         filter_count: state.filteredProblems.length,
         total_in_source: state.allProblems.length,
-        active_filters: state.filters
+        active_filters: {
+          ...state.filters,
+          techTags: Array.from(state.filters.techTags)
+        }
       },
       problem_statements: state.filteredProblems
     };

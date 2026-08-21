@@ -64,6 +64,10 @@
   backdrop-filter: none !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-canvas);
@@ -72,6 +76,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
 }
 
 /* Custom Scrollbars */
@@ -320,22 +329,25 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  min-height: calc(100vh - 170px);
+  align-items: flex-start;
+  min-height: auto;
 }
 
 /* ==========================================================================
    SIDEBAR (Desktop & Mobile Drawer)
    ========================================================================== */
 .sidebar-drawer {
-  width: 330px;
-  min-width: 330px;
+  width: 340px;
+  min-width: 340px;
   background-color: var(--bg-muted);
-  border-right: 2px solid var(--border-light);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 150px);
   position: sticky;
-  top: 0;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  margin: 1.5rem 0 1.5rem 1.5rem;
   z-index: 20;
 }
 
@@ -346,6 +358,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-muted);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .sidebar-heading {
@@ -380,11 +393,19 @@ body {
 .sidebar-scrollable {
   padding: 1.25rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   flex: 1;
 }
 
 .filter-block {
   margin-bottom: 1.35rem;
+}
+
+.block-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
 }
 
 .block-label {
@@ -396,6 +417,14 @@ body {
   letter-spacing: 0.05em;
   color: var(--text-main);
   margin-bottom: 0.45rem;
+}
+
+.multi-hint {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* Search input */
@@ -498,7 +527,7 @@ body {
   color: #FFFFFF;
 }
 
-/* Tech Tag Pills */
+/* Multi-select Tech Tag Pills */
 .tech-tags-grid {
   display: flex;
   flex-wrap: wrap;
@@ -508,13 +537,14 @@ body {
 .tech-tag-pill {
   padding: 0.35rem 0.6rem;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   background-color: #FFFFFF;
   color: var(--text-main);
   border: 2px solid transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s;
+  user-select: none;
 }
 
 .tech-tag-pill:hover {
@@ -524,7 +554,7 @@ body {
 .tech-tag-pill.active {
   background-color: var(--primary);
   color: #FFFFFF;
-  font-weight: 700;
+  border-color: var(--primary);
 }
 
 /* Checkbox Stack */
@@ -661,7 +691,7 @@ body {
 .main-body {
   flex: 1;
   padding: 1.5rem 2rem;
-  overflow-y: auto;
+  min-width: 0;
 }
 
 .desktop-top-bar {
@@ -673,6 +703,12 @@ body {
   border-bottom: 2px solid var(--border-light);
 }
 
+.search-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .summary-count {
   font-family: var(--font-heading);
   font-size: 1.1rem;
@@ -682,6 +718,16 @@ body {
 .summary-count strong {
   font-weight: 800;
   color: var(--primary);
+}
+
+.edition-pill {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  background-color: var(--accent-tint);
+  color: var(--accent-text);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
 }
 
 /* Export Dropdown */
@@ -931,6 +977,16 @@ body {
   text-overflow: ellipsis;
 }
 
+.year-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  background-color: var(--bg-dark);
+  color: #FFFFFF;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
 .card-tools {
   display: flex;
   align-items: center;
@@ -1084,6 +1140,73 @@ mark {
 }
 
 /* ==========================================================================
+   FOOTER & DISCLAIMER (Clean Unobtrusive Block)
+   ========================================================================== */
+.site-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+}
+
+.footer-card {
+  background-color: var(--bg-muted);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.footer-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: block;
+}
+
+.footer-edition {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.footer-disclaimer p {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: #6B7280;
+}
+
+.footer-disclaimer strong {
+  color: var(--text-main);
+}
+
+.footer-disclaimer a {
+  color: var(--primary);
+}
+
+/* ==========================================================================
    MODAL DIALOG (Flat High-Contrast)
    ========================================================================== */
 .flat-modal-backdrop {
@@ -1092,7 +1215,7 @@ mark {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(17, 24, 39, 0.7);
+  background-color: rgba(17, 24, 39, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1149,6 +1272,7 @@ mark {
 .modal-scroll-area {
   padding: 1.5rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   flex: 1;
 }
 
@@ -1436,6 +1560,9 @@ mark {
     width: 85%;
     max-width: 360px;
     height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    border-radius: 0;
     z-index: 50;
     transform: translateX(-100%);
     transition: transform 0.25s ease-in-out;

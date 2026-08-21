@@ -34,10 +34,10 @@
               <path d="M35 8L16 34H32L27 56L48 28H32L35 8Z" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div class="brand-badge">SIH 2026</div>
+          <div class="brand-badge">SIH 2026 EDITION</div>
         </div>
-        <h1 class="hero-title">Problem Statement Explorer</h1>
-        <p class="hero-subtitle">Smart India Hackathon • Comprehensive Research & Analysis Portal</p>
+        <h1 class="hero-title">Smart India Hackathon 2026</h1>
+        <p class="hero-subtitle">Interactive Problem Statement Research & Analysis Explorer</p>
       </div>
 
       <!-- Right Header Actions (GitHub & Stats) -->
@@ -100,7 +100,7 @@
       <div class="sidebar-header">
         <div class="sidebar-title-wrap">
           <h2 class="sidebar-heading">Filter Statements</h2>
-          <span class="sidebar-subheading">Refine by topic, ministry & tags</span>
+          <span class="sidebar-subheading">Refine 2026 problem statements</span>
         </div>
         <div class="sidebar-header-actions">
           <button class="btn-text-bold" id="resetFiltersBtn">Reset All</button>
@@ -139,9 +139,12 @@
           </div>
         </div>
 
-        <!-- Quick Tech Tags -->
+        <!-- Multi-select Quick Tech Tags -->
         <div class="filter-block">
-          <label class="block-label">Technology & Domain Tags</label>
+          <div class="block-label-row">
+            <label class="block-label" style="margin-bottom:0;">Technology & Domains</label>
+            <span class="multi-hint">Multi-select</span>
+          </div>
           <div class="tech-tags-grid" id="techTagsContainer">
             <!-- Rendered by JS -->
           </div>
@@ -231,6 +234,7 @@
       <div class="desktop-top-bar">
         <div class="search-summary">
           <span class="summary-count"><strong id="summaryCount">0</strong> of <span id="totalCount">226</span> statements</span>
+          <span class="edition-pill">SIH 2026</span>
         </div>
 
         <div class="desktop-actions">
@@ -317,6 +321,26 @@
         <button class="btn btn-primary" id="emptyResetBtn">Reset All Filters</button>
       </div>
 
+      <!-- Site Footer & Disclaimer Section -->
+      <footer class="site-footer">
+        <div class="footer-card">
+          <div class="footer-top-row">
+            <div class="footer-brand-info">
+              <span class="footer-title">Smart India Hackathon 2026 Explorer</span>
+              <span class="footer-edition">Edition 2026 • Open Research Tool</span>
+            </div>
+            <div class="footer-links">
+              <a href="https://sih.gov.in/sih2026PS" target="_blank" rel="noopener noreferrer" class="footer-link">Official SIH 2026 Portal &nearr;</a>
+              <a href="https://github.com/sea-deep/sih2026-problem-statements" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository &nearr;</a>
+            </div>
+          </div>
+
+          <div class="footer-disclaimer">
+            <p><strong>Disclosure & Disclaimer:</strong> This portal is an independent, non-official research explorer built to assist participants, researchers, and developers in exploring and analyzing problem statements for <strong>Smart India Hackathon (SIH) 2026</strong>. All problem statements, organization names, department details, and trademarks are the property of their respective government ministries, institutions, and organizations. Data is extracted directly from the public SIH 2026 portal (<a href="https://sih.gov.in/sih2026PS" target="_blank" rel="noopener noreferrer">sih.gov.in/sih2026PS</a>). For official registrations, submissions, and guidelines, refer exclusively to the official Smart India Hackathon website.</p>
+          </div>
+        </div>
+      </footer>
+
     </main>
   </div>
 
@@ -330,6 +354,7 @@
           <span class="color-badge" id="modalCategoryBadge">Software</span>
           <span class="mono-id-tag" id="modalPsId">SIH26001</span>
           <span class="theme-tag-flat" id="modalThemeTag">Disaster Management</span>
+          <span class="year-badge">2026</span>
         </div>
         <button class="modal-close-cross" id="closeModalBtn" aria-label="Close Modal">&times;</button>
       </div>
@@ -413,7 +438,7 @@
       <!-- Modal Footer -->
       <div class="modal-bottom-bar">
         <button class="btn btn-secondary" id="modalFavoriteBtn">★ Bookmark</button>
-        <a href="#" target="_blank" class="btn btn-outline" id="modalOfficialLink">Official SIH Page &nearr;</a>
+        <a href="#" target="_blank" class="btn btn-outline" id="modalOfficialLink">Official SIH 2026 Page &nearr;</a>
         <button class="btn btn-primary" id="modalCloseActionBtn">Close</button>
       </div>
 
