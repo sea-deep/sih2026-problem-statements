@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SIH 2026 Problem Statement Research Explorer</title>
+  
+  <!-- Typography: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Hero / Banner (Poster Aesthetic) -->
+  <header class="hero-banner">
+    <!-- Geometric Background Shapes -->
+    <div class="geo-shape geo-circle-1"></div>
+    <div class="geo-shape geo-square-1"></div>
+    <div class="geo-shape geo-circle-2"></div>
+    
+    <div class="hero-container">
+      <div class="hero-brand">
+        <div class="brand-badge">SIH 2026</div>
+        <h1 class="hero-title">Problem Statement Explorer</h1>
+        <p class="hero-subtitle">Smart India Hackathon • Comprehensive Research & Analysis Portal</p>
+      </div>
+
+      <!-- Quick Metrics Block -->
+      <div class="hero-stats">
+        <div class="stat-box stat-primary">
+          <span class="stat-number" id="filteredCount">0</span>
+          <span class="stat-label">Active Matches</span>
+        </div>
+        <div class="stat-box stat-secondary">
+          <span class="stat-number" id="catSoftCount">172</span>
+          <span class="stat-label">Software</span>
+        </div>
+        <div class="stat-box stat-accent">
+          <span class="stat-number" id="catHardCount">54</span>
+          <span class="stat-label">Hardware</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Floating / Sticky Action Bar -->
+  <div class="mobile-action-bar">
+    <button class="btn btn-primary btn-mobile-filter" id="mobileFilterToggle">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+      <span>Filters</span>
+      <span class="filter-count-badge" id="mobileActiveFilterCount" style="display:none;">0</span>
+    </button>
+
+    <div class="export-dropdown">
+      <button class="btn btn-secondary" id="mobileExportBtn">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        <span>Export</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main App Shell -->
+  <div class="app-shell">
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Filter Sidebar -->
+    <aside class="sidebar-drawer" id="sidebarDrawer">
+      <div class="sidebar-header">
+        <div class="sidebar-title-wrap">
+          <h2 class="sidebar-heading">Filter Statements</h2>
+          <span class="sidebar-subheading">Refine by topic, ministry & tags</span>
+        </div>
+        <div class="sidebar-header-actions">
+          <button class="btn-text-bold" id="resetFiltersBtn">Reset All</button>
+          <button class="btn-close-drawer" id="closeSidebarBtn">&times;</button>
+        </div>
+      </div>
+
+      <div class="sidebar-scrollable">
+        
+        <!-- Search Field -->
+        <div class="filter-block">
+          <label class="block-label" for="searchInput">Keyword Search</label>
+          <div class="input-container">
+            <input type="text" id="searchInput" placeholder="Search keywords, ID, title..." autocomplete="off">
+            <button class="clear-search-btn" id="clearSearchBtn" style="display:none;">&times;</button>
+          </div>
+          <div class="scope-row">
+            <label class="scope-text" for="searchScopeSelect">Scope:</label>
+            <select id="searchScopeSelect" class="form-select-sm">
+              <option value="all">Full Text (Everywhere)</option>
+              <option value="title">Title Only</option>
+              <option value="description">Description & Solution</option>
+              <option value="organization">Organization Only</option>
+              <option value="id">Problem ID Only</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Segment Buttons -->
+        <div class="filter-block">
+          <label class="block-label">Category</label>
+          <div class="flat-segmented-control" id="categoryGroup">
+            <button class="flat-segment active" data-category="ALL">All (<span id="catAllCount">226</span>)</button>
+            <button class="flat-segment" data-category="Software">Software</button>
+            <button class="flat-segment" data-category="Hardware">Hardware</button>
+          </div>
+        </div>
+
+        <!-- Quick Tech Tags -->
+        <div class="filter-block">
+          <label class="block-label">Technology & Domain Tags</label>
+          <div class="tech-tags-grid" id="techTagsContainer">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Theme Selection -->
+        <div class="filter-block">
+          <label class="block-label" for="themeSelect">Theme / Area</label>
+          <select id="themeSelect" class="form-select">
+            <option value="">All Themes (18)</option>
+          </select>
+        </div>
+
+        <!-- Organization Selection -->
+        <div class="filter-block">
+          <label class="block-label" for="orgSelect">Ministry / Organization</label>
+          <select id="orgSelect" class="form-select">
+            <option value="">All Organizations (30+)</option>
+          </select>
+        </div>
+
+        <!-- Department Sub-filter -->
+        <div class="filter-block" id="deptFilterGroup" style="display:none;">
+          <label class="block-label" for="deptSelect">Department / Division</label>
+          <select id="deptSelect" class="form-select">
+            <option value="">All Departments</option>
+          </select>
+        </div>
+
+        <!-- Special Attribute Flags -->
+        <div class="filter-block">
+          <label class="block-label">Attributes</label>
+          <div class="checkbox-stack">
+            <label class="flat-checkbox-label">
+              <input type="checkbox" id="filterHasDataset">
+              <span class="flat-checkbox"></span>
+              <span class="checkbox-text">Has Dataset / Reference</span>
+            </label>
+            <label class="flat-checkbox-label">
+              <input type="checkbox" id="filterHasLinks">
+              <span class="flat-checkbox"></span>
+              <span class="checkbox-text">Has External Links</span>
+            </label>
+            <label class="flat-checkbox-label">
+              <input type="checkbox" id="filterHasVideo">
+              <span class="flat-checkbox"></span>
+              <span class="checkbox-text">Has Reference Video</span>
+            </label>
+            <label class="flat-checkbox-label">
+              <input type="checkbox" id="filterHasContact">
+              <span class="flat-checkbox"></span>
+              <span class="checkbox-text">Has Contact Info</span>
+            </label>
+            <label class="flat-checkbox-label">
+              <input type="checkbox" id="filterFavoritesOnly">
+              <span class="flat-checkbox"></span>
+              <span class="checkbox-text">★ Bookmarked Only (<span id="favCount">0</span>)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Sort Order -->
+        <div class="filter-block">
+          <label class="block-label" for="sortSelect">Sort Order</label>
+          <select id="sortSelect" class="form-select">
+            <option value="id_asc">PS ID (Ascending 26001 &rarr; 26226)</option>
+            <option value="id_desc">PS ID (Descending 26226 &rarr; 26001)</option>
+            <option value="title_asc">Title (A &rarr; Z)</option>
+            <option value="title_desc">Title (Z &rarr; A)</option>
+            <option value="org_asc">Organization (A &rarr; Z)</option>
+            <option value="theme_asc">Theme (A &rarr; Z)</option>
+            <option value="desc_len_desc">Description Length (Detailed First)</option>
+          </select>
+        </div>
+
+        <div class="sidebar-apply-mobile">
+          <button class="btn btn-primary btn-block" id="applyMobileFiltersBtn">Apply Filters</button>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Main Results Column -->
+    <main class="main-body">
+
+      <!-- Desktop Top Action Bar -->
+      <div class="desktop-top-bar">
+        <div class="search-summary">
+          <span class="summary-count"><strong id="summaryCount">0</strong> of <span id="totalCount">226</span> statements</span>
+        </div>
+
+        <div class="desktop-actions">
+          <div class="export-dropdown">
+            <button class="btn btn-primary" id="desktopExportBtn">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download / Export</span>
+            </button>
+            <div class="flat-dropdown-menu" id="exportMenu">
+              <div class="dropdown-header">Export Dataset</div>
+              <button class="dropdown-item" id="downloadFilteredJson">
+                <span class="item-badge-icon">JSON</span> Download Filtered (<span class="export-filtered-num">0</span>)
+              </button>
+              <button class="dropdown-item" id="downloadFilteredCsv">
+                <span class="item-badge-icon">CSV</span> Download Filtered (<span class="export-filtered-num2">0</span>)
+              </button>
+              <div class="dropdown-separator"></div>
+              <button class="dropdown-item" id="downloadSelectedJson">
+                <span class="item-badge-icon">JSON</span> Download Selected (<span id="selectedCountBadge">0</span>)
+              </button>
+              <button class="dropdown-item" id="downloadSelectedCsv">
+                <span class="item-badge-icon">CSV</span> Download Selected (<span id="selectedCountBadge2">0</span>)
+              </button>
+              <div class="dropdown-separator"></div>
+              <button class="dropdown-item" id="copyJsonClipboard">
+                <span class="item-badge-icon">📋</span> Copy Filtered JSON to Clipboard
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Filter Chips Bar -->
+      <div class="active-chips-container" id="activeFiltersBar" style="display:none;">
+        <span class="chips-label">ACTIVE:</span>
+        <div class="chips-list" id="activeFilterChips"></div>
+        <button class="btn-clear-all" id="clearAllChipsBtn">Clear All</button>
+      </div>
+
+      <!-- Sub-Toolbar (Selection & View Toggle) -->
+      <div class="sub-toolbar">
+        <label class="flat-checkbox-label">
+          <input type="checkbox" id="selectAllCheckbox">
+          <span class="flat-checkbox"></span>
+          <span class="checkbox-text">Select All Filtered (<span id="selectedCount">0</span>)</span>
+        </label>
+
+        <div class="view-toggle-block">
+          <button class="view-pill active" id="viewCardsBtn">Cards</button>
+          <button class="view-pill" id="viewTableBtn">Table</button>
+        </div>
+      </div>
+
+      <!-- Results: Cards Grid -->
+      <div class="flat-cards-grid" id="cardsGrid">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Results: Table View -->
+      <div class="flat-table-wrapper" id="tableContainer" style="display:none;">
+        <table class="flat-table">
+          <thead>
+            <tr>
+              <th style="width: 36px;"><input type="checkbox" id="selectAllTable" style="display:none;"><span class="flat-checkbox"></span></th>
+              <th style="width: 100px;">ID</th>
+              <th style="width: 105px;">Category</th>
+              <th>Problem Statement Title</th>
+              <th>Theme</th>
+              <th>Organization</th>
+              <th style="width: 120px; text-align:right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State Block -->
+      <div class="flat-empty-card" id="emptyState" style="display:none;">
+        <div class="empty-graphic">✦</div>
+        <h3 class="empty-title">No Matching Problem Statements</h3>
+        <p class="empty-text">We couldn't find any problem statements matching your current search and filter criteria.</p>
+        <button class="btn btn-primary" id="emptyResetBtn">Reset All Filters</button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Detail Modal Dialog (Color Block Design) -->
+  <div class="flat-modal-backdrop" id="detailModalBackdrop">
+    <div class="flat-modal-card" id="detailModalCard">
+      
+      <!-- Modal Header -->
+      <div class="modal-top">
+        <div class="modal-badge-row">
+          <span class="color-badge" id="modalCategoryBadge">Software</span>
+          <span class="mono-id-tag" id="modalPsId">SIH26001</span>
+          <span class="theme-tag-flat" id="modalThemeTag">Disaster Management</span>
+        </div>
+        <button class="modal-close-cross" id="closeModalBtn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="modal-scroll-area">
+        <h2 class="modal-main-heading" id="modalTitle">Problem Statement Title</h2>
+
+        <!-- Flat Info Matrix -->
+        <div class="info-matrix">
+          <div class="info-cell">
+            <span class="info-label">Organization</span>
+            <span class="info-data" id="modalOrg">-</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-label">Department</span>
+            <span class="info-data" id="modalDept">-</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-label">Submissions</span>
+            <span class="info-data" id="modalSubmissions">0/500</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-label">Deadline</span>
+            <span class="info-data" id="modalDeadline">20 September 2026</span>
+          </div>
+        </div>
+
+        <!-- Flat Navigation Tabs -->
+        <div class="flat-tabs-nav">
+          <button class="flat-tab-btn active" data-tab="full-desc">Full Description</button>
+          <button class="flat-tab-btn" data-tab="structured-sec">Structured Sections</button>
+          <button class="flat-tab-btn" data-tab="dataset-links">Datasets & Links</button>
+          <button class="flat-tab-btn" data-tab="raw-json">Raw JSON</button>
+        </div>
+
+        <!-- Tab Panes -->
+        <div class="tab-content-area">
+          <div class="tab-pane active" id="tab-full-desc">
+            <div class="flat-prose" id="modalDescriptionContent"></div>
+          </div>
+
+          <div class="tab-pane" id="tab-structured-sec">
+            <div class="sections-stack" id="modalSectionsContainer"></div>
+          </div>
+
+          <div class="tab-pane" id="tab-dataset-links">
+            <div class="content-block">
+              <h4 class="block-heading">Dataset & Benchmark References</h4>
+              <div class="flat-callout" id="modalDatasetInfo">No dataset specified.</div>
+            </div>
+
+            <div class="content-block">
+              <h4 class="block-heading">External URLs & Citations</h4>
+              <ul class="flat-links-list" id="modalLinksList">
+                <li>None</li>
+              </ul>
+            </div>
+
+            <div class="content-block" id="modalMediaSection" style="display:none;">
+              <h4 class="block-heading">Media & Videos</h4>
+              <div id="modalYoutubeContent"></div>
+            </div>
+
+            <div class="content-block" id="modalContactSection" style="display:none;">
+              <h4 class="block-heading">Contact Details</h4>
+              <div id="modalContactContent" class="flat-callout"></div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-raw-json">
+            <div class="json-header-bar">
+              <span class="json-schema-label">JSON Schema Object</span>
+              <button class="btn btn-sm btn-secondary" id="copyModalJsonBtn">Copy JSON</button>
+            </div>
+            <pre class="flat-code-block" id="modalJsonCode"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-bottom-bar">
+        <button class="btn btn-secondary" id="modalFavoriteBtn">★ Bookmark</button>
+        <a href="#" target="_blank" class="btn btn-outline" id="modalOfficialLink">Official SIH Page &nearr;</a>
+        <button class="btn btn-primary" id="modalCloseActionBtn">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="flat-toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
